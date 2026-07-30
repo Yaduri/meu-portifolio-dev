@@ -64,9 +64,11 @@
     .headline-hero {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(36px, 5vw, 60px);
+      font-size: clamp(32px, 7vw, 60px);
       line-height: 1.1;
       letter-spacing: -1px;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .headline-section {
@@ -424,6 +426,9 @@
     .hero__headline em {
       font-style: normal;
       color: var(--color-accent-red);
+      display: inline;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .hero__subheadline {
@@ -1804,12 +1809,33 @@
       .hero {
         padding: 90px 0 56px;
         min-height: auto;
+        overflow: hidden;
+      }
+
+      /* Force headline to shrink to fit mobile width */
+      .headline-hero {
+        font-size: clamp(26px, 8vw, 36px);
+        letter-spacing: -0.5px;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+      }
+
+      .headline-section {
+        font-size: clamp(24px, 7vw, 32px);
+      }
+
+      .hero__content {
+        overflow: hidden;
+        width: 100%;
       }
 
       .hero__inner {
         grid-template-columns: 1fr;
         gap: 36px;
         text-align: center;
+        overflow: hidden;
+        width: 100%;
       }
 
       .hero__tagline {
@@ -1818,7 +1844,9 @@
 
       .hero__subheadline {
         max-width: 100%;
-        font-size: 16px;
+        font-size: 15px;
+        overflow-wrap: break-word;
+        word-break: break-word;
       }
 
       .hero__cta-group {
