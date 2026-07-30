@@ -941,6 +941,20 @@
       overflow: hidden;
     }
 
+    /* Real project screenshot */
+    .portfolio-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card:hover .portfolio-card__img {
+      transform: scale(1.03);
+    }
+
     .portfolio-card__mockup {
       width: 100%;
       height: 100%;
@@ -2411,32 +2425,12 @@
         <!-- Projeto 1 -->
         <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
           <div class="portfolio-card__screen">
-            <div class="portfolio-card__mockup">
-              <div class="portfolio-card__top-bar">
-                <div class="port-dot"></div>
-                <div class="port-dot"></div>
-                <div class="port-dot"></div>
-                <span class="port-url">moscabrancacar.com.br</span>
-              </div>
-              <div class="portfolio-card__content">
-                <div class="portfolio-card__content-nav"></div>
-                <div class="portfolio-card__hero-sim">
-                  <div class="portfolio-card__text-lines">
-                    <div class="port-line pl-h"></div>
-                    <div class="port-line pl-h" style="width:65%;"></div>
-                    <div class="port-line pl-s" style="margin-top:6px;"></div>
-                    <div class="port-line pl-xs"></div>
-                    <div class="port-btn-sim"></div>
-                  </div>
-                  <div class="port-img-sim" style="background: linear-gradient(135deg, rgba(26,107,255,0.2), rgba(192,32,42,0.15));"></div>
-                </div>
-                <div class="portfolio-card__bottom-cards">
-                  <div class="port-card-sim"></div>
-                  <div class="port-card-sim"></div>
-                  <div class="port-card-sim"></div>
-                </div>
-              </div>
-            </div>
+            <img
+              src="images/mosca-branca.jpeg"
+              alt="Screenshot do site Mosca Branca Car"
+              class="portfolio-card__img"
+              loading="lazy"
+            />
             <div class="portfolio-card__overlay" aria-hidden="true">
               <span class="portfolio-card__overlay-tag">Site Institucional</span>
               <span class="portfolio-card__overlay-title">Mosca Branca Car</span>
@@ -2459,31 +2453,12 @@
         <!-- Projeto 2 -->
         <a href="https://studio-leticia-vieira.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-studio-leticia" aria-label="Ver projeto Studio Letícia Vieira">
           <div class="portfolio-card__screen">
-            <div class="portfolio-card__mockup">
-              <div class="portfolio-card__top-bar">
-                <div class="port-dot"></div>
-                <div class="port-dot"></div>
-                <div class="port-dot"></div>
-                <span class="port-url">studio-leticia-vieira.vercel.app</span>
-              </div>
-              <div class="portfolio-card__content">
-                <div class="portfolio-card__content-nav"></div>
-                <div class="portfolio-card__hero-sim">
-                  <div class="portfolio-card__text-lines">
-                    <div class="port-line pl-h"></div>
-                    <div class="port-line pl-h" style="width:70%;"></div>
-                    <div class="port-line pl-s" style="margin-top:6px;"></div>
-                    <div class="port-line pl-xs"></div>
-                    <div class="port-btn-sim" style="background: #C0202A;"></div>
-                  </div>
-                  <div class="port-img-sim" style="background: linear-gradient(135deg, rgba(192,32,42,0.2), rgba(26,107,255,0.1));"></div>
-                </div>
-                <div class="portfolio-card__bottom-cards">
-                  <div class="port-card-sim" style="height: 44px;"></div>
-                  <div class="port-card-sim" style="height: 44px;"></div>
-                </div>
-              </div>
-            </div>
+            <img
+              src="images/studio-leticia.jpeg"
+              alt="Screenshot do site Studio Letícia Vieira"
+              class="portfolio-card__img"
+              loading="lazy"
+            />
             <div class="portfolio-card__overlay" aria-hidden="true">
               <span class="portfolio-card__overlay-tag">Landing Page</span>
               <span class="portfolio-card__overlay-title">Studio Letícia Vieira</span>

@@ -1,0 +1,24 @@
+# Ignorar arquivos específicos de documentação de briefing (caso não queira subir para o GitHub público)
+copy_landing_page_yago.md
+direcao_visual_yago.md
+estrutura_landing_page_yago.md
+
+# Dependências (se usar npm/node no futuro)
+node_modules/
+.next/
+dist/
+build/
+
+# Logs e arquivos do sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Configurações de IDEs e Editores
+.vscode/
+.idea/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
