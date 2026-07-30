@@ -9,6 +9,13 @@
   <meta property="og:title" content="Yago Dev — Sites que Geram Clientes" />
   <meta property="og:description" content="Landing Pages e Sites Institucionais com design exclusivo. Pagamento único, sem mensalidade. Suporte de 6 meses grátis." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yagodev.com.br" />
+  <meta property="og:image" content="images/foto-yago.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yago Dev — Sites Profissionais que Geram Clientes" />
+  <meta name="twitter:description" content="Landing Pages e Sites Institucionais sob medida em Várzea Paulista - SP." />
+  <meta name="twitter:image" content="images/foto-yago.jpeg" />
+  <link rel="icon" type="image/jpeg" href="images/foto-yago.jpeg" />
   <title>Yago Dev — Sites Profissionais que Geram Clientes | Várzea Paulista</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1361,10 +1368,12 @@
       position: relative;
     }
 
-    .sobre-avatar-placeholder {
-      font-size: 100px;
-      line-height: 1;
-      opacity: 0.4;
+    .sobre-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .sobre-avatar-text {
@@ -2488,51 +2497,6 @@
     </div>
   </section>
 
-  <!-- ========================
-       SECTION 06 — DEPOIMENTOS
-  ======================== -->
-  <section class="section-depoimentos section-bg-surface" id="depoimentos" aria-label="Depoimentos de clientes">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <h2 class="headline-section">O que dizem quem já tem o site pronto</h2>
-      </div>
-      <div class="depoimentos-grid">
-        <div class="depoimento-card animate-on-scroll stagger-1" id="depoimento-rafael">
-          <div class="depoimento-stars" aria-label="5 estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="depoimento-text">"Tinha vergonha de passar o link do meu site antigo para os clientes. Depois que o Yago criou o novo, comecei a mandar com confiança. O visual ficou muito mais profissional e os clientes percebem isso."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar" aria-hidden="true">R</div>
-            <div class="depoimento-author-info">
-              <strong>Rafael Mendes</strong>
-              <span>Personal Trainer · Várzea Paulista – SP</span>
-            </div>
-          </div>
-        </div>
-        <div class="depoimento-card animate-on-scroll stagger-2" id="depoimento-camila">
-          <div class="depoimento-stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
-          <p class="depoimento-text">"Estava desconfiada no começo, mas o Yago explicou tudo muito bem. O site ficou exatamente como eu queria — bonito, fácil de navegar e sem aquele visual genérico. E o melhor: sem pagar mensalidade. Valeu cada centavo."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar" aria-hidden="true">C</div>
-            <div class="depoimento-author-info">
-              <strong>Camila Torres</strong>
-              <span>Proprietária de Salão de Beleza · Jundiaí – SP</span>
-            </div>
-          </div>
-        </div>
-        <div class="depoimento-card animate-on-scroll stagger-3" id="depoimento-marcos">
-          <div class="depoimento-stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
-          <p class="depoimento-text">"Precisávamos de algo profissional e rápido. O Yago entregou no prazo combinado, ficou dentro do orçamento e ainda nos ajudou depois com alguns ajustes sem cobrar nada extra. Recomendo sem hesitar."</p>
-          <div class="depoimento-author">
-            <div class="depoimento-avatar" aria-hidden="true">M</div>
-            <div class="depoimento-author-info">
-              <strong>Marcos Oliveira</strong>
-              <span>Gerente Comercial · Francisco Morato – SP</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ========================
        SECTION 07 — COMO FUNCIONA
@@ -2595,7 +2559,7 @@
         <div class="sobre-visual animate-on-scroll">
           <div class="sobre-avatar-wrapper">
             <div class="sobre-avatar" role="img" aria-label="Foto de Yago Duarte Ribeiro, desenvolvedor web">
-              <i class="fas fa-user-tie sobre-avatar-placeholder" aria-hidden="true" style="font-size:80px; color: rgba(26,107,255,0.35);"></i>
+              <img src="images/foto-yago.jpeg" alt="Yago Duarte Ribeiro — Desenvolvedor Web" class="sobre-avatar-img" />
               <div class="sobre-avatar-text">
                 <p class="sobre-avatar-name">Yago Duarte</p>
                 <p class="sobre-avatar-role">Desenvolvedor Web · Várzea Paulista</p>
