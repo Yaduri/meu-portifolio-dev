@@ -917,6 +917,10 @@
       transition: all 0.3s ease;
       position: relative;
       background: var(--color-surface);
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     .portfolio-card:hover {
@@ -1075,8 +1079,37 @@
     }
 
     .portfolio-card__info {
-      padding: 20px 24px;
+      padding: 16px 24px 20px;
       border-top: 1px solid rgba(26, 107, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .portfolio-card__info-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .portfolio-card__view-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-accent-blue);
+      border: 1px solid rgba(26, 107, 255, 0.35);
+      border-radius: 6px;
+      padding: 6px 12px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .portfolio-card:hover .portfolio-card__view-link {
+      background: rgba(26, 107, 255, 0.1);
+      border-color: var(--color-accent-blue);
     }
 
     .portfolio-card__info-title {
@@ -2348,7 +2381,7 @@
       </div>
       <div class="portfolio-grid">
         <!-- Projeto 1 -->
-        <div class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca">
+        <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
           <div class="portfolio-card__screen">
             <div class="portfolio-card__mockup">
               <div class="portfolio-card__top-bar">
@@ -2379,19 +2412,24 @@
             <div class="portfolio-card__overlay" aria-hidden="true">
               <span class="portfolio-card__overlay-tag">Site Institucional</span>
               <span class="portfolio-card__overlay-title">Mosca Branca Car</span>
-              <span class="portfolio-card__overlay-link">moscabrancacar.com.br</span>
+              <span class="portfolio-card__overlay-link">moscabrancacar.com.br <i class="fas fa-arrow-up-right-from-square" style="font-size:10px;"></i></span>
             </div>
           </div>
           <div class="portfolio-card__info">
-            <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
-            <div class="portfolio-card__info-meta">
-              <span class="portfolio-tag si">Site Institucional</span>
-              <span class="portfolio-card__info-nicho">Automóveis · Várzea Paulista – SP</span>
+            <div class="portfolio-card__info-left">
+              <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
+              <div class="portfolio-card__info-meta">
+                <span class="portfolio-tag si">Site Institucional</span>
+                <span class="portfolio-card__info-nicho">Automóveis · Várzea Paulista – SP</span>
+              </div>
             </div>
+            <span class="portfolio-card__view-link">
+              Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
+            </span>
           </div>
-        </div>
+        </a>
         <!-- Projeto 2 -->
-        <div class="portfolio-card animate-on-scroll stagger-2" id="portfolio-studio-leticia">
+        <a href="https://studio-leticia-vieira.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-studio-leticia" aria-label="Ver projeto Studio Letícia Vieira">
           <div class="portfolio-card__screen">
             <div class="portfolio-card__mockup">
               <div class="portfolio-card__top-bar">
@@ -2421,17 +2459,22 @@
             <div class="portfolio-card__overlay" aria-hidden="true">
               <span class="portfolio-card__overlay-tag">Landing Page</span>
               <span class="portfolio-card__overlay-title">Studio Letícia Vieira</span>
-              <span class="portfolio-card__overlay-link">studio-leticia-vieira.vercel.app</span>
+              <span class="portfolio-card__overlay-link">studio-leticia-vieira.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:10px;"></i></span>
             </div>
           </div>
           <div class="portfolio-card__info">
-            <h3 class="portfolio-card__info-title">Studio Letícia Vieira</h3>
-            <div class="portfolio-card__info-meta">
-              <span class="portfolio-tag lp">Landing Page</span>
-              <span class="portfolio-card__info-nicho">Estética · Beleza</span>
+            <div class="portfolio-card__info-left">
+              <h3 class="portfolio-card__info-title">Studio Letícia Vieira</h3>
+              <div class="portfolio-card__info-meta">
+                <span class="portfolio-tag lp">Landing Page</span>
+                <span class="portfolio-card__info-nicho">Estética · Beleza</span>
+              </div>
             </div>
+            <span class="portfolio-card__view-link">
+              Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
+            </span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Falar com Yago para ter um site assim">
