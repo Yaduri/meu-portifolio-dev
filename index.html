@@ -10,11 +10,11 @@
   <meta property="og:description" content="Landing Pages e Sites Institucionais com design exclusivo. Pagamento único, sem mensalidade. Suporte de 6 meses grátis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yagodev.com.br" />
-  <meta property="og:image" content="images/foto-yago.jpeg" />
+  <meta property="og:image" content="https://yagodev.com.br/images/foto-yago.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yago Dev — Sites Profissionais que Geram Clientes" />
   <meta name="twitter:description" content="Landing Pages e Sites Institucionais sob medida em Várzea Paulista - SP." />
-  <meta name="twitter:image" content="images/foto-yago.jpeg" />
+  <meta name="twitter:image" content="https://yagodev.com.br/images/foto-yago.jpeg" />
   <link rel="icon" type="image/jpeg" href="images/foto-yago.jpeg" />
   <title>Yago Dev — Sites Profissionais que Geram Clientes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -707,9 +707,10 @@
     }
 
     .services-grid {
-      display: flex;
-      justify-content: center;
-      max-width: 720px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 960px;
       margin: 0 auto 48px;
     }
 
@@ -1179,86 +1180,6 @@
     }
 
     .portfolio-card__info-nicho {
-      font-size: 12px;
-      color: var(--color-text-muted);
-    }
-
-    /* ========================
-       SECTION 06 — DEPOIMENTOS
-    ======================== */
-    .section-depoimentos {
-      padding: var(--section-padding);
-      background: var(--color-surface);
-    }
-
-    .depoimentos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .depoimento-card {
-      background: rgba(10, 10, 15, 0.6);
-      border: 1px solid rgba(26, 107, 255, 0.1);
-      border-radius: var(--border-radius-lg);
-      padding: 28px;
-      backdrop-filter: blur(8px);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .depoimento-card:hover {
-      border-color: rgba(26, 107, 255, 0.25);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
-    }
-
-    .depoimento-stars {
-      color: #F59E0B;
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
-
-    .depoimento-text {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--color-text-muted);
-      font-style: italic;
-      flex: 1;
-    }
-
-    .depoimento-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .depoimento-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-red));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 16px;
-      color: #fff;
-      flex-shrink: 0;
-    }
-
-    .depoimento-author-info strong {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .depoimento-author-info span {
       font-size: 12px;
       color: var(--color-text-muted);
     }
@@ -1931,11 +1852,6 @@
         grid-template-columns: 1fr;
       }
 
-      /* Depoimentos */
-      .depoimentos-grid {
-        grid-template-columns: 1fr;
-      }
-
       /* Processo */
       .processo-steps {
         grid-template-columns: 1fr;
@@ -2084,10 +2000,6 @@
         padding: 28px 20px;
       }
 
-      .depoimento-card {
-        padding: 22px 18px;
-      }
-
       .faq-question {
         font-size: 14px;
         padding: 16px 18px;
@@ -2186,6 +2098,12 @@
 </head>
 <body>
 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </symbol>
+  </svg>
+
   <!-- ========================
        NAVIGATION
   ======================== -->
@@ -2196,11 +2114,12 @@
         <ul class="nav__links" role="list">
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Falar com Yago
         </a>
         <button class="nav__hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
@@ -2221,7 +2140,7 @@
     <a href="#sobre" class="mobile-nav-link">Sobre</a>
     <a href="#faq" class="mobile-nav-link">FAQ</a>
     <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp mt-16 mobile-nav-link" style="margin-top: 8px;">
-      <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
       Falar no WhatsApp
     </a>
   </div>
@@ -2243,7 +2162,7 @@
           </p>
           <div class="hero__cta-group">
             <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-cta" aria-label="Quero meu site - Falar com Yago no WhatsApp">
-              <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               Quero meu site — Falar com Yago
             </a>
           </div>
@@ -2354,13 +2273,27 @@
             <li>Suporte gratuito por 6 meses após a entrega</li>
           </ul>
         </div>
+        <!-- Service 2 -->
+        <div class="service-card animate-on-scroll stagger-2" id="service-institucional">
+          <i class="fas fa-building service-card__icon" aria-hidden="true"></i>
+          <h3 class="service-card__title">Site Institucional Profissional</h3>
+          <span class="service-card__ideal">Ideal para: empresas que precisam de presença completa e credibilidade</span>
+          <ul class="service-card__list" role="list">
+            <li>Página inicial + páginas internas (serviços, sobre, contato)</li>
+            <li>Design exclusivo com a identidade do seu negócio</li>
+            <li>100% responsivo e com carregamento rápido</li>
+            <li>SEO básico configurado</li>
+            <li>Integração com WhatsApp, redes sociais e mapa</li>
+            <li>Suporte gratuito por 6 meses após a entrega</li>
+          </ul>
+        </div>
       </div>
       <p class="service-reinforcement animate-on-scroll">
         "Cada projeto é criado pensando no seu negócio e no seu cliente. Nada de template genérico copiado da internet."
       </p>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20uma%20Landing%20Page%20para%20o%20meu%20neg%C3%B3cio%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="services-cta" aria-label="Falar com Yago no WhatsApp">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Quero uma Landing Page → Falar com Yago
         </a>
       </div>
@@ -2405,7 +2338,7 @@
       </div>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20falar%20sobre%20um%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="diferenciais-cta" aria-label="Falar com Yago agora no WhatsApp">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Falar com Yago agora → WhatsApp
         </a>
       </div>
@@ -2426,7 +2359,7 @@
         <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
           <div class="portfolio-card__screen">
             <img
-              src="images/mosca-branca.png"
+              src="images/mosca-branca.jpeg"
               alt="Screenshot do site Mosca Branca Car"
               class="portfolio-card__img"
               loading="lazy"
@@ -2454,7 +2387,7 @@
         <a href="https://studio-leticia-vieira.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-studio-leticia" aria-label="Ver projeto Studio Letícia Vieira">
           <div class="portfolio-card__screen">
             <img
-              src="images/studio-leticia.png"
+              src="images/studio-leticia.jpeg"
               alt="Screenshot do site Studio Letícia Vieira"
               class="portfolio-card__img"
               loading="lazy"
@@ -2482,7 +2415,7 @@
         <a href="https://demo-estetica-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-3" id="portfolio-demo-estetica" aria-label="Ver projeto de demonstração Essenza Estética">
           <div class="portfolio-card__screen">
             <img
-              src="images/demo-estetica.png"
+              src="images/demo-estetica.jpeg"
               alt="Screenshot do site de demonstração Essenza Estética"
               class="portfolio-card__img"
               loading="lazy"
@@ -2510,7 +2443,7 @@
         <a href="https://demo-moveis.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-4" id="portfolio-demo-moveis" aria-label="Ver projeto de demonstração Ateliê Linha Casa">
           <div class="portfolio-card__screen">
             <img
-              src="images/demo-moveis.png"
+              src="images/demo-moveis.jpeg"
               alt="Screenshot do site de demonstração Ateliê Linha Casa"
               class="portfolio-card__img"
               loading="lazy"
@@ -2538,7 +2471,7 @@
         <a href="https://demo-advocacia-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-5" id="portfolio-demo-advocacia" aria-label="Ver projeto de demonstração Advocacia">
           <div class="portfolio-card__screen">
             <img
-              src="images/demo-advocacia.png"
+              src="images/demo-advocacia.jpeg"
               alt="Screenshot do site de demonstração Advocacia"
               class="portfolio-card__img"
               loading="lazy"
@@ -2565,7 +2498,7 @@
       </div>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Falar com Yago para ter um site assim">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Quero um site assim — Falar com Yago
         </a>
       </div>
@@ -2618,7 +2551,7 @@
       </div>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20come%C3%A7ar%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="processo-cta" aria-label="Começar agora - Falar com Yago no WhatsApp">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Começar agora → Falar com Yago no WhatsApp
         </a>
       </div>
@@ -2654,7 +2587,7 @@
             <span class="sobre-location-item"><i class="fas fa-earth-americas" aria-hidden="true"></i> Atendimento remoto para todo o Brasil</span>
           </div>
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20vamos%20conversar%20sobre%20um%20site%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="sobre-cta" aria-label="Falar com Yago no WhatsApp">
-            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Vamos conversar? → WhatsApp
           </a>
         </div>
@@ -2738,7 +2671,7 @@
       </div>
       <div class="section-cta animate-on-scroll">
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20site!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="faq-cta" aria-label="Falar com Yago pelo WhatsApp">
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Ainda tem dúvida? Me chama no WhatsApp — respondo na hora.
         </a>
       </div>
@@ -2760,7 +2693,7 @@
           <span class="cta-seal"><i class="fas fa-mobile-screen-button cta-seal-emoji" aria-hidden="true"></i> 100% responsivo</span>
         </div>
         <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20meu%20site%20agora%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-xl" id="cta-final-btn" aria-label="Quero meu site agora - Falar com Yago no WhatsApp">
-          <svg class="whatsapp-icon" style="width:26px;height:26px;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg class="whatsapp-icon" style="width:26px;height:26px;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
           Quero meu site agora → Falar com Yago
         </a>
         <p class="cta-safety">Primeira conversa gratuita e sem compromisso. Vamos entender o que seu negócio precisa antes de qualquer proposta.</p>
@@ -2786,7 +2719,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
             <a href="https://wa.me/5511945987666" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="WhatsApp do Yago">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             </a>
           </div>
         </div>
@@ -2810,7 +2743,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">© 2025 Yago Duarte Ribeiro. Todos os direitos reservados.</p>
+        <p class="footer__copy">© 2026 Yago Duarte Ribeiro. Todos os direitos reservados.</p>
         <p class="footer__location"><i class="fas fa-location-dot" aria-hidden="true"></i> Várzea Paulista – SP · Atende todo o Brasil</p>
       </div>
     </div>
