@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-24T17:15:20Z",
+  "title": "Design System: Yago Dev Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Vermelho Chumbo Elétrico", "canonical": "hex(#C0202A)", "tonalRamp": ["#3d0407", "#730b11", "#a01820", "#c0202a", "#d83b45", "#ea6e76", "#f4a2a7", "#fae2e3"] },
+      "secondary": { "role": "secondary", "displayName": "Azul Elétrico", "canonical": "hex(#2563EB)", "tonalRamp": ["#08183a", "#0f317a", "#1e52c7", "#2563eb", "#5389f4", "#8baef7", "#c2d4fb", "#f0f4fe"] },
+      "accent-cyan": { "role": "accent", "displayName": "Ciano Ciberneon", "canonical": "hex(#38BDF8)", "tonalRamp": ["#032b3d", "#085779", "#1191c4", "#38bdf8", "#6cd0fa", "#9ee1fc", "#cff0fd", "#f0fafe"] },
+      "whatsapp": { "role": "accent", "displayName": "Verde Emerald", "canonical": "hex(#22C55E)", "tonalRamp": ["#022b10", "#065c24", "#0fa544", "#22c55e", "#57d885", "#8ce6ac", "#c2f3d5", "#f0fdf4"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Vácuo Espacial Profundo", "canonical": "hex(#07090E)", "tonalRamp": ["#010203", "#040508", "#07090e", "#0f131f", "#1e263d", "#36456e", "#647abf", "#e1e6f5"] },
+      "neutral-surface": { "role": "neutral", "displayName": "Vidro Interestelar", "canonical": "rgba(13, 20, 36, 0.7)", "tonalRamp": ["#020407", "#050911", "#0d1424", "#1b2848", "#334c89", "#5c7ccb", "#a1b4e5", "#e6ebfa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Títulos grandes e chamadas principais." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, descrições e formulários." }
+    },
+    "shadows": [
+      { "name": "shadow-glass", "value": "0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(38, 110, 255, 0.15)", "purpose": "Sombra difusa de profundidade para cards de serviço e portfólio." },
+      { "name": "shadow-glass-hover", "value": "0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 0 28px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(38, 110, 255, 0.4)", "purpose": "Glow azul ativo ao pairar sobre os cards." }
+    ],
+    "motion": [
+      { "name": "ease-fluid", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Aceleração suave de entrada para transições elásticas." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "480px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "desktop-md", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão principal de chamada para ação (CTA) via WhatsApp com gradiente e elevação.",
+      "html": "<button class=\"ds-btn-primary\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"currentColor\"><path d=\"M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.639 2.012 14.184.99 11.993.99c-5.442 0-9.87 4.372-9.874 9.802-.001 1.774.478 3.507 1.395 5.086l-.995 3.635 3.737-.969zm10.742-5.748c-.285-.143-1.687-.827-1.947-.921-.26-.096-.45-.143-.639.143-.19.285-.733.921-.899 1.108-.166.187-.333.21-.617.068-.285-.143-1.202-.44-2.289-1.401-.847-.749-1.42-1.674-1.587-1.957-.166-.285-.018-.439.124-.58l.375-.436c.128-.149.171-.252.256-.421.085-.17.042-.319-.021-.462-.063-.143-.639-1.524-.876-2.096-.23-.556-.464-.48-.639-.488-.166-.008-.356-.01-.546-.01s-.5.07-.76.356c-.26.285-.992.962-.992 2.346 0 1.385 1.01 2.719 1.152 2.908.142.19 1.986 3.011 4.81 4.21.671.285 1.196.456 1.604.584.675.213 1.288.183 1.773.111.539-.08 1.687-.684 1.924-1.343.237-.659.237-1.222.166-1.343-.07-.121-.26-.192-.546-.335z\"/></svg>Falar com Yago</button>",
+      "css": ".ds-btn-primary { background: linear-gradient(135deg, #C0202A 0%, #D82631 100%); color: #F8FAFC; padding: 16px 32px; font-weight: 600; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 24px -4px rgba(192, 32, 42, 0.4); transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s; } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px -4px rgba(192, 32, 42, 0.5); } .ds-icon { fill: currentColor; flex-shrink: 0; }"
+    },
+    {
+      "name": "Card Glassmorphic",
+      "kind": "card",
+      "description": "Card de serviços e diferenciais com efeito de vidro jateado e borda azul translúcida.",
+      "html": "<div class=\"ds-card-glass\"><h3 class=\"ds-card-title\">Landing Page</h3><p class=\"ds-card-text\">Design exclusivo criado do zero para seu negócio.</p></div>",
+      "css": ".ds-card-glass { background: rgba(13, 20, 36, 0.7); backdrop-filter: blur(14px); border: 1px solid rgba(38, 110, 255, 0.15); border-radius: 20px; padding: 36px 28px; transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s; } .ds-card-glass:hover { border-color: rgba(38, 110, 255, 0.4); transform: translateY(-6px); } .ds-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; color: #F8FAFC; margin-bottom: 12px; font-weight: 700; } .ds-card-text { font-family: 'Inter', sans-serif; font-size: 14px; color: #94A3B8; line-height: 1.65; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dark Tech Studio",
+    "overview": "O visual é escuro por padrão, evocando alta tecnologia e acabamento de alto nível (estilo agência premium de tecnologia internacional). Cores e luzes neon (ciano e vermelho) são cirurgicamente aplicadas para direcionar a atenção do usuário.",
+    "keyCharacteristics": [
+      "Fundo preto vácuo com grid e orbes luminosos azuis",
+      "Tipografia geométrica impactante (Plus Jakarta Sans) contrastando com corpo legível (Inter)",
+      "Transparências de vidro (glassmorphism) com bordas azuis ativas",
+      "Micro-interações elásticas com transições fluidas"
+    ],
+    "rules": [
+      { "name": "The Color Rarity Rule", "body": "O acento vermelho chumbo elétrico é reservado exclusivamente para os botões de ação imediata (CTAs) e badges mais importantes, garantindo contraste máximo.", "section": "colors" },
+      { "name": "The Glow-Instead-Of-Shadow Rule", "body": "Em fundos escuros, sombras pretas puras não criam profundidade. A profundidade deve ser gerada por brilhos sutis (glows) coloridos e bordas semi-transparentes.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar o vermelho acentuado apenas em botões principais de ação imediata.",
+      "Do manter o contraste de texto em conformidade estrita com a regra WCAG 2.1 AA.",
+      "Do usar border-radius arredondado (14px/20px) nos cards e elementos interativos."
+    ],
+    "donts": [
+      "Don't usar vermelho e azul elétrico juntos no mesmo elemento para evitar poluição visual.",
+      "Don't utilizar fundos claros em qualquer seção para preservar o aspecto Dark Premium.",
+      "Don't usar mais do que uma fonte de display (Syne foi preterida em favor de Plus Jakarta Sans para consistência)."
+    ]
+  }
+}
