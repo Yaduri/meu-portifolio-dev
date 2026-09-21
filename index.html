@@ -2235,7 +2235,7 @@
         <div class="hero__inner">
           
           <!-- Left Content -->
-          <div class="hero__content animate-on-scroll">
+          <div class="hero__content">
             <div class="hero__status-badge">
               <span class="pulse-dot"></span>
               <span>Disponível para novos projetos este mês</span>
@@ -2265,7 +2265,7 @@
           </div>
 
           <!-- Right Spatial 3D Preview Visual -->
-          <div class="hero__visual animate-on-scroll stagger-2" aria-hidden="true">
+          <div class="hero__visual" aria-hidden="true">
             <div class="hero__mockup-wrapper">
               <div class="hero__mockup-device">
                 <div class="hero__mockup-bar">
@@ -2880,7 +2880,7 @@
             Quero meu site agora → Falar com Yago
           </a>
           
-          <p class="cta-safety">Primeira conversa gratuita e sem compromisso. Vamos entender o que seu negócio precisa antes de qualquer proposta.</p>
+          <p class="cta-safety">Primeira conversa sem compromisso. Vamos entender o que seu negócio precisa antes de qualquer proposta.</p>
           <p class="cta-phone">Ou ligue diretamente: <a href="tel:+5511945987666">(11) 94598-7666</a></p>
         </div>
       </div>
@@ -3105,16 +3105,28 @@
       });
     });
 
-    // 6. GSAP Cinematic Animations & Spatial Micro-Interactions
+    // 6. Smooth IntersectionObserver Entrance Animations for Standard Sections
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    animatedElements.forEach(el => observer.observe(el));
+
+    // 7. GSAP Cinematic Animations & Spatial Micro-Interactions
     if (!prefersReducedMotion && typeof gsap !== 'undefined') {
-      // Hero Entrance Timeline
+      // Hero Entrance Timeline (Explicit fromTo for rock-solid visibility)
       const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      heroTl.from(".hero__status-badge", { y: 18, opacity: 0, duration: 0.6, delay: 0.15 })
-            .from(".hero__headline", { y: 22, opacity: 0, duration: 0.7 }, "-=0.4")
-            .from(".hero__subheadline", { y: 18, opacity: 0, duration: 0.6 }, "-=0.4")
-            .from(".hero__cta-group", { y: 18, opacity: 0, duration: 0.5 }, "-=0.4")
-            .from(".hero__badges .hero__badge", { y: 12, opacity: 0, duration: 0.4, stagger: 0.08 }, "-=0.3")
-            .from(".hero__visual", { scale: 0.95, opacity: 0, duration: 0.8, ease: "back.out(1.2)" }, "-=0.6");
+      heroTl.fromTo(".hero__status-badge", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.15 })
+            .fromTo(".hero__headline", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, "-=0.4")
+            .fromTo(".hero__subheadline", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.4")
+            .fromTo(".hero__cta-group", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.4")
+            .fromTo(".hero__badges .hero__badge", { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.08 }, "-=0.3")
+            .fromTo(".hero__visual", { scale: 0.95, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.2)" }, "-=0.6");
 
       // Interactive 3D Mouse Tilt with gsap.quickTo (Desktop only)
       const mockupDevice = document.querySelector('.hero__mockup-device');
@@ -3202,22 +3214,6 @@
           }
         });
       }
-
-      // ScrollTrigger Reveal for other sections
-      const revealElements = gsap.utils.toArray('.animate-on-scroll:not(.hero__status-badge):not(.hero__headline):not(.hero__subheadline):not(.hero__cta-group):not(.hero__visual)');
-      revealElements.forEach(el => {
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none none"
-          }
-        });
-      });
 
       // Magnetic Button Effect (Desktop pointer only)
       if (window.matchMedia('(pointer: fine)').matches) {
