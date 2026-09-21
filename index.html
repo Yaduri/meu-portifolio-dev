@@ -111,9 +111,24 @@
     }
 
     html {
-      scroll-behavior: smooth;
       overflow-x: hidden;
       font-size: 16px;
+    }
+
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
     }
 
     body {
@@ -1463,16 +1478,24 @@
     }
 
     /* Connected Gradient Track Line */
-    .processo-steps::before {
-      content: '';
+    .processo-track {
       position: absolute;
       top: 36px;
       left: 12%;
       right: 12%;
       height: 2px;
-      background: linear-gradient(90deg, var(--color-accent-red) 0%, var(--color-accent-cyan) 50%, var(--color-whatsapp) 100%);
+      background: rgba(255, 255, 255, 0.08);
       z-index: 0;
-      opacity: 0.4;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .processo-track-fill {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-accent-red) 0%, var(--color-accent-blue) 35%, var(--color-accent-cyan) 70%, var(--color-whatsapp) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
     }
 
     .processo-step {
@@ -2065,7 +2088,7 @@
         gap: 20px;
       }
 
-      .processo-steps::before {
+      .processo-track {
         display: none;
       }
 
@@ -2665,6 +2688,9 @@
         </div>
 
         <div class="processo-steps" role="list">
+          <div class="processo-track" aria-hidden="true">
+            <div class="processo-track-fill" id="processoTrackFill"></div>
+          </div>
           <div class="processo-step animate-on-scroll stagger-1" role="listitem">
             <div class="processo-step__number" aria-label="Passo 1">1</div>
             <div class="processo-step__content">
@@ -2922,34 +2948,96 @@
   </div>
 
   <!-- ========================
+       LENIS & GSAP LIBRARIES (CDN Minified)
+       ======================== -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- ========================
        JAVASCRIPT
        ======================== -->
   <script>
-    // 1. Navigation Scroll Glassmorphism State & Scroll Progress Bar
+    // 0. Accessibility Check & Plugin Registration
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let lenis = null;
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // 1. Initialize Lenis Smooth Scrolling (Inertial Physics)
+    if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+      lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        touchMultiplier: 1.2
+      });
+
+      // Synchronize Lenis scroll updates with GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // 2. Navigation Scroll State & Scroll Progress Bar
     const navbar = document.getElementById('navbar');
     const scrollProgress = document.getElementById('scrollProgress');
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      
-      // Navbar glassmorphism
+    function updateScrollState(scrollY, totalHeight) {
       if (scrollY > 30) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
 
-      // Scroll Progress Indicator
-      if (scrollProgress) {
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (totalHeight > 0) {
-          const progress = Math.min(1, Math.max(0, scrollY / totalHeight));
-          scrollProgress.style.transform = `scaleX(${progress})`;
-        }
+      if (scrollProgress && totalHeight > 0) {
+        const progress = Math.min(1, Math.max(0, scrollY / totalHeight));
+        scrollProgress.style.transform = `scaleX(${progress})`;
       }
-    }, { passive: true });
+    }
 
-    // 2. Mobile Menu Accessible Drawer
+    if (lenis) {
+      lenis.on('scroll', ({ scroll, limit }) => {
+        updateScrollState(scroll, limit);
+      });
+    } else {
+      window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        updateScrollState(window.scrollY, totalHeight);
+      }, { passive: true });
+    }
+
+    // 3. Smooth Anchor Scrolling with Header Offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId === '') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          if (lenis) {
+            lenis.scrollTo(targetElement, { offset: -70, duration: 1.1 });
+          } else {
+            const headerOffset = 70;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - headerOffset,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+
+    // 4. Mobile Menu Accessible Drawer
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileClose = document.getElementById('mobileClose');
@@ -2960,6 +3048,7 @@
       mobileMenu.setAttribute('aria-hidden', 'false');
       hamburgerBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
     }
 
     function closeMenu() {
@@ -2967,22 +3056,21 @@
       mobileMenu.setAttribute('aria-hidden', 'true');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      if (lenis) lenis.start();
     }
 
     hamburgerBtn.addEventListener('click', openMenu);
     mobileClose.addEventListener('click', closeMenu);
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-    // Close on Escape Key
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
         closeMenu();
       }
     });
 
-    // 3. Smooth FAQ Accordion
+    // 5. Smooth FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
-
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
       const answer = item.querySelector('.faq-answer');
@@ -2990,7 +3078,6 @@
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
 
-        // Close other items for single-focus accordion
         faqItems.forEach(other => {
           if (other !== item) {
             other.classList.remove('open');
@@ -3001,7 +3088,6 @@
           }
         });
 
-        // Toggle clicked item
         if (isOpen) {
           item.classList.remove('open');
           answer.style.maxHeight = null;
@@ -3011,93 +3097,161 @@
           answer.style.maxHeight = answer.scrollHeight + 'px';
           question.setAttribute('aria-expanded', 'true');
         }
+
+        // Notify Lenis and ScrollTrigger to recalculate viewport bounds
+        if (typeof ScrollTrigger !== 'undefined') {
+          setTimeout(() => ScrollTrigger.refresh(), 350);
+        }
       });
     });
 
-    // 4. Smooth IntersectionObserver Entrance Animations
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    // 6. GSAP Cinematic Animations & Spatial Micro-Interactions
+    if (!prefersReducedMotion && typeof gsap !== 'undefined') {
+      // Hero Entrance Timeline
+      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      heroTl.from(".hero__status-badge", { y: 18, opacity: 0, duration: 0.6, delay: 0.15 })
+            .from(".hero__headline", { y: 22, opacity: 0, duration: 0.7 }, "-=0.4")
+            .from(".hero__subheadline", { y: 18, opacity: 0, duration: 0.6 }, "-=0.4")
+            .from(".hero__cta-group", { y: 18, opacity: 0, duration: 0.5 }, "-=0.4")
+            .from(".hero__badges .hero__badge", { y: 12, opacity: 0, duration: 0.4, stagger: 0.08 }, "-=0.3")
+            .from(".hero__visual", { scale: 0.95, opacity: 0, duration: 0.8, ease: "back.out(1.2)" }, "-=0.6");
 
-    const observerOptions = {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    };
+      // Interactive 3D Mouse Tilt with gsap.quickTo (Desktop only)
+      const mockupDevice = document.querySelector('.hero__mockup-device');
+      const heroVisual = document.querySelector('.hero__visual');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+      if (mockupDevice && heroVisual && window.matchMedia('(pointer: fine)').matches) {
+        const xRotTo = gsap.quickTo(mockupDevice, "rotationY", { duration: 0.6, ease: "power2.out" });
+        const yRotTo = gsap.quickTo(mockupDevice, "rotationX", { duration: 0.6, ease: "power2.out" });
 
-    animatedElements.forEach(el => observer.observe(el));
+        heroVisual.addEventListener('mousemove', (e) => {
+          const rect = heroVisual.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-    // 5. Spring Animated Count-Up for Stats Bar
-    const statsSection = document.getElementById('statsBar');
-    let statsAnimated = false;
+          xRotTo(x * 14);
+          yRotTo(-y * 14);
+        });
 
-    if (statsSection) {
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !statsAnimated) {
-            statsAnimated = true;
+        heroVisual.addEventListener('mouseleave', () => {
+          xRotTo(-4);
+          yRotTo(2);
+        });
+      }
+
+      // Stats Bar Number Counters with GSAP Interpolation
+      const statsSection = document.getElementById('statsBar');
+      if (statsSection) {
+        ScrollTrigger.create({
+          trigger: statsSection,
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
             document.querySelectorAll('.stat-num').forEach(counter => {
               const target = parseInt(counter.getAttribute('data-target'), 10);
               const prefix = counter.getAttribute('data-prefix') || '';
               const suffix = counter.getAttribute('data-suffix') || '';
-              
               if (isNaN(target) || target === 0) return;
 
-              const duration = 1600; // ms
-              const startTime = performance.now();
-
-              function updateCount(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                // Ease out cubic formula for fluid spring-like slowdown
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                const currentVal = Math.floor(easeProgress * target);
-
-                counter.textContent = prefix + currentVal + suffix;
-
-                if (progress < 1) {
-                  requestAnimationFrame(updateCount);
-                } else {
+              const valObj = { val: 0 };
+              gsap.to(valObj, {
+                val: target,
+                duration: 1.6,
+                ease: "power2.out",
+                onUpdate: () => {
+                  counter.textContent = prefix + Math.floor(valObj.val) + suffix;
+                },
+                onComplete: () => {
                   counter.textContent = prefix + target + suffix;
                 }
-              }
-
-              requestAnimationFrame(updateCount);
+              });
             });
-            statsObserver.unobserve(statsSection);
           }
         });
-      }, { threshold: 0.2 });
+      }
 
-      statsObserver.observe(statsSection);
-    }
+      // Process Track Scroll Scrubbing
+      const trackFill = document.getElementById('processoTrackFill');
+      const processoSection = document.getElementById('processo');
+      if (trackFill && processoSection) {
+        gsap.to(trackFill, {
+          scaleX: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: processoSection,
+            start: "top 60%",
+            end: "bottom 75%",
+            scrub: 0.5
+          }
+        });
 
-    // 6. Smooth Anchor Scrolling with Header Offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#' || targetId === '') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const headerOffset = 80;
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - headerOffset;
+        // Step numbers pop on scroll
+        gsap.utils.toArray('.processo-step').forEach((step) => {
+          const num = step.querySelector('.processo-step__number');
+          if (num) {
+            gsap.from(num, {
+              scale: 0.82,
+              duration: 0.5,
+              ease: "back.out(1.6)",
+              scrollTrigger: {
+                trigger: step,
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+              }
+            });
+          }
+        });
+      }
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
+      // ScrollTrigger Reveal for other sections
+      const revealElements = gsap.utils.toArray('.animate-on-scroll:not(.hero__status-badge):not(.hero__headline):not(.hero__subheadline):not(.hero__cta-group):not(.hero__visual)');
+      revealElements.forEach(el => {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play none none none"
+          }
+        });
       });
-    });
+
+      // Magnetic Button Effect (Desktop pointer only)
+      if (window.matchMedia('(pointer: fine)').matches) {
+        const magneticBtns = document.querySelectorAll('.btn-primary, .whatsapp-float__btn');
+        magneticBtns.forEach(btn => {
+          const xTo = gsap.quickTo(btn, "x", { duration: 0.35, ease: "power2.out" });
+          const yTo = gsap.quickTo(btn, "y", { duration: 0.35, ease: "power2.out" });
+
+          btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const relX = e.clientX - rect.left - rect.width / 2;
+            const relY = e.clientY - rect.top - rect.height / 2;
+            xTo(relX * 0.28);
+            yTo(relY * 0.28);
+          });
+
+          btn.addEventListener('mouseleave', () => {
+            xTo(0);
+            yTo(0);
+          });
+        });
+      }
+    } else {
+      // Fallback for prefers-reduced-motion: reveal instantly
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        el.classList.add('visible');
+      });
+      document.querySelectorAll('.stat-num').forEach(counter => {
+        const target = counter.getAttribute('data-target') || '';
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        counter.textContent = prefix + target + suffix;
+      });
+    }
   </script>
 </body>
 </html>
