@@ -18,12 +18,55 @@ typography:
     fontSize: "clamp(28px, 8.5vw, 56px)"
     fontWeight: 800
     lineHeight: 1.15
+  headline:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontSize: "clamp(24px, 7.5vw, 42px)"
+    fontWeight: 700
+    lineHeight: 1.2
+  title-xl:
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: 1.3
+  title-lg:
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: 1.3
+  title:
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: 1.3
+  title-sm:
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: 1.3
   body:
     fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.65
+  body-sm:
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.5
+  caption:
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: 1.4
+  badge:
+    fontSize: "11px"
+    fontWeight: 600
+    lineHeight: 1.2
+  icon-lg:
+    fontSize: "30px"
+    lineHeight: 1
+  icon-md:
+    fontSize: "24px"
+    lineHeight: 1
+  icon-sm:
+    fontSize: "20px"
+    lineHeight: 1
 rounded:
+  xs: "6px"
   sm: "8px"
   md: "14px"
   lg: "20px"

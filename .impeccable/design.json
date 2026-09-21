@@ -13,7 +13,11 @@
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Títulos grandes e chamadas principais." },
-      "body": { "displayName": "Body", "purpose": "Texto corrido, descrições e formulários." }
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção destacados." },
+      "title": { "displayName": "Title", "purpose": "Títulos de cards e subtópicos." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, descrições e formulários." },
+      "caption": { "displayName": "Caption", "purpose": "Metadados, rótulos e apoios." },
+      "badge": { "displayName": "Badge", "purpose": "Pílulas de status e tags." }
     },
     "shadows": [
       { "name": "shadow-glass", "value": "0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(38, 110, 255, 0.15)", "purpose": "Sombra difusa de profundidade para cards de serviço e portfólio." },
