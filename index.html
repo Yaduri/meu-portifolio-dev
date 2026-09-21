@@ -9,7 +9,7 @@
   
   <!-- Open Graph & Social Sharing -->
   <meta property="og:title" content="Yago Dev — Sites de Alta Conversão & Sistemas Web sob Medida" />
-  <meta property="og:description" content="Sites de conversão e sistemas web exclusivos para o seu negócio. Design profissional sob medida, alta velocidade e 6 meses de suporte direto com o desenvolvedor." />
+  <meta property="og:description" content="Sites de conversão e sistemas web exclusivos para o seu negócio. Design profissional sob medida, alta velocidade e suporte direto com o desenvolvedor." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yagodev.com.br" />
   <meta property="og:image" content="https://yagodev.com.br/images/foto-yago.jpeg" />
@@ -1807,17 +1807,24 @@
     .faq-answer {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 0.35s var(--ease-fluid);
+      transition: grid-template-rows 0.35s var(--ease-fluid), opacity 0.3s ease;
+      visibility: hidden;
       overflow: hidden;
+      opacity: 0;
     }
 
     .faq-item.open .faq-answer {
       grid-template-rows: 1fr;
+      visibility: visible;
+      opacity: 1;
     }
 
     .faq-answer-inner {
       min-height: 0;
       overflow: hidden;
+    }
+
+    .faq-answer-content {
       padding: 0 26px 22px;
       font-size: 15px;
       color: var(--color-text-secondary);
@@ -2321,7 +2328,7 @@
             </h1>
             
             <p class="subheadline hero__subheadline">
-              Desenvolvo <strong>Sites de Alta Conversão e Sistemas Web</strong> sob medida para o seu negócio — com design exclusivo, carregamento ultrarrápido e <strong>suporte direto por 6 meses</strong>.
+              Desenvolvo <strong>Sites de Alta Conversão e Sistemas Web</strong> sob medida para o seu negócio — com design exclusivo, carregamento ultrarrápido e <strong>suporte direto com o desenvolvedor</strong>.
             </p>
             
             <div class="hero__cta-group">
@@ -2333,7 +2340,7 @@
             
             <div class="hero__badges">
               <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Código sob medida</span>
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 6 meses de suporte grátis</span>
+              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 6 meses de suporte nos sites</span>
               <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Alta velocidade</span>
               <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 100% responsivo</span>
             </div>
@@ -2408,7 +2415,7 @@
           </div>
           <div class="stat-item animate-on-scroll stagger-3">
             <div class="stat-num" data-target="6" data-prefix="" data-suffix=" Meses">6 Meses</div>
-            <div class="stat-label">Suporte Gratuito Incluso</div>
+            <div class="stat-label">Suporte Incluso nos Sites</div>
           </div>
           <div class="stat-item animate-on-scroll stagger-4">
             <div class="stat-num" data-target="90" data-prefix="+" data-suffix="">+90</div>
@@ -2643,8 +2650,8 @@
 
           <div class="diferencial-card animate-on-scroll stagger-2" id="diferencial-suporte">
             <i class="fas fa-screwdriver-wrench diferencial-card__icon" aria-hidden="true"></i>
-            <h3 class="diferencial-card__title">Suporte gratuito por 6 meses</h3>
-            <p class="diferencial-card__text">Após a entrega, continuo ao seu lado por 6 meses sem cobrar nada. Dúvidas, ajustes de texto e atualizações.</p>
+            <h3 class="diferencial-card__title">Suporte e Acompanhamento Real</h3>
+            <p class="diferencial-card__text">Para sites de conversão, 6 meses de suporte gratuito após a entrega. Para sistemas web, suporte técnico contínuo e hospedagem com planos mensais transparentes.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-3" id="diferencial-prazo">
@@ -2888,8 +2895,8 @@
             <div class="processo-step__number" aria-label="Passo 4">4</div>
             <div class="processo-step__content">
               <i class="fas fa-headset processo-step__icon" aria-hidden="true"></i>
-              <h3 class="processo-step__title">6 meses de suporte gratuito</h3>
-              <p class="processo-step__text">Com o site publicado, você conta com meu suporte por 6 meses sem custo extra para tirar dúvidas e fazer pequenos ajustes.</p>
+              <h3 class="processo-step__title">Suporte e acompanhamento</h3>
+              <p class="processo-step__text">Para sites de conversão, você conta com 6 meses de suporte gratuito para dúvidas e ajustes. Para sistemas web, suporte e hospedagem contínuos em plano mensal acessível.</p>
             </div>
           </div>
         </div>
@@ -2960,7 +2967,9 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-mensalidade" role="region">
-              <div class="faq-answer-inner">Para <strong>sites de conversão</strong>, o desenvolvimento tem investimento único e não há cobrança de mensalidade obrigatória de manutenção (o site é 100% seu, arcando apenas com os custos anuais normais de domínio e hospedagem padrão). Já para <strong>sistemas web sob medida</strong> (como catálogos de estoque automotivo com banco de dados ou mini lojas virtuais), definimos uma mensalidade transparente para servidor em nuvem, segurança e suporte técnico contínuo.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">Para <strong>sites de conversão</strong>, o desenvolvimento tem investimento único e não há cobrança de mensalidade de manutenção (o site é 100% seu, arcando apenas com os custos anuais normais de domínio e hospedagem padrão). Já para <strong>sistemas web sob medida</strong> (como catálogos de estoque automotivo com banco de dados ou mini lojas virtuais), o suporte técnico contínuo e a hospedagem em nuvem são cobrados mensalmente através de um plano transparente e acessível.</div>
+              </div>
             </div>
           </div>
 
@@ -2970,17 +2979,21 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-prazo" role="region">
-              <div class="faq-answer-inner">Um site de conversão costuma ficar pronto entre 5 e 10 dias úteis após o envio das informações iniciais. Sistemas web e catálogos com banco de dados têm cronograma planejado de acordo com a complexidade, combinado no início e cumprido com rigor.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">Um site de conversão costuma ficar pronto entre 5 e 10 dias úteis após o envio das informações iniciais. Sistemas web e catálogos com banco de dados têm cronograma planejado de acordo com a complexidade, combinado no início e cumprido com rigor.</div>
+              </div>
             </div>
           </div>
 
           <div class="faq-item" id="faq-alteracoes" role="listitem">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-alteracoes">
-              <span>Como funciona o suporte gratuito de 6 meses?</span>
+              <span>Como funciona o suporte nos sites e nos sistemas?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-alteracoes" role="region">
-              <div class="faq-answer-inner">Após o site ir ao ar, você tem 6 meses de garantia para tirar dúvidas, solicitar pequenos ajustes de textos, alteração de fotos ou suporte técnico diretamente comigo no WhatsApp sem nenhum custo extra.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">O <strong>suporte gratuito por 6 meses</strong> é exclusivo para <strong>sites de conversão</strong> (sites normais) — cobrindo dúvidas, pequenos ajustes de textos, alteração de fotos e suporte técnico direto comigo no WhatsApp sem custos adicionais.<br><br>Para <strong>sistemas web sob medida</strong> (como estoque para concessionárias e mini lojas), a infraestrutura de banco de dados em nuvem, hospedagem e suporte técnico contínuo são mantidos através de uma <strong>mensalidade acessível</strong>, garantindo estabilidade, segurança e atualizações constantes.</div>
+              </div>
             </div>
           </div>
 
@@ -2990,7 +3003,9 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-atendimento" role="region">
-              <div class="faq-answer-inner">Sim! Atendo clientes de todo o Brasil de forma 100% online. Todo o alinhamento, apresentação e aprovação do projeto acontece de forma prática via WhatsApp e videochamadas.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">Sim! Atendo clientes de todo o Brasil de forma 100% online. Todo o alinhamento, apresentação e aprovação do projeto acontece de forma prática via WhatsApp e videochamadas.</div>
+              </div>
             </div>
           </div>
 
@@ -3000,7 +3015,9 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-parcelamento" role="region">
-              <div class="faq-answer-inner">Aceito Pix, transferência e parcelamento no cartão de crédito. Entre em contato para conversarmos sobre as condições para o seu projeto.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">Aceito Pix, transferência e parcelamento no cartão de crédito. Entre em contato para conversarmos sobre as condições para o seu projeto.</div>
+              </div>
             </div>
           </div>
 
@@ -3010,7 +3027,9 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-nicho" role="region">
-              <div class="faq-answer-inner">Desenvolvo para concessionárias e revendas de veículos (sistemas de estoque), marcas e comércios (mini lojas e catálogos), clínicas de saúde e estética, advogados, consultorias e empresas que buscam captar mais clientes pela internet.</div>
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">Desenvolvo para concessionárias e revendas de veículos (sistemas de estoque), marcas e comércios (mini lojas e catálogos), clínicas de saúde e estética, advogados, consultorias e empresas que buscam captar mais clientes pela internet.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -3036,7 +3055,7 @@
           
           <div class="cta-final-seals">
             <span class="cta-seal"><i class="fas fa-code" aria-hidden="true"></i> Código sob medida</span>
-            <span class="cta-seal"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> 6 meses de suporte grátis</span>
+            <span class="cta-seal"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> 6 meses de suporte para sites</span>
             <span class="cta-seal"><i class="fas fa-shield-halved" aria-hidden="true"></i> Proposta transparente</span>
             <span class="cta-seal"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> 100% responsivo</span>
           </div>
