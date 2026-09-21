@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yago Duarte Ribeiro — Desenvolvedor de Landing Pages de Alta Conversão em Várzea Paulista e todo o Brasil. Design exclusivo, entrega rápida e suporte de 6 meses gratuito. Sem mensalidade." />
-  <meta name="keywords" content="desenvolvedor de sites, criação de landing pages, landing page alta conversão, Várzea Paulista, desenvolvimento web, programador de sites" />
+  <meta name="description" content="Yago Duarte Ribeiro — Sites de Alta Conversão e Sistemas Web sob medida em Várzea Paulista e todo o Brasil. Design exclusivo, entrega rápida e suporte direto com o desenvolvedor." />
+  <meta name="keywords" content="desenvolvedor de sites, site de conversão, sistemas web, estoque para concessionárias, mini loja virtual, Várzea Paulista, desenvolvimento web, programador de sites" />
   <meta name="author" content="Yago Duarte Ribeiro" />
   
   <!-- Open Graph & Social Sharing -->
-  <meta property="og:title" content="Yago Dev — Landing Pages que Convertem e Trazem Clientes" />
-  <meta property="og:description" content="Landing Pages profissionais com design exclusivo sob medida. Pagamento único, sem mensalidade e com 6 meses de suporte grátis." />
+  <meta property="og:title" content="Yago Dev — Sites de Alta Conversão & Sistemas Web sob Medida" />
+  <meta property="og:description" content="Sites de conversão e sistemas web exclusivos para o seu negócio. Design profissional sob medida, alta velocidade e 6 meses de suporte direto com o desenvolvedor." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yagodev.com.br" />
   <meta property="og:image" content="https://yagodev.com.br/images/foto-yago.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Yago Dev — Landing Pages Profissionais" />
-  <meta name="twitter:description" content="Landing Pages de Alta Conversão sob medida. Várzea Paulista – SP e atendimento online para todo o Brasil." />
+  <meta name="twitter:title" content="Yago Dev — Sites de Alta Conversão & Sistemas Web" />
+  <meta name="twitter:description" content="Sites de Alta Conversão e Sistemas Web sob medida. Várzea Paulista – SP e atendimento online para todo o Brasil." />
   <meta name="twitter:image" content="https://yagodev.com.br/images/foto-yago.jpeg" />
   <meta name="theme-color" content="#07090E" />
 
   <link rel="icon" type="image/jpeg" href="images/foto-yago.jpeg" />
-  <title>Yago Dev — Landing Pages que Geram Clientes | Desenvolvimento Web</title>
+  <title>Yago Dev — Sites de Conversão & Sistemas Web | Desenvolvimento Sob Medida</title>
   
   <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1047,49 +1047,70 @@
     }
 
     /* ==========================================================================
-       9. SECTION: SOLUÇÃO (Landing Pages de Alta Conversão)
+       9. SECTION: SOLUÇÕES (Sites de Conversão & Sistemas Web)
        ========================================================================== */
     .section-solucao {
       padding: var(--section-padding);
     }
 
-    .services-single-wrapper {
-      max-width: 780px;
-      margin: 0 auto 44px;
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 44px;
     }
 
-    .service-card-featured {
+    @media (min-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+    }
+
+    .service-card {
       background: var(--color-surface);
       border: 1px solid var(--color-surface-border);
       border-radius: var(--radius-lg);
-      padding: 44px 40px;
+      padding: 36px 28px;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: var(--transition-normal);
     }
 
-    .service-card-featured:hover {
+    .service-card:hover {
       background: var(--color-surface-hover);
       border-color: var(--color-surface-border-hover);
-      box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.8), 0 0 45px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(37, 99, 235, 0.2);
       transform: translateY(-4px);
+    }
+
+    .service-card.featured {
+      border-color: rgba(192, 32, 42, 0.45);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(192, 32, 42, 0.15);
+    }
+
+    .service-card.featured:hover {
+      border-color: var(--color-accent-red);
+      box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.8), 0 0 45px rgba(192, 32, 42, 0.3);
     }
 
     .service-top-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
     .service-card__icon-badge {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       border-radius: var(--radius-md);
       background: rgba(37, 99, 235, 0.15);
       border: 1px solid rgba(56, 189, 248, 0.3);
@@ -1097,7 +1118,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .service-card.featured .service-card__icon-badge {
+      background: rgba(192, 32, 42, 0.15);
+      border-color: rgba(192, 32, 42, 0.4);
+      color: var(--color-accent-red-lighter);
     }
 
     .service-card__badge-special {
@@ -1107,56 +1135,86 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 14px;
+      letter-spacing: 0.5px;
+      padding: 5px 12px;
       border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    .service-card__badge-special.badge-cyan {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: var(--color-accent-cyan);
+    }
+
+    .service-card__badge-special.badge-emerald {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #34D399;
     }
 
     .service-card__title {
       font-weight: 800;
-      font-size: clamp(24px, 3vw, 30px);
+      font-size: 20px;
       margin-bottom: 8px;
       color: var(--color-text-primary);
+      line-height: 1.3;
     }
 
     .service-card__ideal {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--color-accent-cyan);
       font-weight: 600;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       display: block;
+      line-height: 1.4;
+      min-height: 38px;
     }
 
-    .service-features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px 24px;
-      margin-bottom: 32px;
+    .service-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-grow: 1;
     }
 
     .service-feature-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      font-size: 15px;
+      gap: 10px;
+      font-size: 14px;
       color: var(--color-text-secondary);
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .service-feature-item i {
       color: var(--color-whatsapp);
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 3px;
       flex-shrink: 0;
+    }
+
+    .service-card__footer {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .service-card__cta {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 16px;
+      font-size: 14px;
     }
 
     .service-reinforcement {
       text-align: center;
       font-style: italic;
       color: var(--color-text-muted);
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom: 36px;
-      max-width: 600px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
@@ -2197,7 +2255,7 @@
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#faq">Dúvidas</a></li>
           </ul>
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20minha%20Landing%20Page%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Falar com Yago
           </a>
@@ -2220,7 +2278,7 @@
     <a href="#processo" class="mobile-nav-link">Como Funciona</a>
     <a href="#sobre" class="mobile-nav-link">Sobre</a>
     <a href="#faq" class="mobile-nav-link">Dúvidas</a>
-    <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20minha%20Landing%20Page%21" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp mt-16 mobile-nav-link" style="margin-top: 12px; width: 100%;">
+    <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp mt-16 mobile-nav-link" style="margin-top: 12px; width: 100%;">
       <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
       Falar no WhatsApp
     </a>
@@ -2246,20 +2304,20 @@
             </h1>
             
             <p class="subheadline hero__subheadline">
-              Desenvolvo <strong>Landing Pages de Alta Conversão</strong> sob medida para o seu negócio — com design exclusivo, carregamento ultrarrápido e <strong>suporte gratuito por 6 meses</strong>. Pagamento único, sem mensalidades.
+              Desenvolvo <strong>Sites de Alta Conversão e Sistemas Web</strong> sob medida para o seu negócio — com design exclusivo, carregamento ultrarrápido e <strong>suporte direto por 6 meses</strong>.
             </p>
             
             <div class="hero__cta-group">
-              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20minha%20Landing%20Page%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-cta" aria-label="Quero minha Landing Page - Falar com Yago no WhatsApp">
+              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-cta" aria-label="Quero meu projeto - Falar com Yago no WhatsApp">
                 <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                Quero meu site — Falar com Yago
+                Quero meu projeto — Falar com Yago
               </a>
             </div>
             
             <div class="hero__badges">
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Pagamento único</span>
+              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Código sob medida</span>
               <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 6 meses de suporte grátis</span>
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Design sob medida</span>
+              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Alta velocidade</span>
               <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 100% responsivo</span>
             </div>
           </div>
@@ -2336,8 +2394,8 @@
             <div class="stat-label">Suporte Gratuito Incluso</div>
           </div>
           <div class="stat-item animate-on-scroll stagger-4">
-            <div class="stat-num" data-target="0" data-prefix="" data-suffix="">0</div>
-            <div class="stat-label">Mensalidades ou Taxas Ocultas</div>
+            <div class="stat-num" data-target="90" data-prefix="+" data-suffix="">+90</div>
+            <div class="stat-label">Google PageSpeed Score</div>
           </div>
         </div>
       </div>
@@ -2382,67 +2440,168 @@
     </section>
 
     <!-- ========================
-         SECTION 03 — SOLUÇÃO (Landing Page de Alta Conversão)
+         SECTION 03 — SOLUÇÕES (Sites de Conversão & Sistemas Web)
          ======================== -->
-    <section class="section-solucao section-bg-dark" id="servicos" aria-label="Serviço principal">
+    <section class="section-solucao section-bg-dark" id="servicos" aria-label="Soluções e serviços oferecidos">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-bullseye"></i> Solução Sob Medida</span>
-          <h2 class="headline-section">O que eu entrego para o seu negócio</h2>
-          <p class="subheadline">Estrutura premium focada em transformar visitantes em contatos diretos no seu WhatsApp.</p>
+          <span class="section-tagline"><i class="fas fa-cubes"></i> Soluções Sob Medida</span>
+          <h2 class="headline-section">O que eu desenvolvo para o seu negócio</h2>
+          <p class="subheadline">Projetos planejados e programados do zero para gerar contatos, organizar processos e fechar vendas.</p>
         </div>
 
-        <div class="services-single-wrapper animate-on-scroll">
-          <div class="service-card-featured" id="service-landing">
-            <div class="service-top-row">
-              <div class="service-card__icon-badge">
-                <i class="fas fa-rocket"></i>
+        <div class="services-grid">
+          <!-- Card 1: Sites de Conversão -->
+          <div class="service-card featured animate-on-scroll stagger-1" id="service-conversao">
+            <div>
+              <div class="service-top-row">
+                <div class="service-card__icon-badge">
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <span class="service-card__badge-special">Mais Pedido</span>
               </div>
-              <span class="service-card__badge-special">Mais Pedido</span>
+
+              <h3 class="service-card__title">Sites de Alta Conversão</h3>
+              <span class="service-card__ideal">Ideal para: profissionais autônomos, clínicas, consultorias e negócios que buscam mais clientes</span>
+
+              <div class="service-features-list">
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Design exclusivo</strong> feito sob medida (sem templates de IA)</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Foco em conversão</strong> para WhatsApp e formulários</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Carregamento ultrarrápido</strong> com 90+ no PageSpeed</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>100% responsivo</strong> para celular, tablet e computador</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Sem taxas ocultas</strong> ou contratos de fidelidade</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>6 meses de suporte</strong> direto com o desenvolvedor</span>
+                </div>
+              </div>
             </div>
 
-            <h3 class="service-card__title">Landing Page de Alta Conversão</h3>
-            <span class="service-card__ideal">Ideal para: profissionais autônomos, clínicas, consultorias e empresas que desejam mais clientes</span>
-
-            <div class="service-features-grid">
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>Design exclusivo</strong> criado do zero para a sua marca</span>
-              </div>
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>Foco em conversão</strong> direta para WhatsApp e formulários</span>
-              </div>
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>100% responsiva</strong> e perfeita no celular, tablet e desktop</span>
-              </div>
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>Carregamento ultrarrápido</strong> com pontuação 90+ no PageSpeed</span>
-              </div>
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>SEO básico configurado</strong> para ser encontrado no Google</span>
-              </div>
-              <div class="service-feature-item">
-                <i class="fas fa-circle-check"></i>
-                <span><strong>Suporte gratuito por 6 meses</strong> após a publicação do site</span>
-              </div>
-            </div>
-
-            <p class="service-reinforcement">
-              "Cada projeto é criado pensando exclusivamente no seu cliente. Nada de templates pré-fabricados ou cópias genéricas."
-            </p>
-
-            <div class="section-cta">
-              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20uma%20Landing%20Page%20para%20o%20meu%20neg%C3%B3cio%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="services-cta" aria-label="Falar com Yago no WhatsApp">
+            <div class="service-card__footer">
+              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20Site%20de%20Convers%C3%A3o%20para%20o%20meu%20neg%C3%B3cio%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-card__cta" aria-label="Quero um Site de Conversão - Falar com Yago">
                 <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                Quero uma Landing Page → Falar com Yago
+                Quero um Site de Conversão
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Sistemas de Estoque & Catálogos -->
+          <div class="service-card animate-on-scroll stagger-2" id="service-estoque">
+            <div>
+              <div class="service-top-row">
+                <div class="service-card__icon-badge">
+                  <i class="fas fa-car-side"></i>
+                </div>
+                <span class="service-card__badge-special badge-cyan">Concessionárias & Lojas</span>
+              </div>
+
+              <h3 class="service-card__title">Sistemas de Estoque Automotivo</h3>
+              <span class="service-card__ideal">Ideal para: concessionárias, lojas de veículos e revendas que precisam exibir seu estoque</span>
+
+              <div class="service-features-list">
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Painel fácil e rápido</strong> para adicionar, editar e retirar veículos</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Filtros inteligentes</strong> por marca, modelo, ano e faixa de preço</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Botão de proposta direta</strong> no WhatsApp para cada veículo</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Galeria de fotos otimizada</strong> que carrega sem lentidão</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Banco de dados seguro</strong> com backup automático</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Manutenção & Hospedagem</strong> inclusas em plano acessível</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card__footer">
+              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20Sistema%20de%20Estoque%20para%20minha%20loja%21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary service-card__cta" aria-label="Quero um Sistema de Estoque - Falar com Yago">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Quero Sistema de Estoque
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Mini Lojas & Painéis sob Medida -->
+          <div class="service-card animate-on-scroll stagger-3" id="service-lojas">
+            <div>
+              <div class="service-top-row">
+                <div class="service-card__icon-badge">
+                  <i class="fas fa-store"></i>
+                </div>
+                <span class="service-card__badge-special badge-emerald">E-commerce Ágil</span>
+              </div>
+
+              <h3 class="service-card__title">Mini Lojas & Painéis sob Medida</h3>
+              <span class="service-card__ideal">Ideal para: marcas locais, atacado/varejo e negócios que querem vender sem taxas abusivas</span>
+
+              <div class="service-features-list">
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Catálogo dinâmico</strong> com fotos, variações e preços claros</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Carrinho simplificado</strong> com checkout direto no WhatsApp ou Pix</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Zero comissões por venda</strong> — 100% do lucro fica com você</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Painel administrativo simples</strong> para gerenciar produtos</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Integração com WhatsApp</strong> para receber pedidos formatados</span>
+                </div>
+                <div class="service-feature-item">
+                  <i class="fas fa-circle-check"></i>
+                  <span><strong>Suporte técnico contínuo</strong> para manter tudo funcionando</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card__footer">
+              <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20uma%20Mini%20Loja%20ou%20Painel%20sob%20medida%21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary service-card__cta" aria-label="Quero uma Mini Loja ou Painel - Falar com Yago">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Quero Mini Loja / Painel
               </a>
             </div>
           </div>
         </div>
+
+        <p class="service-reinforcement animate-on-scroll">
+          "Cada projeto é desenvolvido pensando na realidade do seu negócio e dos seus clientes. Sem modelos prontos genéricos ou ferramentas engessadas."
+        </p>
 
       </div>
     </section>
@@ -2461,10 +2620,10 @@
           <div class="diferencial-card featured animate-on-scroll stagger-1" id="diferencial-pagamento">
             <div class="diferencial-badge">Destaque</div>
             <div class="diferencial-card__icon-wrapper">
-              <i class="fas fa-credit-card" aria-hidden="true"></i>
+              <i class="fas fa-shield-halved" aria-hidden="true"></i>
             </div>
-            <h3 class="diferencial-card__title">Pagamento único, sem mensalidade</h3>
-            <p class="diferencial-card__text">Você investe uma única vez e o site é 100% seu para sempre. Sem taxas ocultas de manutenção mensal.</p>
+            <h3 class="diferencial-card__title">Orçamento Claro & Sem Surpresas</h3>
+            <p class="diferencial-card__text">Preço justo e proposta 100% transparente. Você sabe exatamente o que está contratando, com escopo bem definido e sem taxas ocultas.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-2" id="diferencial-suporte">
@@ -2501,7 +2660,7 @@
         </div>
 
         <div class="section-cta animate-on-scroll">
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20falar%20sobre%20um%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="diferenciais-cta" aria-label="Falar com Yago agora no WhatsApp">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="diferenciais-cta" aria-label="Falar com Yago agora no WhatsApp">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Falar com Yago agora no WhatsApp
           </a>
@@ -2531,7 +2690,7 @@
                 loading="lazy"
               />
               <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site Institucional</span>
+                <span class="portfolio-card__overlay-tag">Sistema & Estoque</span>
                 <span class="portfolio-card__overlay-title">Mosca Branca Car</span>
                 <span class="portfolio-card__overlay-link">moscabrancacar.com.br <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
               </div>
@@ -2540,8 +2699,8 @@
               <div class="portfolio-card__info-left">
                 <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
                 <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag si">Site Institucional</span>
-                  <span class="portfolio-card__info-nicho">Automóveis · Várzea Paulista – SP</span>
+                  <span class="portfolio-tag si">Sistema de Estoque</span>
+                  <span class="portfolio-card__info-nicho">Concessionária · Várzea Paulista – SP</span>
                 </div>
               </div>
               <span class="portfolio-card__view-link">
@@ -2560,7 +2719,7 @@
                 loading="lazy"
               />
               <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Demonstração</span>
+                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
                 <span class="portfolio-card__overlay-title">Aline Duarte — Psicóloga</span>
                 <span class="portfolio-card__overlay-link">demo-psicologia-chi.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
               </div>
@@ -2569,7 +2728,7 @@
               <div class="portfolio-card__info-left">
                 <h3 class="portfolio-card__info-title">Aline Duarte — Psicóloga</h3>
                 <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Demonstração</span>
+                  <span class="portfolio-tag demo">Site de Conversão</span>
                   <span class="portfolio-card__info-nicho">Psicologia & Saúde</span>
                 </div>
               </div>
@@ -2589,7 +2748,7 @@
                 loading="lazy"
               />
               <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Demonstração</span>
+                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
                 <span class="portfolio-card__overlay-title">Essenza Estética</span>
                 <span class="portfolio-card__overlay-link">demo-estetica-theta.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
               </div>
@@ -2598,7 +2757,7 @@
               <div class="portfolio-card__info-left">
                 <h3 class="portfolio-card__info-title">Essenza Estética & Bem-Estar</h3>
                 <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Demonstração</span>
+                  <span class="portfolio-tag demo">Site de Conversão</span>
                   <span class="portfolio-card__info-nicho">Estética & Saúde</span>
                 </div>
               </div>
@@ -2618,7 +2777,7 @@
                 loading="lazy"
               />
               <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Demonstração</span>
+                <span class="portfolio-card__overlay-tag">Catálogo Online</span>
                 <span class="portfolio-card__overlay-title">Ateliê Linha Casa</span>
                 <span class="portfolio-card__overlay-link">demo-moveis.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
               </div>
@@ -2627,7 +2786,7 @@
               <div class="portfolio-card__info-left">
                 <h3 class="portfolio-card__info-title">Ateliê Linha Casa — Móveis Planejados</h3>
                 <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Demonstração</span>
+                  <span class="portfolio-tag demo">Catálogo & Conversão</span>
                   <span class="portfolio-card__info-nicho">Móveis & Design</span>
                 </div>
               </div>
@@ -2647,7 +2806,7 @@
                 loading="lazy"
               />
               <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Demonstração</span>
+                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
                 <span class="portfolio-card__overlay-title">Escritório de Advocacia</span>
                 <span class="portfolio-card__overlay-link">demo-advocacia-lemon.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
               </div>
@@ -2656,7 +2815,7 @@
               <div class="portfolio-card__info-left">
                 <h3 class="portfolio-card__info-title">Escritório de Advocacia</h3>
                 <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Demonstração</span>
+                  <span class="portfolio-tag demo">Site de Conversão</span>
                   <span class="portfolio-card__info-nicho">Advocacia & Direito</span>
                 </div>
               </div>
@@ -2668,9 +2827,9 @@
         </div>
 
         <div class="section-cta animate-on-scroll">
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20site%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Falar com Yago para ter um site assim">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20projeto%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Falar com Yago para ter um projeto assim">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-            Quero um site assim — Falar com Yago
+            Quero um projeto assim — Falar com Yago
           </a>
         </div>
       </div>
@@ -2684,7 +2843,7 @@
         <div class="section-header animate-on-scroll">
           <span class="section-tagline"><i class="fas fa-list-check"></i> Passo a Passo</span>
           <h2 class="headline-section">É mais simples do que parece</h2>
-          <p class="subheadline">Em quatro etapas transparentes, você sai do zero para uma Landing Page no ar — sem complicação técnica.</p>
+          <p class="subheadline">Em quatro etapas transparentes, você sai do zero para o seu site ou sistema no ar — sem complicação técnica.</p>
         </div>
 
         <div class="processo-steps" role="list">
@@ -2758,7 +2917,7 @@
           <div class="sobre-content animate-on-scroll stagger-2">
             <span class="section-tagline"><i class="fas fa-user"></i> Sobre Mim</span>
             <h2 class="headline-section">Prazer, sou o Yago — desenvolvedor de sites em Várzea Paulista</h2>
-            <p class="sobre-text">Trabalho com desenvolvimento de Landing Pages e sites para profissionais e empresas que desejam crescer e se posicionar com autoridade no digital.</p>
+            <p class="sobre-text">Trabalho com desenvolvimento de sites de alta conversão e sistemas web sob medida para profissionais e empresas que desejam crescer, vender mais e se posicionar com autoridade.</p>
             <p class="sobre-text">Comecei porque vi muitos profissionais excelentes com sites lentos ou sem nenhuma presença online. Agências grandes cobram valores astronômicos, demoram meses e você nunca fala com quem realmente faz o trabalho.</p>
             <p class="sobre-text">Comigo, o atendimento é 100% humanizado e direto. Você tem uma pessoa real cuidando do seu projeto do início ao fim.</p>
             
@@ -2767,7 +2926,7 @@
               <span class="sobre-location-item"><i class="fas fa-earth-americas" aria-hidden="true"></i> Atendimento para todo o Brasil</span>
             </div>
             
-            <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20vamos%20conversar%20sobre%20um%20site%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="sobre-cta" aria-label="Falar com Yago no WhatsApp">
+            <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20vamos%20conversar%20sobre%20um%20projeto%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="sobre-cta" aria-label="Falar com Yago no WhatsApp">
               <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               Vamos conversar? → WhatsApp
             </a>
@@ -2790,11 +2949,11 @@
         <div class="faq-list" role="list">
           <div class="faq-item" id="faq-mensalidade" role="listitem">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-mensalidade">
-              <span>O site tem mensalidade?</span>
+              <span>Como funciona o pagamento? Tem mensalidade?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-mensalidade" role="region">
-              <div class="faq-answer-inner">Não! Você paga apenas uma vez pelo desenvolvimento e o site é 100% seu. Não existe taxa mensal de manutenção ou fidelidade. Os únicos custos anuais normais da internet são o domínio (.com.br ~R$40/ano) e a hospedagem, e eu te oriento em todo o processo.</div>
+              <div class="faq-answer-inner">Para <strong>sites de conversão</strong>, o desenvolvimento tem investimento único e não há cobrança de mensalidade obrigatória de manutenção (o site é 100% seu, arcando apenas com os custos anuais normais de domínio e hospedagem padrão). Já para <strong>sistemas web sob medida</strong> (como catálogos de estoque automotivo com banco de dados ou mini lojas virtuais), definimos uma mensalidade transparente para servidor em nuvem, segurança e suporte técnico contínuo.</div>
             </div>
           </div>
 
@@ -2804,7 +2963,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-prazo" role="region">
-              <div class="faq-answer-inner">Uma Landing Page costuma ficar pronta entre 5 e 10 dias úteis após o envio das informações iniciais. O prazo é combinado no início e cumprido rigorosamente.</div>
+              <div class="faq-answer-inner">Um site de conversão costuma ficar pronto entre 5 e 10 dias úteis após o envio das informações iniciais. Sistemas web e catálogos com banco de dados têm cronograma planejado de acordo com a complexidade, combinado no início e cumprido com rigor.</div>
             </div>
           </div>
 
@@ -2844,7 +3003,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq-answer-nicho" role="region">
-              <div class="faq-answer-inner">Atendo prestadores de serviço, clínicas, advogados, corretores, arquitetos, fotógrafos, psicólogos, consultorias e empresas locais que buscam captar mais clientes qualificados pela internet.</div>
+              <div class="faq-answer-inner">Desenvolvo para concessionárias e revendas de veículos (sistemas de estoque), marcas e comércios (mini lojas e catálogos), clínicas de saúde e estética, advogados, consultorias e empresas que buscam captar mais clientes pela internet.</div>
             </div>
           </div>
         </div>
@@ -2866,18 +3025,18 @@
         <div class="animate-on-scroll">
           <span class="section-tagline"><i class="fas fa-paper-plane"></i> Comece Agora</span>
           <h2 class="headline-section mb-16">Seu negócio merece uma presença<br>digital à altura.</h2>
-          <p class="cta-final-sub">Landing Pages criadas do zero, com design exclusivo, carregamento ultrarrápido e suporte real. Pagamento único — sem mensalidade, sem surpresas.</p>
+          <p class="cta-final-sub">Sites de alta conversão e sistemas web desenvolvidos do zero, com design exclusivo, carregamento ultrarrápido e suporte real direto com o desenvolvedor.</p>
           
           <div class="cta-final-seals">
-            <span class="cta-seal"><i class="fas fa-credit-card" aria-hidden="true"></i> Pagamento único</span>
+            <span class="cta-seal"><i class="fas fa-code" aria-hidden="true"></i> Código sob medida</span>
             <span class="cta-seal"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> 6 meses de suporte grátis</span>
-            <span class="cta-seal"><i class="fas fa-palette" aria-hidden="true"></i> Design exclusivo</span>
+            <span class="cta-seal"><i class="fas fa-shield-halved" aria-hidden="true"></i> Proposta transparente</span>
             <span class="cta-seal"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> 100% responsivo</span>
           </div>
           
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20meu%20site%20agora%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-xl" id="cta-final-btn" aria-label="Quero meu site agora - Falar com Yago no WhatsApp">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20meu%20projeto%20agora%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-xl" id="cta-final-btn" aria-label="Quero meu projeto agora - Falar com Yago no WhatsApp">
             <svg class="whatsapp-icon" style="width:26px;height:26px;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-            Quero meu site agora → Falar com Yago
+            Quero meu projeto agora → Falar com Yago
           </a>
           
           <p class="cta-safety">Primeira conversa sem compromisso. Vamos entender o que seu negócio precisa antes de qualquer proposta.</p>
@@ -2895,7 +3054,7 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <div class="footer__brand-name">Yago<span>Dev</span></div>
-          <p class="footer__brand-desc">Desenvolvedor de Landing Pages de alta conversão para profissionais e empresas que desejam atrair mais clientes e transmitir autoridade.</p>
+          <p class="footer__brand-desc">Desenvolvedor de sites de alta conversão e sistemas web sob medida para profissionais e empresas que desejam atrair mais clientes e transmitir autoridade.</p>
           <div class="footer__socials" aria-label="Redes sociais">
             <a href="https://wa.me/5511945987666" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="WhatsApp do Yago">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
@@ -2942,7 +3101,7 @@
        ======================== -->
   <div class="whatsapp-float" aria-label="Botão flutuante WhatsApp">
     <span class="whatsapp-float__label">Falar com Yago</span>
-    <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20saber%20mais%20sobre%20a%20cria%C3%A7%C3%A3o%20de%20Landing%20Pages%21" target="_blank" rel="noopener noreferrer" class="whatsapp-float__btn" id="whatsapp-float-btn" aria-label="Abrir WhatsApp e falar com Yago">
+    <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20saber%20mais%20sobre%20sites%20e%20sistemas%20web%21" target="_blank" rel="noopener noreferrer" class="whatsapp-float__btn" id="whatsapp-float-btn" aria-label="Abrir WhatsApp e falar com Yago">
       <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
   </div>
