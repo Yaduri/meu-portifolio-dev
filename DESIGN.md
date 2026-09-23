@@ -243,10 +243,10 @@ O layout segue um grid fluido e flexível com largura máxima de `1200px`. O esp
 O sistema de profundidade baseia-se em elevações direcionais suaves com contraste natural contra o fundo escuro, evitando halos cromáticos saturados ou borrões artificiais.
 
 ### Shadow Vocabulary
-- **Sombra Glassmorphic:** `0 10px 24px -6px rgba(0, 0, 0, 0.5)` em repouso.
-- **Sombra Glassmorphic Hover:** `0 16px 32px -8px rgba(0, 0, 0, 0.7)` ao interagir com cards.
-- **Elevação Primária de Botão:** `0 8px 20px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25)`.
-- **Elevação Flutuante WhatsApp:** `0 10px 24px -4px rgba(0, 0, 0, 0.6)`.
+- **Sombra Glassmorphic:** `0 6px 14px -3px rgba(0, 0, 0, 0.55)` em repouso.
+- **Sombra Glassmorphic Hover:** `0 10px 14px -4px rgba(0, 0, 0, 0.75)` ao interagir com cards.
+- **Elevação Primária de Botão:** `0 8px 14px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25)`.
+- **Elevação Flutuante WhatsApp:** `0 6px 14px -3px rgba(0, 0, 0, 0.6)`.
 
 ## Shapes
 

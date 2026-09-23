@@ -110,8 +110,8 @@
       --transition-normal: 0.35s var(--ease-fluid);
       --transition-slow: 0.6s var(--ease-fluid);
 
-      --shadow-glass: 0 10px 24px -6px rgba(0, 0, 0, 0.5);
-      --shadow-glass-hover: 0 16px 32px -8px rgba(0, 0, 0, 0.7);
+      --shadow-glass: 0 6px 14px -3px rgba(0, 0, 0, 0.55);
+      --shadow-glass-hover: 0 10px 14px -4px rgba(0, 0, 0, 0.75);
     }
 
     html {
@@ -244,10 +244,13 @@
       outline: 3px solid var(--color-text-primary);
     }
 
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--color-accent-cyan);
-      outline-offset: 3px;
-      border-radius: var(--radius-sm);
+    *:focus-visible {
+      outline: 2px solid var(--color-accent-cyan) !important;
+      outline-offset: 3px !important;
+    }
+
+    *:focus:not(:focus-visible) {
+      outline: none;
     }
 
     /* Scroll Progress Indicator Bar */
@@ -401,7 +404,7 @@
       font-size: 17px;
       min-height: 64px;
       border-radius: var(--radius-lg);
-      box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.7);
     }
 
     .btn-secondary {
@@ -419,7 +422,7 @@
       background: rgba(37, 99, 235, 0.15);
       color: var(--color-text-primary);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--color-accent-cyan);
+      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--color-accent-cyan);
     }
 
     .btn-whatsapp {
@@ -508,7 +511,7 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.7);
     }
 
     .nav__inner {
@@ -790,7 +793,7 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       overflow: hidden;
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
     }
 
     .hero__mockup-bar {
@@ -930,7 +933,7 @@
       align-items: center;
       gap: 10px;
       backdrop-filter: blur(16px);
-      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6);
       transform: translateZ(30px);
     }
 
@@ -1093,7 +1096,7 @@
       padding: 36px 28px;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.5);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -1105,18 +1108,18 @@
     .service-card:hover {
       background: var(--color-surface-hover);
       border-color: var(--color-surface-border-hover);
-      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.75);
       transform: translateY(-4px);
     }
 
     .service-card.featured {
       border-color: rgba(192, 32, 42, 0.45);
-      box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.6);
     }
 
     .service-card.featured:hover {
       border-color: var(--color-accent-red);
-      box-shadow: 0 18px 36px -8px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
     }
 
     .service-top-row {
@@ -1294,7 +1297,7 @@
 
     .diferencial-card.featured:hover {
       border-color: var(--color-accent-red);
-      box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.7);
     }
 
     .diferencial-badge {
@@ -1662,7 +1665,7 @@
       justify-content: center;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
     }
 
     .sobre-avatar-img {
@@ -1932,8 +1935,8 @@
     }
 
     .footer__social {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
       border: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
@@ -2025,7 +2028,7 @@
       transition: all 0.3s var(--ease-fluid);
       pointer-events: none;
       backdrop-filter: blur(12px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
     }
 
     .whatsapp-float:hover .whatsapp-float__label {
@@ -2042,14 +2045,14 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6);
       transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s ease;
       flex-shrink: 0;
     }
 
     .whatsapp-float__btn:hover {
       transform: scale(1.08);
-      box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.75);
     }
 
     .whatsapp-float__btn i {
@@ -2237,6 +2240,31 @@
         bottom: -24px;
       }
     }
+
+    /* Accessibility: Reduced Motion (Intentional Feedback without Excessive Motion) */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.05s !important;
+        scroll-behavior: auto !important;
+      }
+
+      .pulse-dot {
+        animation: none !important;
+        opacity: 1 !important;
+      }
+
+      .btn-primary::after {
+        display: none !important;
+      }
+
+      .animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2295,7 +2323,7 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div class="nav__mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu de navegação mobile" aria-hidden="true">
+  <div class="nav__mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação mobile" aria-hidden="true">
     <button class="nav__mobile-close" id="mobileClose" aria-label="Fechar menu">✕</button>
     <a href="#servicos" class="mobile-nav-link">Serviços</a>
     <a href="#portfolio" class="mobile-nav-link">Portfólio</a>
@@ -3264,23 +3292,40 @@
       hamburgerBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
       if (lenis) lenis.stop();
+      setTimeout(() => mobileClose.focus(), 50);
     }
 
-    function closeMenu() {
+    function closeMenu(restoreFocus = true) {
       mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('aria-hidden', 'true');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
       if (lenis) lenis.start();
+      if (restoreFocus) hamburgerBtn.focus();
     }
 
     hamburgerBtn.addEventListener('click', openMenu);
-    mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    mobileClose.addEventListener('click', () => closeMenu(true));
+    mobileLinks.forEach(link => link.addEventListener('click', () => closeMenu(false)));
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-        closeMenu();
+      if (mobileMenu.classList.contains('open')) {
+        if (e.key === 'Escape') {
+          closeMenu(true);
+        } else if (e.key === 'Tab') {
+          const focusable = mobileMenu.querySelectorAll('button, a[href]');
+          if (focusable.length > 0) {
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
       }
     });
 
