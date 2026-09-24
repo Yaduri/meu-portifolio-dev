@@ -478,6 +478,7 @@
     .stagger-4 { transition-delay: 0.32s; }
     .stagger-5 { transition-delay: 0.40s; }
     .stagger-6 { transition-delay: 0.48s; }
+    .stagger-7 { transition-delay: 0.56s; }
 
     @media (prefers-reduced-motion: reduce) {
       .animate-on-scroll {
@@ -1357,7 +1358,7 @@
     }
 
     @media (min-width: 769px) {
-      .portfolio-card:nth-child(5):last-child {
+      .portfolio-card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
         max-width: 580px;
         margin: 0 auto;
@@ -2889,6 +2890,35 @@
                 <div class="portfolio-card__info-meta">
                   <span class="portfolio-tag demo">Site de Conversão</span>
                   <span class="portfolio-card__info-nicho">Arquitetura & Alto Padrão · Jundiaí – SP</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Projeto 7 (Demonstração) -->
+          <a href="https://demo-massoterapia.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-7" id="portfolio-demo-massoterapia" aria-label="Ver projeto Serena Terapias e Spa Urbano">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-massoterapia.jpeg"
+                alt="Screenshot do site Serena — Terapias & Spa Urbano"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+              <div class="portfolio-card__overlay" aria-hidden="true">
+                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
+                <span class="portfolio-card__overlay-title">Serena — Terapias & Spa Urbano</span>
+                <span class="portfolio-card__overlay-link">demo-massoterapia.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
+              </div>
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Serena — Terapias & Spa Urbano</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Massoterapia & Spa · Jundiaí – SP</span>
                 </div>
               </div>
               <span class="portfolio-card__view-link">
