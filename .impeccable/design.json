@@ -1,33 +1,72 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-23T09:57:00Z",
-  "title": "Design System: Yago Dev Portfolio",
+  "generatedAt": "2026-09-25T11:39:00Z",
+  "title": "Design System: Yago Duarte Portfolio",
   "extensions": {
     "colorMeta": {
-      "primary": { "role": "primary", "displayName": "Vermelho Chumbo Elétrico", "canonical": "hex(#C0202A)", "tonalRamp": ["#3d0407", "#730b11", "#a01820", "#c0202a", "#d83b45", "#ea6e76", "#f4a2a7", "#fae2e3"] },
-      "secondary": { "role": "secondary", "displayName": "Azul Elétrico", "canonical": "hex(#2563EB)", "tonalRamp": ["#08183a", "#0f317a", "#1e52c7", "#2563eb", "#5389f4", "#8baef7", "#c2d4fb", "#f0f4fe"] },
-      "accent-cyan": { "role": "accent", "displayName": "Ciano Ciberneon", "canonical": "hex(#38BDF8)", "tonalRamp": ["#032b3d", "#085779", "#1191c4", "#38bdf8", "#6cd0fa", "#9ee1fc", "#cff0fd", "#f0fafe"] },
-      "whatsapp": { "role": "accent", "displayName": "Verde Emerald", "canonical": "hex(#22C55E)", "tonalRamp": ["#022b10", "#065c24", "#0fa544", "#22c55e", "#57d885", "#8ce6ac", "#c2f3d5", "#f0fdf4"] },
-      "whatsapp-text": { "role": "accent", "displayName": "Verde Escuro AAA", "canonical": "hex(#032310)", "tonalRamp": ["#010e06", "#02180b", "#032310", "#063e1d", "#0c6731", "#15974a", "#38c772", "#a6efc4"] },
-      "neutral-bg": { "role": "neutral", "displayName": "Vácuo Espacial Profundo", "canonical": "hex(#07090E)", "tonalRamp": ["#010203", "#040508", "#07090e", "#0f131f", "#1e263d", "#36456e", "#647abf", "#e1e6f5"] },
-      "neutral-surface": { "role": "neutral", "displayName": "Vidro Interestelar", "canonical": "rgba(13, 20, 36, 0.7)", "tonalRamp": ["#020407", "#050911", "#0d1424", "#1b2848", "#334c89", "#5c7ccb", "#a1b4e5", "#e6ebfa"] }
+      "primary": {
+        "role": "primary",
+        "displayName": "Laranja Chama",
+        "canonical": "hex(#FF6B00)",
+        "tonalRamp": ["#331500", "#662b00", "#994000", "#cc5500", "#ff6b00", "#ff8833", "#ffa666", "#ffd2b3"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Laranja Chama Luz",
+        "canonical": "hex(#FF8533)",
+        "tonalRamp": ["#331a0a", "#663514", "#994f1f", "#cc6a29", "#ff8533", "#ff9d5c", "#ffb685", "#ffdcb8"]
+      },
+      "whatsapp": {
+        "role": "accent",
+        "displayName": "Verde WhatsApp",
+        "canonical": "hex(#22C55E)",
+        "tonalRamp": ["#022b10", "#065c24", "#0fa544", "#22c55e", "#57d885", "#8ce6ac", "#c2f3d5", "#f0fdf4"]
+      },
+      "whatsapp-text": {
+        "role": "accent",
+        "displayName": "Verde Escuro AAA",
+        "canonical": "hex(#032310)",
+        "tonalRamp": ["#010e06", "#02180b", "#032310", "#063e1d", "#0c6731", "#15974a", "#38c772", "#a6efc4"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Grafite Escuro",
+        "canonical": "hex(#0F1115)",
+        "tonalRamp": ["#030304", "#08090b", "#0f1115", "#1c2027", "#2e3440", "#475163", "#74829c", "#e1e5ee"]
+      },
+      "neutral-surface": {
+        "role": "neutral",
+        "displayName": "Grafite Superfície Translúcido",
+        "canonical": "rgba(20, 23, 29, 0.85)",
+        "tonalRamp": ["#040506", "#0a0c0f", "#14171d", "#222731", "#363e4e", "#525e77", "#8493b3", "#e6ebf5"]
+      },
+      "neutral-text": {
+        "role": "neutral",
+        "displayName": "Branco Neve",
+        "canonical": "hex(#F8F9FA)",
+        "tonalRamp": ["#323437", "#64696e", "#969da5", "#c8d0dc", "#f8f9fa", "#fafbfc", "#fcfdfe", "#ffffff"]
+      },
+      "neutral-text-secondary": {
+        "role": "neutral",
+        "displayName": "Cinza Fumaça",
+        "canonical": "hex(#9CA3AF)",
+        "tonalRamp": ["#1f2123", "#3e4247", "#5d636a", "#7d848e", "#9ca3af", "#b0b6bf", "#c5c9cf", "#e9eaed"]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Títulos grandes e chamadas principais da hero." },
-      "headline": { "displayName": "Headline", "purpose": "Títulos de seção destacados com text-wrap balance." },
-      "title": { "displayName": "Title", "purpose": "Títulos de cards de serviços e projetos." },
-      "body": { "displayName": "Body", "purpose": "Texto corrido, descrições e itens de lista." },
-      "caption": { "displayName": "Caption", "purpose": "Metadados, rótulos e apoios." },
-      "badge": { "displayName": "Badge", "purpose": "Pílulas de status e tags de especialidade." }
+      "display": { "displayName": "Display", "purpose": "Títulos de alto impacto no hero." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos das seções de serviços, portfólio e diferenciais." },
+      "title": { "displayName": "Title", "purpose": "Títulos de cards e itens de lista." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido de leitura e parágrafos explicativos." },
+      "label": { "displayName": "Label", "purpose": "Badges, tags de categorias e subtítulos da marca." }
     },
     "shadows": [
-      { "name": "shadow-glass", "value": "0 6px 14px -3px rgba(0, 0, 0, 0.55)", "purpose": "Elevação neutra direcional para cards de serviços e portfólio em repouso." },
-      { "name": "shadow-glass-hover", "value": "0 10px 14px -4px rgba(0, 0, 0, 0.75)", "purpose": "Elevação tátil intensificada ao pairar sobre cards interativos." },
-      { "name": "shadow-button-primary", "value": "0 8px 14px -4px rgba(0, 0, 0, 0.7)", "purpose": "Profundidade direcional limpa para os botões principais de conversão." },
-      { "name": "shadow-float-whatsapp", "value": "0 6px 14px -3px rgba(0, 0, 0, 0.6)", "purpose": "Elevação do botão flutuante de atendimento WhatsApp." }
+      { "name": "shadow-glass", "value": "0 6px 14px -3px rgba(0, 0, 0, 0.55)", "purpose": "Elevação direcional neutra para cards em repouso." },
+      { "name": "shadow-glass-hover", "value": "0 10px 14px -4px rgba(0, 0, 0, 0.75)", "purpose": "Elevação de hover para cards interativos." },
+      { "name": "shadow-button-primary", "value": "0 8px 14px -4px rgba(0, 0, 0, 0.7)", "purpose": "Elevação de destaque para botões de conversão." }
     ],
     "motion": [
-      { "name": "ease-fluid", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Aceleração suave de entrada para micro-interações táteis." }
+      { "name": "ease-fluid", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Aceleração tátil para hover e cliques em botões e cards." }
     ],
     "breakpoints": [
       { "name": "mobile", "value": "480px" },
@@ -41,43 +80,41 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Botão principal de chamada para ação (CTA) com gradiente vermelho chumbo e elevação direcional neutra.",
+      "description": "Botão principal de chamada para ação com gradiente Laranja Chama e texto escuro WCAG AAA.",
       "html": "<button class=\"ds-btn-primary\">Quero meu projeto — Falar com Yago</button>",
-      "css": ".ds-btn-primary { background: linear-gradient(135deg, #C0202A 0%, #D82631 100%); color: #FFFFFF; padding: 18px 36px; font-weight: 700; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 16px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.7); transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s; } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 18px -4px rgba(0, 0, 0, 0.75); } .ds-btn-primary:focus-visible { outline: 2px solid #38BDF8; outline-offset: 3px; }"
+      "css": ".ds-btn-primary { background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%); color: #0F1115; font-weight: 800; padding: 16px 32px; border: none; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.7); transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s; } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 18px -4px rgba(0, 0, 0, 0.75); } .ds-btn-primary:focus-visible { outline: 2px solid #FF6B00; outline-offset: 3px; }"
     },
     {
       "name": "Card Glassmorphic",
       "kind": "card",
-      "description": "Card de serviços e sistemas web com acabamento em vidro escuro translúcido, borda ciano sutil e elevação direcional.",
-      "html": "<div class=\"ds-card-glass\"><h3 class=\"ds-card-title\">Sites de Alta Conversão & Sistemas Web</h3><p class=\"ds-card-text\">Design exclusivo planejado e programado do zero para gerar contatos, organizar processos e fechar vendas.</p></div>",
-      "css": ".ds-card-glass { background: rgba(13, 20, 36, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(38, 110, 255, 0.15); border-radius: 20px; padding: 36px 28px; box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.55); transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s, box-shadow 0.35s; } .ds-card-glass:hover { border-color: rgba(38, 110, 255, 0.4); transform: translateY(-4px); box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.75); } .ds-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; color: #F8FAFC; margin-bottom: 12px; font-weight: 700; letter-spacing: -0.02em; } .ds-card-text { font-family: 'Inter', sans-serif; font-size: 15px; color: #94A3B8; line-height: 1.65; }"
+      "description": "Card em vidro escuro translúcido com borda Cinza Fumaça sutil e elevação direcional neutra.",
+      "html": "<div class=\"ds-card-glass\"><h3 class=\"ds-card-title\">Sites de Alta Conversão</h3><p class=\"ds-card-text\">Design exclusivo planejado e programado do zero para gerar contatos e fechar negócios no WhatsApp.</p></div>",
+      "css": ".ds-card-glass { background: rgba(20, 23, 29, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(156, 163, 175, 0.12); border-radius: 20px; padding: 36px 28px; box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.55); transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s, box-shadow 0.35s; } .ds-card-glass:hover { border-color: rgba(255, 107, 0, 0.45); transform: translateY(-4px); box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.75); } .ds-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; color: #F8F9FA; margin-bottom: 12px; font-weight: 700; letter-spacing: -0.02em; } .ds-card-text { font-family: 'Inter', sans-serif; font-size: 15px; color: #9CA3AF; line-height: 1.65; }"
     }
   ],
   "narrative": {
-    "northStar": "The Dark Tech Studio",
-    "overview": "O visual é escuro por padrão, evocando alta tecnologia, autoridade técnica e refinamento de alto nível. Projetado para profissionais autônomos, clínicas, consultorias e empresas que buscam Sites de Alta Conversão e Sistemas Web sob Medida.",
+    "northStar": "High-Conversion Graphite & Flame Forge",
+    "overview": "O visual é ancorado em uma atmosfera escura de alto padrão técnico, projetado especificamente para converter visitantes em clientes pagantes através de extrema clareza, autoridade imediata e refinamento tipográfico.",
     "keyCharacteristics": [
-      "Fundo vácuo espacial profundo com iluminação direcional sóbria",
-      "Tipografia geométrica expressiva (Plus Jakarta Sans) contrastando com corpo legível e funcional (Inter)",
-      "Transparências de vidro (glassmorphism) com bordas azuis discretas e elevação realista",
-      "Micro-interações elásticas em hover e scroll suave desacelerado com Lenis e GSAP ScrollTrigger",
-      "Zero halos cromáticos de IA: profundidade obtida por elevação direcional neutra"
+      "Fundo grafite profundo (#0F1115) com iluminação ambiente alaranjada",
+      "Laranja Chama (#FF6B00) como cor protagonista de conversão",
+      "Superfícies em smoked glass com bordas táteis de alta resolução",
+      "Texto escuro sobre laranja com conformidade total de contraste WCAG AAA"
     ],
     "rules": [
-      { "name": "The Color Rarity Rule", "body": "O acento vermelho chumbo elétrico é reservado exclusivamente para os botões de ação imediata (CTAs) e badges mais importantes, garantindo contraste e hierarquia máxima.", "section": "colors" },
-      { "name": "The Directional Elevation Rule", "body": "Profundidade vem de elevação direcional com sombras neutras suaves e bordas translúcidas finas, sem recorrer a halos fluorescentes desproporcionais.", "section": "elevation" },
-      { "name": "The Single Display Voice Rule", "body": "Plus Jakarta Sans governa toda a voz de exibição e cabeçalhos com tracking balanceado (-0.025em), enquanto Inter garante clareza técnica e máxima legibilidade para o corpo.", "section": "typography" }
+      {
+        "name": "The High-Contrast Action Rule",
+        "body": "Todo botão com fundo laranja deve utilizar texto #0F1115 com peso 800 para atingir contraste AAA de 6.6:1.",
+        "section": "colors"
+      }
     ],
     "dos": [
-      "Do manter a hierarquia clara entre Sites de Conversão e Sistemas Web sob medida.",
-      "Do utilizar #032310 em textos sobre o verde WhatsApp para garantir contraste acessível AAA.",
-      "Do usar elevação direcional com sombras neutras em vez de brilhos de contorno neon.",
-      "Do preservar text-wrap: balance nos títulos para manter tipografia visualmente estável."
+      "Do manter o contraste estrito WCAG AAA em todos os elementos de ação.",
+      "Do preservar a sobriedade do grafite escuro com toques seletivos de Laranja Chama."
     ],
     "donts": [
-      "Don't prometer '0 mensalidade' de forma genérica, pois sistemas web exigem infraestrutura em nuvem e manutenção técnica.",
-      "Don't utilizar halos cromáticos de offset zero (box-shadow: 0 0 Xpx).",
-      "Don't aninhar cards dentro de cards para evitar ruído visual desnecessário."
+      "Don't utilizar texto branco sobre fundo laranja puro.",
+      "Don't utilizar sombras coloridas com offset zero."
     ]
   }
 }

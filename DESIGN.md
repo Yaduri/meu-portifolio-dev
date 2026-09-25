@@ -1,22 +1,22 @@
 ---
-name: "Yago Dev Portfolio"
+name: "Yago Duarte Portfolio"
 description: "Sites de Alta Conversão e Sistemas Web sob Medida"
 colors:
-  primary: "#C0202A"
-  primary-hover: "#A01820"
-  primary-gradient-end: "#D82631"
-  primary-gradient-hover: "#B91C1C"
-  accent-red-light: "#FF6B72"
-  accent-red-lighter: "#FFA3A8"
-  accent-red-dark: "#9B121B"
-  secondary: "#2563EB"
-  secondary-dark: "#1D4ED8"
-  accent-cyan: "#38BDF8"
+  primary: "#FF6B00"
+  primary-hover: "#E66000"
+  primary-gradient-end: "#FF8533"
+  primary-gradient-hover: "#E66000"
+  accent-orange-light: "#FF8533"
+  accent-orange-lighter: "#FFA366"
+  accent-orange-dark: "#FF6B00"
+  secondary: "#FF8533"
+  secondary-dark: "#E66000"
+  accent-cyan: "#FF6B00"
   step-3-blue: "#0369A1"
   step-3-blue-dark: "#075985"
   whatsapp: "#22C55E"
   whatsapp-hover: "#16A34A"
-  whatsapp-light: "#4ADE80"
+  whatsapp-light: "#2ED86E"
   whatsapp-text: "#032310"
   whatsapp-dark: "#15803D"
   step-4-green: "#14532D"
@@ -25,16 +25,17 @@ colors:
   badge-amber-bg: "rgba(245, 158, 11, 0.15)"
   badge-emerald: "#34D399"
   badge-emerald-bg: "rgba(16, 185, 129, 0.12)"
-  neutral-bg: "#07090E"
-  neutral-bg-alt: "#0B0E17"
-  neutral-surface: "rgba(13, 20, 36, 0.7)"
-  neutral-surface-hover: "rgba(19, 29, 53, 0.85)"
-  surface-border: "rgba(38, 110, 255, 0.15)"
-  surface-border-hover: "rgba(38, 110, 255, 0.4)"
-  neutral-text: "#F8FAFC"
-  neutral-text-secondary: "#CBD5E1"
-  neutral-text-muted: "#94A3B8"
-  neutral-text-dim: "#94A3B8"
+  neutral-bg: "#0F1115"
+  neutral-bg-alt: "#14171D"
+  neutral-surface: "rgba(20, 23, 29, 0.85)"
+  neutral-surface-hover: "rgba(26, 30, 38, 0.95)"
+  surface-border: "rgba(156, 163, 175, 0.12)"
+  surface-border-hover: "rgba(255, 107, 0, 0.5)"
+  neutral-text: "#F8F9FA"
+  neutral-text-secondary: "#9CA3AF"
+  neutral-text-muted: "#9CA3AF"
+  neutral-text-dim: "#9CA3AF"
+  footer-bg: "#0A0C0F"
   shimmer-border: "rgba(255, 255, 255, 0.1)"
 typography:
   display:
@@ -49,24 +50,18 @@ typography:
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.02em"
-  title-display-max:
-    fontSize: "40px"
-    fontWeight: 800
+  headline-sub:
+    fontSize: "clamp(28px, 3.5vw, 36px)"
+    fontWeight: 700
     lineHeight: 1.2
-  title-display-mobile:
+  title-hero-fluid:
+    fontSize: "clamp(16px, 1.8vw, 18px)"
+    fontWeight: 600
+  title-mobile-hero:
     fontSize: "38px"
     fontWeight: 800
-    lineHeight: 1.2
-  title-display-sm:
-    fontSize: "36px"
-    fontWeight: 800
-    lineHeight: 1.2
   title-xl:
-    fontSize: "32px"
-    fontWeight: 700
-    lineHeight: 1.3
-  title-hero-sub:
-    fontSize: "28px"
+    fontSize: "30px"
     fontWeight: 700
     lineHeight: 1.3
   title-lg:
@@ -77,10 +72,9 @@ typography:
     fontSize: "22px"
     fontWeight: 700
     lineHeight: 1.3
-  title-section-sub:
+  title-sub:
     fontSize: "21px"
-    fontWeight: 700
-    lineHeight: 1.3
+    fontWeight: 600
   title:
     fontSize: "20px"
     fontWeight: 700
@@ -94,7 +88,6 @@ typography:
     fontWeight: 700
     lineHeight: 1.3
   body-lead:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.6
@@ -103,179 +96,153 @@ typography:
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.65
-  body-alt:
+  body-sm:
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.6
-  body-sm:
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1.5
   caption:
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: 1.5
+  caption-sm:
     fontSize: "13px"
     fontWeight: 500
-    lineHeight: 1.4
-  caption-sm:
+    lineHeight: 1.5
+  label:
     fontSize: "12px"
-    fontWeight: 500
-    lineHeight: 1.4
-  badge:
+    fontWeight: 700
+    letterSpacing: "0.05em"
+  sub-label:
     fontSize: "11px"
     fontWeight: 600
-    lineHeight: 1.2
-  micro:
+    letterSpacing: "0.08em"
+  micro-label:
     fontSize: "10px"
-    fontWeight: 500
-    lineHeight: 1.2
-  icon-lg:
-    fontSize: "30px"
-    lineHeight: 1
-  icon-md:
-    fontSize: "24px"
-    lineHeight: 1
-  icon-sm:
-    fontSize: "20px"
-    lineHeight: 1
+    fontWeight: 600
+    letterSpacing: "0.1em"
 rounded:
-  pill: "2px"
   xs: "6px"
   sm: "8px"
   md: "14px"
   lg: "20px"
   full: "9999px"
 spacing:
-  container-max: "1200px"
-  section-padding: "110px 0"
-  section-padding-mobile: "68px 0"
+  xs: "4px"
+  sm: "8px"
+  md: "16px"
+  lg: "24px"
+  xl: "32px"
+  2xl: "48px"
+  section: "110px"
+  section-mobile: "68px"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
-    textColor: "{colors.neutral-text}"
+    textColor: "{colors.neutral-bg}"
     rounded: "{rounded.sm}"
     padding: "16px 32px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
-  button-whatsapp:
-    backgroundColor: "{colors.whatsapp}"
-    textColor: "{colors.whatsapp-text}"
-    rounded: "{rounded.sm}"
-    padding: "16px 32px"
-  button-whatsapp-hover:
-    backgroundColor: "{colors.whatsapp-light}"
+    textColor: "{colors.neutral-bg}"
 ---
 
-# Design System: Yago Dev Portfolio
+# Design System: Yago Duarte Portfolio
 
 ## Overview
 
-**Creative North Star: "The Dark Tech Studio"**
+**Creative North Star: "High-Conversion Graphite & Flame Forge"**
 
-O visual é escuro por padrão, evocando alta tecnologia, autoridade técnica e refinamento de alto nível. Projetado para profissionais autônomos, clínicas, consultorias e empresas locais que buscam **Sites de Alta Conversão** e **Sistemas Web sob Medida** (ex: gestão de estoque automotivo para concessionárias, mini lojas e catálogos dinâmicos).
+O visual é ancorado em uma atmosfera escura de alto padrão técnico, projetado especificamente para converter visitantes em clientes pagantes através de extrema clareza, autoridade imediata e refinamento tipográfico. Elimina os azuis genéricos saturados da web comum e adota a paleta oficial da marca Yago Duarte:
+
+- **Grafite Escuro (`#0F1115`)**: Base sólida e densa que reduz a fadiga visual e projeta elegância arquitetural.
+- **Laranja Chama (`#FF6B00`)**: Energia de conversão precisa, focado em botões de ação (WhatsApp/Proposta) e detalhes de alta vibração.
+- **Branco Neve (`#F8F9FA`)**: Títulos de impacto e legibilidade cristalina.
+- **Cinza Fumaça (`#9CA3AF`)**: Apoio estrutural calmo, subtítulos, divisores e metadados.
 
 **Key Characteristics:**
-- Fundo vácuo espacial profundo com iluminação direcional sóbria.
-- Tipografia geométrica expressiva (Plus Jakarta Sans) contrastando com corpo legível e funcional (Inter).
-- Transparências de vidro (glassmorphism) com bordas azuis discretas e elevação realista.
-- Micro-interações elásticas em hover e scroll suave desacelerado com Lenis e GSAP ScrollTrigger.
-- Zero halos cromáticos de IA: profundidade obtida por elevação direcional neutra.
+- Fundo grafite profundo com grid pontilhado sutil e difusão de luz ambiente âmbar/laranja
+- Superfícies em vidro escuro translúcido (*smoked glass*) com bordas táteis
+- Botões primários com alto contraste WCAG AAA (texto escuro sobre gradiente laranja)
+- Símbolo 3D oficial da marca em destaque com iluminação volumétrica
 
 ## Colors
 
-A paleta de cores é calibrada para atender com folga às diretrizes de contraste WCAG AA e AAA:
+A paleta é concisa, disciplinada e orientada à conversão direta.
 
 ### Primary
-- **Vermelho Chumbo Elétrico** (`#C0202A` / `#D82631`): Reservado para ações imediatas (CTAs principais de conversão para o WhatsApp) e selos de alto destaque ("Mais Pedido").
-- **Tons de Apoio:** `#FF6B72`, `#FFA3A8`, `#9B121B`.
-
-### Secondary & Tech Accents
-- **Azul Elétrico** (`#2563EB`): Utilizado em ornamentações de tecnologia, etapas de processo e links de apoio.
-- **Ciano Elétrico** (`#38BDF8`): Utilizado em ícones editoriais de diferenciais, tags técnicas e anéis de foco acessível `:focus-visible`.
-- **Azul Oceano** (`#0369A1` / `#075985`): Utilizado no gradiente da etapa 3 do processo.
-
-### Conversion & Status
-- **Verde WhatsApp** (`#22C55E` / `#16A34A`): Ação de contato direto.
-- **Verde Escuro Alto Contraste** (`#032310`): Texto e ícone sobre o verde WhatsApp (proporção de contraste **8.5:1, nível AAA**).
-- **Verde Esmeralda** (`#34D399`): Badge de E-commerce Ágil e selos de velocidade.
-- **Amarelo Âmbar** (`#FBBF24`): Estrelas de avaliação e badges de conversão.
+- **Laranja Chama** (`#FF6B00` / `#FF8533`): A cor protagonista de conversão. Utilizada exclusivamente em botões de ação direta, destaques textuais estratégicos e detalhes da marca.
+- **Laranja Chama Hover** (`#E66000`): Estado ativo e de foco tátil dos botões.
 
 ### Neutral
-- **Vácuo Espacial Profundo** (`#07090E`): Fundo principal da página.
-- **Preto Sombra do Vácuo** (`#0B0E17`): Fundo de seções alternadas.
-- **Vidro Translúcido** (`rgba(13, 20, 36, 0.7)`): Preenchimento de superfícies e cards.
-- **Off-White Primário** (`#F8FAFC`): Títulos principais (contraste > 14:1).
-- **Off-White Secundário** (`#CBD5E1`): Texto de leitura do corpo.
-- **Cinza Muted Alto Contraste** (`#94A3B8`): Textos de apoio, descrições menores e notas secundárias (contraste **6.2:1**, WCAG AA).
+- **Grafite Escuro** (`#0F1115`): Fundo principal do website e cor de texto sobre botões laranjas (garante contraste AAA de 6.6:1).
+- **Grafite Superfície** (`#14171D` / `rgba(20, 23, 29, 0.85)`): Fundo de seções alternadas e cards de vidro translúcido.
+- **Branco Neve** (`#F8F9FA`): Títulos principais (H1, H2, H3), nome da marca e elementos de destaque máximo.
+- **Cinza Fumaça** (`#9CA3AF`): Parágrafos, textos descritivos, metadados e bordas sutis.
+
+### Secondary & Accents
+- **Verde WhatsApp** (`#22C55E`): Preservado exclusivamente para o botão flutuante e canais de contato direto.
+- **Verde Escuro AAA** (`#032310`): Contraste ideal sobre o botão flutuante.
+
+### Named Rules
+**The High-Contrast Action Rule.** Todo botão ou elemento com fundo Laranja Chama (`#FF6B00`) DEVE utilizar texto e ícones na cor Grafite Escuro (`#0F1115 !important`) com peso 800. É estritamente proibido utilizar texto branco sobre laranja puro por violar as diretrizes de contraste WCAG AA.
+
+**The Restrained Flame Rule.** O Laranja Chama cobre no máximo 10% da superfície visível de qualquer viewport, preservando seu valor de chamada irresistível ao olhar do cliente.
 
 ## Typography
 
-**Display Font:** Plus Jakarta Sans (com fallback sans-serif)  
-**Body Font:** Inter (com fallback sans-serif)
-
-**Ritmo e Rastreamento (Tracking):**
-- Títulos Display: `-0.025em` com `text-wrap: balance` para prevenir quebras isoladas de linha.
-- Títulos de Seção: `-0.02em` com `text-wrap: balance`.
-- Subtítulos e Parágrafos: `text-wrap: pretty` para fluxo harmonioso.
+**Display / Headings Font:** Plus Jakarta Sans (`font-family: 'Plus Jakarta Sans', sans-serif`)
+**Body Font:** Inter (`font-family: 'Inter', sans-serif`)
 
 ### Hierarchy
-- **Display** (Extra Bold (800), `clamp(32px, 5.5vw, 56px)`, 1.15): Título principal do Hero.
-- **Headline** (Bold (700), `clamp(26px, 3.5vw, 40px)`, 1.2): Títulos de seções principais.
-- **Title-XL** (Bold (700), 32px, 1.3): Títulos de destaque.
-- **Title-LG** (Bold (700), 24px, 1.3): Números das etapas e cabeçalhos intermediários.
-- **Title-MD** (Bold (700), 22px, 1.3): Título do box de proposta.
-- **Title** (Bold (700), 20px, 1.3): Títulos de cards de serviços.
-- **Title-SM** (Bold (700), 19px, 1.3): Nome no card Sobre Mim.
-- **Title-XS** (Bold (700), 18px, 1.3): Títulos de diferenciais e perguntas do FAQ.
-- **Body-Lead** (Regular (400), 17px, 1.6): Subtítulos em destaque e botão principal XL.
-- **Body** (Regular (400), 16px, 1.65): Texto geral, descrições e itens de lista.
-- **Body-Alt** (Regular (400), 15px, 1.6): Textos de cards compactos.
-- **Body-SM** (Regular (400), 14px, 1.5): Textos de apoio nos passos do processo.
-- **Caption** (Medium (500), 13px, 1.4): Selo de disponibilidade live no hero.
-- **Caption-SM** (Medium (500), 12px, 1.4): Metadados de portfólio e tags.
-- **Badge** (Semi-Bold (600), 11px, 1.2): Tags especiais de serviço e status.
-- **Micro** (Medium (500), 10px, 1.2): Rótulos de métricas compactas.
+- **Display Hero** (`font-weight: 800`, `clamp(32px, 5.5vw, 56px)`, `line-height: 1.15`, `letter-spacing: -0.025em`): Promessa central de valor no Hero.
+- **Headline de Seção** (`font-weight: 700`, `clamp(26px, 3.5vw, 40px)`, `line-height: 1.2`, `letter-spacing: -0.02em`): Abertura das seções.
+- **Title Cards** (`font-weight: 700`, `20px` a `24px`, `line-height: 1.3`): Títulos de serviços e projetos.
+- **Body** (`font-weight: 400`, `16px`, `line-height: 1.65`): Textos corridos em Cinza Fumaça (`#9CA3AF`).
+- **Label / Tag** (`font-weight: 800`, `11px`, `letter-spacing: 1.2px`, uppercase): Badges de categoria e destaque.
 
 ## Layout
 
-O layout segue um grid fluido e flexível com largura máxima de `1200px`. O espaçamento vertical das seções é generoso (`110px` no desktop e `68px` no mobile) para garantir respiro e escaneabilidade em qualquer dispositivo.
+- **Container Máximo:** 1200px centralizado com padding lateral de 24px (mobile) a 32px (desktop).
+- **Ritmo Vertical:** Padding de seção de 110px no desktop e 68px no mobile.
+- **Grid de Cards:** Grid adaptativo de 3 colunas (serviços) e 2 colunas (portfólio), colapsando em coluna única no mobile.
 
 ## Elevation & Depth
 
-O sistema de profundidade baseia-se em elevações direcionais suaves com contraste natural contra o fundo escuro, evitando halos cromáticos saturados ou borrões artificiais.
-
-### Shadow Vocabulary
-- **Sombra Glassmorphic:** `0 6px 14px -3px rgba(0, 0, 0, 0.55)` em repouso.
-- **Sombra Glassmorphic Hover:** `0 10px 14px -4px rgba(0, 0, 0, 0.75)` ao interagir com cards.
-- **Elevação Primária de Botão:** `0 8px 14px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25)`.
-- **Elevação Flutuante WhatsApp:** `0 6px 14px -3px rgba(0, 0, 0, 0.6)`.
+Profundidade construída com elevação direcional tátil e iluminação ambiente difusa:
+- **Shadow Glass:** `0 6px 14px -3px rgba(0, 0, 0, 0.55)` para cards em repouso.
+- **Shadow Glass Hover:** `0 10px 14px -4px rgba(0, 0, 0, 0.75)` ao pairar sobre cards interativos.
+- **Proibição Absoluta:** Sombras coloridas com offset zero (`box-shadow: 0 0 Xpx color`) são banidas em favor de elevação direcional neutra.
 
 ## Shapes
 
-- **Micro:** 2px (pontos de pulso e detalhes).
-- **Borda Suave:** 6px / 8px (botões e selos compactos).
-- **Canto de Card:** 14px / 20px (contêineres de vidro, cards de serviços e imagens de projetos).
-- **Círculo / Pill Completo:** 9999px (botão flutuante, pílulas de status e tags).
+- **Raio de Borda dos Botões:** 8px (`--radius-sm`) para botões padrão; 20px (`--radius-lg`) para botões hero/XL.
+- **Raio de Borda dos Cards:** 20px (`--radius-lg`) com cantos arredondados suaves.
+- **Raio de Pílulas / Badges:** 9999px (`--radius-full`) para tags de destaque.
 
 ## Components
 
 ### Buttons
-- **Primary:** Gradiente vermelho chumbo elétrico (`#C0202A` a `#D82631`) com efeito sutil de shimmer, elevação direcional e texto branco em negrito.
-- **WhatsApp:** Gradiente verde reativo com texto `#032310` de altíssimo contraste (nível AAA).
-- **Secondary Glass:** Vidro semitransparente com borda ciano/azul e backdrop blur.
+- **Primary:** Fundo gradiente linear (`135deg, #FF6B00 0%, #FF8533 100%`), texto `#0F1115 !important`, peso 800, padding 16px 32px, elevação direcional. Efeito hover com deslocamento de -2px e shimmer suave.
+- **Secondary:** Fundo grafite translúcido (`rgba(20, 23, 29, 0.6)`), borda laranja fina (`rgba(255, 107, 0, 0.35)`), texto Branco Neve.
 
-### Cards & Features
-- **Serviços:** Três pilares (Sites de Conversão, Sistemas de Estoque, Mini Lojas) com badges específicos, listas de benefícios escaneáveis e CTAs dedicados.
-- **Diferenciais:** Diagramação editorial alinhada à esquerda com ícones livres em fluxo natural, substituindo caixas genéricas centralizadas.
-- **FAQ:** Expansão via CSS Grid puro (`grid-template-rows: 0fr -> 1fr`) garantindo zero reflow de layout.
+### Cards Glassmorphic
+- **Estrutura:** Fundo em `rgba(20, 23, 29, 0.85)` com `backdrop-filter: blur(16px)` e borda sutil de 1px em `rgba(156, 163, 175, 0.12)`.
+- **Card em Destaque:** Borda em `rgba(255, 107, 0, 0.45)` com badge superior em degradê Laranja Chama.
+
+### Brand Logo Lockup
+- **Símbolo:** Renderização do ícone 3D "YD" com sombra suave alaranjada.
+- **Tipografia:** `YAGO` (font-weight: 800) + `DUARTE` (font-weight: 500) em Branco Neve + subtítulo `SITES E SISTEMAS WEB` (11px, Cinza Fumaça).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** manter a hierarquia clara entre Sites de Conversão e Sistemas Web sob medida.
-- **Do** utilizar `#032310` em textos sobre o verde WhatsApp para garantir contraste acessível AAA.
-- **Do** usar elevação direcional com sombras neutras em vez de brilhos de contorno neon.
-- **Do** preservar `text-wrap: balance` nos títulos para manter tipografia visualmente estável.
+- **Do** priorizar a legibilidade estrita WCAG AAA em todas as combinações de texto e fundo.
+- **Do** usar o Laranja Chama (`#FF6B00`) para conduzir a ação para o WhatsApp e proposta de valor.
+- **Do** manter as superfícies com acabamento grafite sóbrio e transições suaves de 0.2s a 0.35s.
+- **Do** garantir que todo texto interativo ou funcional possua no mínimo 11px de tamanho de fonte.
 
 ### Don't:
-- **Don't** prometer "0 mensalidade" de forma genérica, pois sistemas web exigem infraestrutura em nuvem e manutenção técnica.
-- **Don't** utilizar halos cromáticos de offset zero (`box-shadow: 0 0 Xpx`).
-- **Don't** aninhar cards dentro de cards para evitar ruído visual desnecessário.
+- **Don't** utilizar texto branco sobre botões ou badges alaranjadas (contraste insuficiente).
+- **Don't** reintroduzir azuis aeroespaciais genéricos ou tons ciano ciberpunk.
+- **Don't** aplicar sombras coloridas com offset zero (`box-shadow: 0 0 ...`).
+- **Don't** usar templates ou layouts genéricos sem respeitar a identidade oficial da marca.
