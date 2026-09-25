@@ -16,7 +16,7 @@ Profissionais autônomos, clínicas de saúde/estética, escritórios de advocac
 Gerar resultados comerciais concretos por meio de Sites de Alta Conversão que atraem clientes pelo WhatsApp e Sistemas Web que facilitam a gestão de estoque, catálogos e vendas.
 
 ## Positioning
-Sites de conversão e sistemas web sob medida (sem templates genéricos de IA), com carregamento ultrarrápido (foco em PageSpeed), suporte contínuo de 6 meses direto com o desenvolvedor e transparência total de investimento para cada necessidade de negócio.
+Sites de conversão e sistemas web sob medida (sem templates genéricos), com carregamento ultrarrápido (foco em PageSpeed), suporte contínuo de 6 meses direto com o desenvolvedor e transparência total de investimento para cada necessidade de negócio.
 
 ## Operating Context
 Conversão ágil via WhatsApp, catálogos online para consulta rápida de produtos/veículos, navegação mobile-first (mais de 70% dos acessos), painéis de fácil atualização e compartilhamento direto de links comerciais.
