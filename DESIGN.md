@@ -3,247 +3,180 @@ name: "Yago Duarte Portfolio"
 description: "Sites de Alta Conversão e Sistemas Web sob Medida"
 colors:
   primary: "#FF6B00"
-  primary-hover: "#E66000"
-  primary-gradient-end: "#FF8533"
-  primary-gradient-hover: "#E66000"
-  accent-orange-light: "#FF8533"
-  accent-orange-lighter: "#FFA366"
-  accent-orange-dark: "#FF6B00"
-  secondary: "#FF8533"
-  secondary-dark: "#E66000"
-  accent-cyan: "#FF6B00"
-  step-3-blue: "#0369A1"
-  step-3-blue-dark: "#075985"
+  primary-hover: "#FF8533"
   whatsapp: "#22C55E"
-  whatsapp-hover: "#16A34A"
-  whatsapp-light: "#2ED86E"
+  whatsapp-hover: "#2ED86E"
   whatsapp-text: "#032310"
-  whatsapp-dark: "#15803D"
-  step-4-green: "#14532D"
-  status-live: "#4ADE80"
-  badge-amber: "#FBBF24"
-  badge-amber-bg: "rgba(245, 158, 11, 0.15)"
-  badge-emerald: "#34D399"
-  badge-emerald-bg: "rgba(16, 185, 129, 0.12)"
   neutral-bg: "#0F1115"
   neutral-bg-alt: "#14171D"
-  neutral-surface: "rgba(20, 23, 29, 0.85)"
-  neutral-surface-hover: "rgba(26, 30, 38, 0.95)"
+  footer-bg: "#0A0C0F"
   surface-border: "rgba(156, 163, 175, 0.12)"
-  surface-border-hover: "rgba(255, 107, 0, 0.5)"
   neutral-text: "#F8F9FA"
   neutral-text-secondary: "#9CA3AF"
-  neutral-text-muted: "#9CA3AF"
-  neutral-text-dim: "#9CA3AF"
-  footer-bg: "#0A0C0F"
-  shimmer-border: "rgba(255, 255, 255, 0.1)"
 typography:
   display:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "clamp(32px, 5.5vw, 56px)"
-    fontWeight: 800
-    lineHeight: 1.15
-    letterSpacing: "-0.025em"
-  headline:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "clamp(26px, 3.5vw, 40px)"
-    fontWeight: 700
-    lineHeight: 1.2
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(2.5rem, 6vw, 4.75rem)"
+    fontWeight: 400
+    lineHeight: 1.04
     letterSpacing: "-0.02em"
-  headline-sub:
-    fontSize: "clamp(28px, 3.5vw, 36px)"
-    fontWeight: 700
-    lineHeight: 1.2
-  title-hero-fluid:
-    fontSize: "clamp(16px, 1.8vw, 18px)"
-    fontWeight: 600
-  title-mobile-hero:
-    fontSize: "38px"
-    fontWeight: 800
-  title-xl:
-    fontSize: "30px"
-    fontWeight: 700
+  headline:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(1.875rem, 4.2vw, 3.25rem)"
+    fontWeight: 400
+    lineHeight: 1.08
+    letterSpacing: "-0.025em"
+  headline-closing:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(2rem, 5.2vw, 4rem)"
+    fontWeight: 400
+  numeral:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "2.75rem"
+    fontWeight: 400
+  statement:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(1.25rem, 2.1vw, 1.625rem)"
+    fontWeight: 400
     lineHeight: 1.3
-  title-lg:
-    fontSize: "24px"
-    fontWeight: 700
-    lineHeight: 1.3
-  title-md:
-    fontSize: "22px"
-    fontWeight: 700
-    lineHeight: 1.3
-  title-sub:
-    fontSize: "21px"
-    fontWeight: 600
+  row-title:
+    fontFamily: "Young Serif, Georgia, serif"
+    fontSize: "clamp(1.375rem, 2.4vw, 1.875rem)"
+    fontWeight: 400
+    lineHeight: 1.15
   title:
-    fontSize: "20px"
-    fontWeight: 700
+    fontFamily: "Inter, sans-serif"
+    fontSize: "22px"
+    fontWeight: 600
     lineHeight: 1.3
   title-sm:
-    fontSize: "19px"
-    fontWeight: 700
-    lineHeight: 1.3
-  title-xs:
+    fontFamily: "Inter, sans-serif"
     fontSize: "18px"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: 1.3
   body-lead:
-    fontSize: "17px"
+    fontFamily: "Inter, sans-serif"
+    fontSize: "clamp(16px, 1.8vw, 18px)"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.65
   body:
     fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.65
   body-sm:
-    fontSize: "15px"
+    fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.6
   caption:
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: 1.5
-  caption-sm:
     fontSize: "13px"
     fontWeight: 500
-    lineHeight: 1.5
   label:
-    fontSize: "12px"
-    fontWeight: 700
-    letterSpacing: "0.05em"
-  sub-label:
     fontSize: "11px"
     fontWeight: 600
     letterSpacing: "0.08em"
-  micro-label:
-    fontSize: "10px"
-    fontWeight: 600
-    letterSpacing: "0.1em"
 rounded:
   xs: "6px"
   sm: "8px"
-  md: "14px"
-  lg: "20px"
-  full: "9999px"
+  md: "8px"
+  full: "50%"
 spacing:
-  xs: "4px"
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  xl: "32px"
-  2xl: "48px"
-  section: "110px"
-  section-mobile: "68px"
+  container: "1200px"
+  section: "120px"
+  section-mobile: "72px"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.neutral-bg}"
     rounded: "{rounded.sm}"
-    padding: "16px 32px"
+    padding: "16px 28px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
     textColor: "{colors.neutral-bg}"
+  button-secondary:
+    backgroundColor: "transparent"
+    textColor: "{colors.neutral-text}"
+    rounded: "{rounded.sm}"
+    padding: "14px 28px"
 ---
 
 # Design System: Yago Duarte Portfolio
 
 ## Overview
 
-**Creative North Star: "High-Conversion Graphite & Flame Forge"**
+**Direção: editorial escuro, plano e direto.** Uma página grafite, sem enfeites, em que a tipografia grande faz o trabalho que antes era de cards, ícones e efeitos. O único acento é o laranja da marca, reservado para a ação.
 
-O visual é ancorado em uma atmosfera escura de alto padrão técnico, projetado especificamente para converter visitantes em clientes pagantes através de extrema clareza, autoridade imediata e refinamento tipográfico. Elimina os azuis genéricos saturados da web comum e adota a paleta oficial da marca Yago Duarte:
-
-- **Grafite Escuro (`#0F1115`)**: Base sólida e densa que reduz a fadiga visual e projeta elegância arquitetural.
-- **Laranja Chama (`#FF6B00`)**: Energia de conversão precisa, focado em botões de ação (WhatsApp/Proposta) e detalhes de alta vibração.
-- **Branco Neve (`#F8F9FA`)**: Títulos de impacto e legibilidade cristalina.
-- **Cinza Fumaça (`#9CA3AF`)**: Apoio estrutural calmo, subtítulos, divisores e metadados.
-
-**Key Characteristics:**
-- Fundo grafite único e liso, sem brilhos, grid ou faixas alternadas; seções separadas por linhas finas
-- Conteúdo sem cards: grupos separados por espaço e linhas de 1px, títulos de seção alinhados à esquerda
-- Botões primários com alto contraste WCAG AAA (texto escuro sobre laranja sólido)
-- Símbolo 3D oficial da marca em destaque com iluminação volumétrica
+- Fundo grafite único e liso; seções separadas por linhas de 1px.
+- Títulos em serifa de peso (Young Serif), texto e interface em Inter.
+- Laranja apenas nos botões de ação e em um trecho do título do hero.
+- Imagens reais: foto do Yago em preto e branco e capturas dos projetos.
+- Sem cards, sombras, gradientes, blur decorativo ou ícones ilustrativos.
 
 ## Colors
 
-A paleta é concisa, disciplinada e orientada à conversão direta.
+- **Grafite Escuro** (`#0F1115`): fundo da página e texto sobre botões laranja.
+- **Branco Neve** (`#F8F9FA`): títulos e texto de destaque.
+- **Cinza Fumaça** (`#9CA3AF`): parágrafos, legendas e metadados.
+- **Linha** (`rgba(156, 163, 175, 0.12)`): divisórias de seção e de itens.
+- **Laranja Chama** (`#FF6B00`, hover `#FF8533`): botões primários, destaque do título do hero, seleção de texto e hover de links.
+- **Verde WhatsApp** (`#22C55E`): exclusivo do botão flutuante e do botão do menu mobile.
 
-### Primary
-- **Laranja Chama** (`#FF6B00` / `#FF8533`): A cor protagonista de conversão. Utilizada exclusivamente em botões de ação direta, destaques textuais estratégicos e detalhes da marca.
-- **Laranja Chama Hover** (`#E66000`): Estado ativo e de foco tátil dos botões.
+**Regra do contraste.** Todo fundo laranja usa texto e ícones em Grafite Escuro (`#0F1115`). Texto branco sobre laranja é proibido.
 
-### Neutral
-- **Grafite Escuro** (`#0F1115`): Fundo principal do website e cor de texto sobre botões laranjas (garante contraste AAA de 6.6:1).
-- **Grafite Superfície** (`#14171D` / `rgba(20, 23, 29, 0.85)`): Fundo de seções alternadas e cards de vidro translúcido.
-- **Branco Neve** (`#F8F9FA`): Títulos principais (H1, H2, H3), nome da marca e elementos de destaque máximo.
-- **Cinza Fumaça** (`#9CA3AF`): Parágrafos, textos descritivos, metadados e bordas sutis.
-
-### Secondary & Accents
-- **Verde WhatsApp** (`#22C55E`): Preservado exclusivamente para o botão flutuante e canais de contato direto.
-- **Verde Escuro AAA** (`#032310`): Contraste ideal sobre o botão flutuante.
-
-### Named Rules
-**The High-Contrast Action Rule.** Todo botão ou elemento com fundo Laranja Chama (`#FF6B00`) DEVE utilizar texto e ícones na cor Grafite Escuro (`#0F1115 !important`) com peso 800. É estritamente proibido utilizar texto branco sobre laranja puro por violar as diretrizes de contraste WCAG AA.
-
-**The Restrained Flame Rule.** O Laranja Chama cobre no máximo 10% da superfície visível de qualquer viewport, preservando seu valor de chamada irresistível ao olhar do cliente.
+**Regra da chama contida.** Em qualquer tela deve haver, no máximo, um botão laranja em evidência além do destaque do título.
 
 ## Typography
 
-**Display / Headings Font:** Plus Jakarta Sans (`font-family: 'Plus Jakarta Sans', sans-serif`)
-**Body Font:** Inter (`font-family: 'Inter', sans-serif`)
+- **Young Serif** (peso único 400): voz de display. Usada em h1, h2, nas frases de dor, nos títulos das linhas de diferenciais e nos numerais do processo. Nunca em itálico.
+- **Inter** (400, 500, 600, 700, 800): corpo, títulos de item (h3), botões, navegação e a marca "YAGO DUARTE".
 
-### Hierarchy
-- **Display Hero** (`font-weight: 800`, `clamp(32px, 5.5vw, 56px)`, `line-height: 1.15`, `letter-spacing: -0.025em`): Promessa central de valor no Hero.
-- **Headline de Seção** (`font-weight: 700`, `clamp(26px, 3.5vw, 40px)`, `line-height: 1.2`, `letter-spacing: -0.02em`): Abertura das seções.
-- **Title Cards** (`font-weight: 700`, `20px` a `24px`, `line-height: 1.3`): Títulos de serviços e projetos.
-- **Body** (`font-weight: 400`, `16px`, `line-height: 1.65`): Textos corridos em Cinza Fumaça (`#9CA3AF`).
-- **Label / Tag** (`font-weight: 800`, `11px`, `letter-spacing: 1.2px`, uppercase): Badges de categoria e destaque.
+Os títulos usam `text-wrap: balance`; parágrafos longos ficam em até 60 caracteres por linha.
 
 ## Layout
 
-- **Container Máximo:** 1200px centralizado com padding lateral de 24px (mobile) a 32px (desktop).
-- **Ritmo Vertical:** Padding de seção de 110px no desktop e 68px no mobile.
-- **Ordem das seções:** Hero (só texto) → Portfólio → Dores → Serviços → Diferenciais (com os números) → Processo → Sobre → FAQ → CTA final.
-- **Grids:** 3 colunas (serviços e diferenciais). Portfólio em grade de 6 colunas (4 projetos grandes e 3 menores) no desktop e fileira deslizável com scroll-snap no mobile.
+- **Ordem das seções:** Hero → Caso Mosca Branca Car → Demonstrações → Dores → Serviços → Por que o Yago (diferenciais e história) → Processo → FAQ → CTA final.
+- **Hero:** título em largura total; abaixo, texto e botão à esquerda e a foto com legenda à direita. No mobile a foto vira uma miniatura ao lado da legenda.
+- **Caso real:** imagem larga (3:1) seguida de título à esquerda e descrição à direita.
+- **Demonstrações:** grade de 3 colunas no desktop, 2 no tablet e fileira deslizável com scroll-snap no mobile.
+- **Dores e FAQ:** título fixo à esquerda e lista à direita no desktop.
+- **Diferenciais:** linhas de largura total, título à esquerda e texto à direita.
+- **Processo:** 4 colunas com numeral em serifa; lista vertical no mobile.
+- **Container:** 1200px, com 24px de margem lateral (20px abaixo de 480px).
+- **Ritmo vertical:** 120px por seção no desktop e 72px no mobile.
 
 ## Elevation & Depth
 
-Layout plano. A hierarquia vem de espaço, tipografia e linhas finas, não de sombras:
-- **Linha divisória:** `1px solid rgba(156, 163, 175, 0.12)` entre seções e itens de lista.
-- **Sem sombras e sem blur** em cards, botões e badges. O único blur é o da barra de navegação ao rolar.
-- **Proibição Absoluta:** Sombras coloridas com offset zero (`box-shadow: 0 0 Xpx color`) são banidas em favor de elevação direcional neutra.
+Layout plano. Não há sombras nem blur em blocos de conteúdo. O único blur é o da barra de navegação ao rolar.
 
-## Shapes
+## Motion
 
-- **Raio de Borda dos Botões:** 8px (`--radius-sm`) para botões padrão; 20px (`--radius-lg`) para botões hero/XL.
-- **Raio de Borda dos Cards:** 20px (`--radius-lg`) com cantos arredondados suaves.
-- **Raio de Pílulas / Badges:** 9999px (`--radius-full`) para tags de destaque.
+- Entrada do hero: título e linha de conteúdo sobem 12px com fade, uma única vez.
+- Momento de rolagem único: a imagem do caso Mosca Branca abre de cima para baixo (`clip-path`) quando entra na tela.
+- Nenhuma outra seção anima ao rolar. Rolagem nativa do navegador.
+- `prefers-reduced-motion` desliga tudo.
 
 ## Components
 
 ### Buttons
-- **Primary:** Fundo sólido `#FF6B00`, texto `#0F1115 !important`, peso 700, padding 16px 28px. Hover clareia para `#FF8533`. Sem gradiente, sombra ou shimmer.
-- **Secondary:** Fundo transparente, borda neutra fina (`rgba(255, 255, 255, 0.18)`), texto Branco Neve. Usado também no CTA da navegação.
+- **Primary:** fundo sólido `#FF6B00`, texto `#0F1115`, peso 700, raio 8px. Hover clareia para `#FF8533`.
+- **Secondary:** transparente com borda `rgba(255, 255, 255, 0.18)` e texto Branco Neve. Usado na navegação e em ações secundárias.
+- **Text link:** texto Branco Neve sublinhado; o sublinhado fica laranja no hover.
 
 ### Blocos de conteúdo
-- **Estrutura:** Sem fundo, sombra ou raio; apenas uma linha superior de 1px em `rgba(156, 163, 175, 0.12)`. Ícones, checks e badges em tons neutros.
-- **Bloco em Destaque:** Linha superior em Branco Neve e botão primário laranja; sem badge colorido.
+Sem fundo, sombra ou raio. A separação é uma linha superior de 1px. O serviço em destaque usa a linha em Branco Neve e o rótulo "Mais pedido".
 
-### Brand Logo Lockup
-- **Símbolo:** Renderização do ícone 3D "YD" com sombra suave alaranjada.
-- **Tipografia:** `YAGO` (font-weight: 800) + `DUARTE` (font-weight: 500) em Branco Neve + subtítulo `SITES E SISTEMAS WEB` (11px, Cinza Fumaça).
+### Ícones
+SVGs inline de traço 1.75, usados só onde ajudam a leitura (checks das listas, seta de link externo, WhatsApp). Não há ícones decorativos em títulos de bloco.
 
 ## Do's and Don'ts
 
-### Do:
-- **Do** priorizar a legibilidade estrita WCAG AAA em todas as combinações de texto e fundo.
-- **Do** usar o Laranja Chama (`#FF6B00`) para conduzir a ação para o WhatsApp e proposta de valor.
-- **Do** manter as superfícies com acabamento grafite sóbrio e transições suaves de 0.2s a 0.35s.
-- **Do** garantir que todo texto interativo ou funcional possua no mínimo 11px de tamanho de fonte.
+### Do
+- Deixar o título grande carregar a seção; um título por bloco, sem rótulo acima.
+- Usar imagens reais (projetos e a foto do Yago).
+- Manter o laranja raro para que o botão continue chamando atenção.
 
-### Don't:
-- **Don't** utilizar texto branco sobre botões ou badges alaranjadas (contraste insuficiente).
-- **Don't** reintroduzir azuis aeroespaciais genéricos ou tons ciano ciberpunk.
-- **Don't** aplicar sombras coloridas com offset zero (`box-shadow: 0 0 ...`).
-- **Don't** usar templates ou layouts genéricos sem respeitar a identidade oficial da marca.
+### Don't
+- Não reintroduzir cards, sombras, gradientes, brilhos de fundo ou vidro fosco.
+- Não usar pílulas ou "eyebrows" acima dos títulos, nem selos de números grandes.
+- Não usar itálico na serifa de display nem texto branco sobre laranja.
+- Não adicionar uma terceira família tipográfica.

@@ -31,7 +31,7 @@ Conversão ágil via WhatsApp, catálogos online para consulta rápida de produt
 - Nome/Identidade: Yago Dev / Yago Duarte Ribeiro.
 - Tom de Voz: Profissional, humano, confiável, direto e transparente.
 - Identidade Visual: Escura, plana e minimalista (fundo grafite `#0F1115`, texto branco neve `#F8F9FA`, apoio cinza fumaça `#9CA3AF` e laranja chama `#FF6B00` apenas nos CTAs e em um destaque do título). Detalhes em `DESIGN.md`.
-- Tipografia: Plus Jakarta Sans (títulos) e Inter (corpo de texto).
+- Tipografia: Young Serif (títulos) e Inter (corpo de texto e interface).
 
 ## Evidence on Hand
 - Portfólio com projetos reais e demonstrações em nichos estratégicos (Mosca Branca Car - Estoque Automotivo, Aline Duarte Psicóloga, Essenza Estética, Ateliê Linha Casa, Escritório de Advocacia).

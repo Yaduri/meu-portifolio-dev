@@ -27,7 +27,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
 
   <style>
@@ -67,11 +67,11 @@
 
       --radius-xs: 6px;
       --radius-sm: 8px;
-      --radius-md: 14px;
+      --radius-md: 8px;
 
       --container-max: 1200px;
-      --section-padding: 110px 0;
-      --section-padding-mobile: 68px 0;
+      --section-padding-y: 120px;
+      --section-padding: var(--section-padding-y) 0;
 
       /* Easing */
       --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
@@ -82,6 +82,7 @@
       font-size: 16px;
       scroll-behavior: smooth;
       scroll-padding-top: 76px;
+      scrollbar-color: #2B3038 var(--color-bg);
     }
 
     body {
@@ -96,25 +97,19 @@
 
 
 
-    /* Typographic System: Display & Headings */
-    h1, h2, h3, h4, h5, h6,
-    .font-display,
+    /* Type roles: Young Serif is the display voice, Inter does everything else */
     .headline-hero,
     .headline-section,
-    .nav__logo,
-    .nav__mobile-menu a,
-    .sobre-avatar-name,
-    .faq-question,
-    .footer__brand-name,
-    .footer__col-title,
-    .processo-step__number,
-    .processo-step__title,
-    .dor-transition,
-    .service-card__title,
-    .diferencial-card__title,
-    .portfolio-card__info-title,
-    .stat-num {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    .dor-card__text,
+    .diferencial-row dt,
+    .processo-step__number {
+      font-family: 'Young Serif', Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+    }
+
+    ::selection {
+      background: var(--color-accent-red);
+      color: #0F1115;
     }
 
     /* Accessibility: Skip to Content & Focus Rings */
@@ -157,21 +152,17 @@
     }
 
     .headline-hero {
-      font-weight: 800;
-      font-size: clamp(32px, 5.5vw, 56px);
-      line-height: 1.15;
-      letter-spacing: -0.025em;
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
       text-wrap: balance;
       color: var(--color-text-primary);
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
 
     .headline-section {
-      font-weight: 700;
-      font-size: clamp(26px, 3.2vw, 38px);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.875rem, 4.2vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
       text-wrap: balance;
       color: var(--color-text-primary);
     }
@@ -181,15 +172,32 @@
       color: var(--color-text-muted);
       line-height: 1.65;
       text-wrap: pretty;
+      max-width: 60ch;
     }
 
     .section-header {
-      max-width: 720px;
-      margin-bottom: 56px;
+      max-width: 860px;
+      margin-bottom: 64px;
     }
 
     .section-header .headline-section {
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-text-primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.3);
+      text-underline-offset: 6px;
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .text-link:hover {
+      text-decoration-color: var(--color-accent-red);
     }
 
     main > section + section {
@@ -318,46 +326,12 @@
     /* ==========================================================================
        4. ANIMATIONS & SCROLL REVEAL (Antigravity Motion)
        ========================================================================== */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s var(--ease-fluid), transform 0.5s var(--ease-fluid);
-      will-change: opacity, transform;
-    }
-
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger-1 { transition-delay: 0.05s; }
-    .stagger-2 { transition-delay: 0.10s; }
-    .stagger-3 { transition-delay: 0.15s; }
-    .stagger-4 { transition-delay: 0.20s; }
-    .stagger-5 { transition-delay: 0.25s; }
-    .stagger-6 { transition-delay: 0.30s; }
-    .stagger-7 { transition-delay: 0.35s; }
 
     @keyframes heroIn {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: none; }
     }
 
-    .hero__content > * {
-      animation: heroIn 0.6s var(--ease-fluid) both;
-    }
-
-    .hero__content > :nth-child(2) { animation-delay: 0.08s; }
-    .hero__content > :nth-child(3) { animation-delay: 0.16s; }
-    .hero__content > :nth-child(4) { animation-delay: 0.24s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .animate-on-scroll {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
 
     /* ==========================================================================
        5. NAVIGATION (Fixed Glassmorphism Header)
@@ -407,7 +381,6 @@
     }
 
     .nav__logo-title {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 16px;
       font-weight: 800;
       letter-spacing: 0.5px;
@@ -422,7 +395,6 @@
     }
 
     .nav__logo-sub {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 1.4px;
@@ -545,25 +517,61 @@
        6. HERO SECTION
        ========================================================================== */
     .hero {
-      padding: 136px 0 56px;
-      position: relative;
+      padding: 132px 0 80px;
     }
 
     .hero__headline {
-      margin-bottom: 24px;
-      max-width: 940px;
+      max-width: 15em;
     }
 
     .hero__headline em {
       font-style: normal;
       color: var(--color-accent-red-light);
-      display: inline;
-      word-break: break-word;
+    }
+
+    .hero__row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 256px;
+      gap: 64px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .hero__portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 40% 0;
+      border-radius: var(--radius-xs);
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    .hero__portrait figcaption {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+
+    .hero__portrait strong {
+      display: block;
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    .hero .container > * {
+      animation: heroIn 0.7s var(--ease-fluid) both;
+    }
+
+    .hero .container > .hero__row {
+      animation-delay: 0.12s;
     }
 
     .hero__subheadline {
-      margin-bottom: 36px;
-      max-width: 600px;
+      margin-bottom: 32px;
+      max-width: 34em;
     }
 
     .hero__subheadline strong {
@@ -575,28 +583,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 32px;
       align-items: center;
-    }
-
-    .hero__badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 20px;
-    }
-
-    .hero__badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--color-text-secondary);
-    }
-
-    .hero__badge .icon {
-      color: var(--color-text-muted);
-      font-size: 13px;
     }
 
     /* ==========================================================================
@@ -613,23 +600,24 @@
     }
 
     .dor-card {
-      padding: 22px 0;
+      padding: 28px 0;
       border-top: 1px solid var(--color-surface-border);
     }
 
     .dor-card__text {
-      font-size: 18px;
-      line-height: 1.5;
+      font-size: clamp(1.25rem, 2.1vw, 1.625rem);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
       color: var(--color-text-primary);
+      text-wrap: pretty;
     }
 
     .dor-transition {
-      font-size: 18px;
-      font-weight: 400;
+      font-size: 16px;
       color: var(--color-text-muted);
       padding-top: 28px;
       border-top: 1px solid var(--color-surface-border);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* ==========================================================================
@@ -665,20 +653,6 @@
       border-top-color: var(--color-text-primary);
     }
 
-    .service-top-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .service-card__icon-badge {
-      color: var(--color-text-primary);
-      font-size: 22px;
-      line-height: 1;
-    }
-
     .service-card__badge-special {
       color: var(--color-text-muted);
       font-size: 11px;
@@ -688,10 +662,17 @@
       white-space: nowrap;
     }
 
-    .service-card__title {
-      font-weight: 700;
-      font-size: 22px;
+    .service-card__head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
       margin-bottom: 8px;
+    }
+
+    .service-card__title {
+      font-weight: 600;
+      font-size: 22px;
       color: var(--color-text-primary);
       line-height: 1.3;
     }
@@ -754,97 +735,123 @@
       padding: var(--section-padding);
     }
 
-    .stats-grid {
+    .diferencial-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-bottom: 64px;
-    }
-
-    .stat-num {
-      font-weight: 700;
-      font-size: clamp(28px, 3.5vw, 36px);
-      color: var(--color-text-primary);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      line-height: 1.3;
-    }
-
-    .diferenciais-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px 48px;
-      margin-bottom: 56px;
-    }
-
-    .diferencial-card {
-      padding-top: 24px;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 12px 72px;
+      align-items: baseline;
+      padding: 28px 0;
       border-top: 1px solid var(--color-surface-border);
     }
 
-    .diferencial-card__icon {
-      display: block;
-      font-size: 22px;
-      color: var(--color-text-primary);
-      margin-bottom: 18px;
-    }
-
-    .diferencial-card__title {
-      font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 12px;
+    .diferencial-row dt {
+      font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
       color: var(--color-text-primary);
     }
 
-    .diferencial-card__text {
-      font-size: 14px;
-      color: var(--color-text-muted);
+    .diferencial-row dd {
+      font-size: 16px;
       line-height: 1.65;
+      color: var(--color-text-secondary);
+      max-width: 60ch;
     }
 
     /* ==========================================================================
        11. SECTION: PORTFÓLIO (Grid Interativo & Cards em HD)
        ========================================================================== */
+    .section-case {
+      padding: 0 0 var(--section-padding-y);
+    }
+
+    .hero + .section-case,
+    .section-case + .section-portfolio {
+      border-top: 0;
+    }
+
+    .section-case + .section-portfolio {
+      padding-top: 0;
+    }
+
+    .case__media {
+      display: block;
+      overflow: hidden;
+      border-radius: var(--radius-xs);
+      background: var(--color-bg-alt);
+    }
+
+    .case__media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1280 / 428;
+      object-fit: cover;
+      object-position: left top;
+      transition: transform 0.9s var(--ease-fluid);
+    }
+
+    .case__media:hover img {
+      transform: scale(1.015);
+    }
+
+    /* The page's one scroll moment: the case image wipes open */
+    .case__media.is-armed {
+      clip-path: inset(0 0 100% 0);
+    }
+
+    .case__media.is-armed img {
+      transform: scale(1.08);
+    }
+
+    .case__media.is-in {
+      clip-path: inset(0);
+      transition: clip-path 1.1s var(--ease-fluid);
+    }
+
+    .case__media.is-in img {
+      transform: none;
+      transition: transform 1.4s var(--ease-fluid);
+    }
+
+    .case__body {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 24px 72px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .case__meta {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    .case__text p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      max-width: 60ch;
+    }
+
     .section-portfolio {
       padding: var(--section-padding);
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 48px 32px;
       margin-bottom: 56px;
     }
 
     .portfolio-card {
-      grid-column: span 3;
       display: flex;
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-    }
-
-    .portfolio-card:nth-child(n+5) {
-      grid-column: span 2;
-    }
-
-    .hero + .section-portfolio {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .section-portfolio .section-header {
-      margin-bottom: 36px;
-    }
-
-    .portfolio-card:nth-child(n+5) .portfolio-card__view-link {
-      display: none;
     }
 
     .portfolio-card__screen {
@@ -871,11 +878,7 @@
     }
 
     .portfolio-card__info {
-      padding-top: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      padding-top: 16px;
     }
 
     .portfolio-card__info-left {
@@ -884,7 +887,7 @@
     }
 
     .portfolio-card__info-title {
-      font-weight: 700;
+      font-weight: 600;
       font-size: 18px;
       margin-bottom: 6px;
       color: var(--color-text-primary);
@@ -910,22 +913,6 @@
       color: var(--color-text-muted);
     }
 
-    .portfolio-card__view-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--color-text-primary);
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: color 0.2s;
-    }
-
-    .portfolio-card:hover .portfolio-card__view-link {
-      color: var(--color-accent-red-light);
-    }
-
     /* ==========================================================================
        12. SECTION: PROCESSO (4 Etapas com Trilha Conectada)
        ========================================================================== */
@@ -937,49 +924,25 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
-      position: relative;
       margin-bottom: 56px;
     }
 
-    .processo-track {
-      position: absolute;
-      top: 20px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-surface-border);
-      z-index: 0;
-      overflow: hidden;
-    }
-
     .processo-step {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: relative;
-      z-index: 1;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-surface-border);
     }
 
     .processo-step__number {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--color-bg);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 2.75rem;
+      line-height: 1;
       color: var(--color-text-primary);
-      font-weight: 700;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      flex-shrink: 0;
-      box-shadow: 0 0 0 10px var(--color-bg);
+      margin-bottom: 28px;
     }
 
     .processo-step__title {
-      font-weight: 700;
+      font-weight: 600;
       font-size: 18px;
+      line-height: 1.3;
       margin-bottom: 10px;
       color: var(--color-text-primary);
     }
@@ -993,100 +956,6 @@
     /* ==========================================================================
        13. SECTION: SOBRE (Humanizado & Confiança)
        ========================================================================== */
-    .section-sobre {
-      padding: var(--section-padding);
-    }
-
-    .sobre-inner {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .sobre-visual {
-      display: flex;
-      justify-content: center;
-    }
-
-    .sobre-avatar-wrapper {
-      position: relative;
-    }
-
-    .sobre-avatar {
-      width: 290px;
-      height: 340px;
-      border-radius: var(--radius-md);
-      background: var(--color-bg-alt);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .sobre-avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .sobre-avatar-text {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(0deg, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.6) 60%, transparent 100%);
-      padding: 24px 18px 18px;
-      text-align: center;
-    }
-
-    .sobre-avatar-name {
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--color-text-primary);
-    }
-
-    .sobre-avatar-role {
-      font-size: 13px;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-      margin-top: 2px;
-    }
-
-    .sobre-content .headline-section {
-      margin-bottom: 20px;
-    }
-
-    .sobre-text {
-      font-size: 16px;
-      color: var(--color-text-secondary);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .sobre-location {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 16px 0;
-      border-top: 1px solid var(--color-surface-border);
-      border-bottom: 1px solid var(--color-surface-border);
-      margin: 24px 0 32px;
-    }
-
-    .sobre-location-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--color-text-muted);
-    }
-
-    .sobre-location-item .icon {
-      color: var(--color-text-muted);
-    }
-
     /* ==========================================================================
        14. SECTION: FAQ (Accordion Fluido & Acessível)
        ========================================================================== */
@@ -1112,7 +981,8 @@
       padding: 22px 0;
       text-align: left;
       color: var(--color-text-primary);
-      font-size: 16px;
+      font-family: inherit;
+      font-size: 18px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -1169,44 +1039,22 @@
        15. SECTION: CTA FINAL & FOOTER
        ========================================================================== */
     .section-cta-final {
-      padding: var(--section-padding);
+      padding: 140px 0;
       text-align: center;
     }
 
     .section-cta-final .headline-section {
-      margin-bottom: 16px;
+      font-size: clamp(2rem, 5.2vw, 4rem);
+      max-width: 16em;
+      margin: 0 auto 24px;
     }
 
     .cta-final-sub {
       font-size: 18px;
       color: var(--color-text-muted);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 40px;
+      max-width: 34em;
       line-height: 1.65;
-    }
-
-    .cta-final-seals {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px 32px;
-      margin-bottom: 40px;
-    }
-
-    .cta-seal {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-    }
-
-    .cta-seal .icon {
-      color: var(--color-text-muted);
-      font-size: 14px;
     }
 
     .cta-safety {
@@ -1239,17 +1087,6 @@
       grid-template-columns: 1.5fr 1fr 1fr;
       gap: 48px;
       margin-bottom: 44px;
-    }
-
-    .footer__brand-name {
-      font-weight: 800;
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--color-text-primary);
-    }
-
-    .footer__brand-name span {
-      color: var(--color-accent-red);
     }
 
     .footer__brand-desc {
@@ -1389,31 +1226,27 @@
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero {
-        padding: 120px 0 56px;
+        padding: 128px 0 72px;
       }
 
-      .stats-grid {
+      .hero__row {
+        grid-template-columns: minmax(0, 1fr) 220px;
+        gap: 40px;
+      }
+
+      .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px 24px;
       }
 
-      .diferenciais-grid {
+      .processo-steps {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .sobre-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .sobre-visual {
-        justify-content: flex-start;
+        gap: 40px 32px;
       }
     }
 
     @media (max-width: 768px) {
       :root {
-        --section-padding: var(--section-padding-mobile);
+        --section-padding-y: 72px;
       }
 
       .nav__links, .nav__cta-desktop {
@@ -1425,20 +1258,44 @@
       }
 
       .hero {
-        padding: 100px 0 48px;
+        padding: 108px 0 56px;
       }
 
       .headline-hero {
-        font-size: clamp(28px, 8.5vw, 38px);
-        letter-spacing: -0.6px;
+        font-size: clamp(2.5rem, 11.5vw, 3.25rem);
       }
 
       .headline-section {
-        font-size: clamp(24px, 7vw, 30px);
+        font-size: clamp(1.875rem, 8vw, 2.375rem);
       }
 
       .section-header {
         margin-bottom: 40px;
+      }
+
+      .hero__row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 28px;
+      }
+
+      /* Compact portrait: small photo beside the caption */
+      .hero__portrait {
+        display: grid;
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 16px;
+        align-items: center;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-surface-border);
+      }
+
+      .hero__portrait img {
+        aspect-ratio: 1;
+        object-position: 40% 12%;
+      }
+
+      .hero__portrait figcaption {
+        margin-top: 0;
       }
 
       .hero__cta-group .btn,
@@ -1448,7 +1305,16 @@
         max-width: 100%;
       }
 
-      /* Portfolio becomes a swipeable row on phones */
+      .case__media img {
+        aspect-ratio: 3 / 2;
+      }
+
+      .case__body {
+        grid-template-columns: 1fr;
+        margin-top: 28px;
+      }
+
+      /* Demos become a swipeable row on phones */
       .portfolio-grid {
         display: flex;
         gap: 16px;
@@ -1464,44 +1330,41 @@
         display: none;
       }
 
-      .portfolio-card,
-      .portfolio-card:nth-child(n+5) {
+      .portfolio-card {
         flex: 0 0 84%;
         scroll-snap-align: start;
       }
 
-      .portfolio-card.animate-on-scroll {
-        opacity: 1;
-        transform: none;
-      }
-
-      .portfolio-card__view-link {
-        display: none;
-      }
-
-      .stats-grid {
-        margin-bottom: 48px;
+      .diferencial-row {
+        grid-template-columns: 1fr;
+        padding: 24px 0;
       }
 
       .processo-steps {
         grid-template-columns: 1fr;
         gap: 0;
-      }
-
-      .processo-track {
-        display: none;
+        margin-bottom: 40px;
       }
 
       .processo-step {
-        flex-direction: row;
-        gap: 18px;
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 0 12px;
         padding: 24px 0;
-        border-top: 1px solid var(--color-surface-border);
       }
 
       .processo-step__number {
+        grid-row: 1 / span 2;
         margin-bottom: 0;
-        box-shadow: none;
+        font-size: 2.25rem;
+      }
+
+      .processo-step > :not(.processo-step__number) {
+        grid-column: 2;
+      }
+
+      .section-cta-final {
+        padding: 88px 0;
       }
 
       .footer__inner {
@@ -1529,11 +1392,6 @@
         padding: 0 20px;
       }
 
-      .diferenciais-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
       .portfolio-grid {
         scroll-padding-left: 20px;
         margin: 0 -20px 40px;
@@ -1549,12 +1407,6 @@
         transition-duration: 0.05s !important;
         scroll-behavior: auto !important;
       }
-
-      .animate-on-scroll {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
     }
   </style>
 </head>
@@ -1569,17 +1421,7 @@
     </symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
-    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
-    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9"/><path d="M3 9h18v11H3z"/><path d="M9 20v-6h6v6"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
-    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
   </svg>
 
   <header>
@@ -1598,7 +1440,6 @@
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#processo">Como Funciona</a></li>
-            <li><a href="#sobre">Sobre</a></li>
             <li><a href="#faq">Dúvidas</a></li>
           </ul>
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
@@ -1621,7 +1462,6 @@
     <a href="#servicos" class="mobile-nav-link">Serviços</a>
     <a href="#diferenciais" class="mobile-nav-link">Diferenciais</a>
     <a href="#processo" class="mobile-nav-link">Como Funciona</a>
-    <a href="#sobre" class="mobile-nav-link">Sobre</a>
     <a href="#faq" class="mobile-nav-link">Dúvidas</a>
     <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp mt-16 mobile-nav-link" style="margin-top: 12px; width: 100%;">
       <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
@@ -1632,66 +1472,60 @@
   <main>
     <section class="hero" id="hero" aria-label="Apresentação do Desenvolvedor">
       <div class="container">
-        <div class="hero__inner">
-          
+        <h1 class="headline-hero hero__headline">
+          Seu site sob medida, <em>ultrarrápido no celular</em>, pronto para vender pelo WhatsApp.
+        </h1>
+
+        <div class="hero__row">
           <div class="hero__content">
-            
-            <h1 class="headline-hero hero__headline">
-              Seu site sob medida, <em>ultrarrápido no celular</em>, pronto para vender pelo WhatsApp.
-            </h1>
-            
             <p class="subheadline hero__subheadline">
               Desenvolvo sites de alta conversão pensados para o seu negócio vender mais: design exclusivo, carregamento instantâneo no 4G e <strong>6 meses de suporte direto com quem programou</strong>. Pagamento único, sem mensalidade e sem surpresas.
             </p>
-            
+
             <div class="hero__cta-group">
               <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20gratuito%20para%20o%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-cta" aria-label="Quero meu diagnóstico gratuito no WhatsApp">
                 <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                 Quero meu diagnóstico gratuito no WhatsApp
               </a>
             </div>
-            
-            <div class="hero__badges">
-              <span class="hero__badge"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Pagamento único para sites</span>
-              <span class="hero__badge"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Suporte de 6 meses incluso</span>
-            </div>
+          </div>
+
+          <figure class="hero__portrait">
+            <img src="images/foto-yago.jpeg" alt="Yago Duarte Ribeiro, desenvolvedor web" width="640" height="640" />
+            <figcaption><strong>Yago Duarte</strong> Desenvolvedor web em Várzea Paulista, SP. Você fala direto comigo, do orçamento ao suporte.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-case" id="portfolio" aria-label="Projeto em destaque">
+      <div class="container">
+        <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="case__media" id="portfolio-mosca-branca" aria-label="Abrir o site Mosca Branca Car">
+          <img src="images/mosca-branca-capa.jpeg" alt="Página inicial do site Mosca Branca Car" width="1280" height="428" />
+        </a>
+
+        <div class="case__body">
+          <div>
+            <h2 class="headline-section">Mosca Branca Car</h2>
+            <p class="case__meta">Cliente real, no ar · Sistema de Estoque · Várzea Paulista, SP</p>
+          </div>
+          <div class="case__text">
+            <p>Plataforma de anúncios de veículos de único dono. Quem compra filtra por marca, modelo, quilometragem e preço e fala direto com o vendedor pelo WhatsApp. Quem vende se cadastra e publica o próprio anúncio.</p>
+            <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="text-link">Ver o site no ar <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-portfolio" id="portfolio" aria-label="Portfólio de projetos">
+    <section class="section-portfolio" aria-label="Demonstrações por segmento">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2 class="headline-section">Projetos que já estão no ar</h2>
-          <p class="subheadline">Sites reais e demonstrações desenvolvidas sob medida com identidade marcante, velocidade e foco comercial.</p>
+        <div class="section-header">
+          <h2 class="headline-section">Demonstrações por segmento</h2>
+          <p class="subheadline">Seis sites de demonstração, cada um desenhado do zero para um tipo de negócio.</p>
         </div>
 
         <div class="portfolio-grid">
-          <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/mosca-branca.jpeg"
-                alt="Screenshot do site Mosca Branca Car"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag si">Sistema de Estoque</span>
-                  <span class="portfolio-card__info-nicho">Concessionária · Várzea Paulista – SP</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-psicologia-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-demo-psicologia" aria-label="Ver projeto de demonstração Aline Duarte Psicóloga">
+          <a href="https://demo-psicologia-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-psicologia" aria-label="Ver projeto de demonstração Aline Duarte Psicóloga">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-psicologia.jpeg"
@@ -1708,13 +1542,10 @@
                   <span class="portfolio-card__info-nicho">Psicologia & Saúde</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
 
-          <a href="https://demo-estetica-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-3" id="portfolio-demo-estetica" aria-label="Ver projeto de demonstração Essenza Estética">
+          <a href="https://demo-estetica-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-estetica" aria-label="Ver projeto de demonstração Essenza Estética">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-estetica.jpeg"
@@ -1731,13 +1562,10 @@
                   <span class="portfolio-card__info-nicho">Estética & Saúde</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
 
-          <a href="https://demo-moveis.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-4" id="portfolio-demo-moveis" aria-label="Ver projeto de demonstração Ateliê Linha Casa">
+          <a href="https://demo-moveis.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-moveis" aria-label="Ver projeto de demonstração Ateliê Linha Casa">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-moveis.jpeg"
@@ -1754,13 +1582,10 @@
                   <span class="portfolio-card__info-nicho">Móveis & Design</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
 
-          <a href="https://demo-advocacia-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-5" id="portfolio-demo-advocacia" aria-label="Ver projeto de demonstração Advocacia">
+          <a href="https://demo-advocacia-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-advocacia" aria-label="Ver projeto de demonstração Advocacia">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-advocacia.jpeg"
@@ -1777,13 +1602,10 @@
                   <span class="portfolio-card__info-nicho">Advocacia & Direito</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
 
-          <a href="https://demo-arquitetura-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-6" id="portfolio-demo-arquitetura" aria-label="Ver projeto Studio Japi Arquitetura">
+          <a href="https://demo-arquitetura-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-arquitetura" aria-label="Ver projeto Studio Japi Arquitetura">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-studio-japi.jpeg"
@@ -1800,13 +1622,10 @@
                   <span class="portfolio-card__info-nicho">Arquitetura & Alto Padrão · Jundiaí – SP</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
 
-          <a href="https://demo-massoterapia.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-7" id="portfolio-demo-massoterapia" aria-label="Ver projeto Serena Terapias e Spa Urbano">
+          <a href="https://demo-massoterapia.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card" id="portfolio-demo-massoterapia" aria-label="Ver projeto Serena Terapias e Spa Urbano">
             <div class="portfolio-card__screen">
               <img
                 src="images/demo-massoterapia.jpeg"
@@ -1823,15 +1642,12 @@
                   <span class="portfolio-card__info-nicho">Massoterapia & Spa · Jundiaí – SP</span>
                 </div>
               </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-              </span>
             </div>
           </a>
         </div>
 
-        <div class="section-cta animate-on-scroll">
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20projeto%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Quero um projeto para o meu segmento">
+        <div class="section-cta">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20projeto%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="portfolio-cta" aria-label="Quero um projeto para o meu segmento">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Quero um projeto para o meu segmento
           </a>
@@ -1841,29 +1657,29 @@
 
     <section class="section-dor" id="dor" aria-label="Identificação de problemas">
       <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
           <h2 class="headline-section">Você se identifica com alguma dessas situações?</h2>
         </div>
         
         <div class="dor-grid">
-          <div class="dor-card animate-on-scroll stagger-1">
+          <div class="dor-card">
             <p class="dor-card__text">Você ainda não tem um site profissional e sente que seu negócio perde clientes todos os dias por não passar a confiança que deveria.</p>
           </div>
           
-          <div class="dor-card animate-on-scroll stagger-2">
+          <div class="dor-card">
             <p class="dor-card__text">Seu site atual é lento no celular, parece antigo ou você tem vergonha de mandar o link para clientes exigentes.</p>
           </div>
           
-          <div class="dor-card animate-on-scroll stagger-3">
+          <div class="dor-card">
             <p class="dor-card__text">Você depende apenas do Instagram e sabe o risco de ficar sem um canal próprio, seguro e profissional para fechar negócios.</p>
           </div>
           
-          <div class="dor-card animate-on-scroll stagger-4">
+          <div class="dor-card">
             <p class="dor-card__text">Já contratou agências ou profissionais no passado e ficou na mão com atrasos, sites genéricos ou falta de suporte depois da entrega.</p>
           </div>
         </div>
 
-        <p class="dor-transition animate-on-scroll">
+        <p class="dor-transition">
           Se você respondeu sim para qualquer uma dessas situações, você está no lugar certo para virar essa página.
         </p>
       </div>
@@ -1871,22 +1687,18 @@
 
     <section class="section-solucao" id="servicos" aria-label="Soluções e serviços oferecidos">
       <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
           <h2 class="headline-section">O que eu desenvolvo para o seu negócio</h2>
           <p class="subheadline">Projetos planejados e programados do zero para gerar contatos diários, valorizar seus serviços e facilitar suas vendas.</p>
         </div>
 
         <div class="services-grid">
-          <div class="service-card featured animate-on-scroll stagger-1" id="service-conversao">
+          <div class="service-card featured" id="service-conversao">
             <div>
-              <div class="service-top-row">
-                <div class="service-card__icon-badge">
-                  <svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg>
-                </div>
+              <div class="service-card__head">
+                <h3 class="service-card__title">Sites de Alta Conversão</h3>
                 <span class="service-card__badge-special">Mais Pedido</span>
               </div>
-
-              <h3 class="service-card__title">Sites de Alta Conversão</h3>
               <span class="service-card__ideal">Ideal para: profissionais autônomos, clínicas, consultorias e empresas de serviços que buscam mais clientes</span>
 
               <div class="service-features-list">
@@ -1917,16 +1729,11 @@
             </div>
           </div>
 
-          <div class="service-card animate-on-scroll stagger-2" id="service-estoque">
+          <div class="service-card" id="service-estoque">
             <div>
-              <div class="service-top-row">
-                <div class="service-card__icon-badge">
-                  <svg class="icon" aria-hidden="true"><use href="#i-car"></use></svg>
-                </div>
-                <span class="service-card__badge-special">Concessionárias & Lojas</span>
+              <div class="service-card__head">
+                <h3 class="service-card__title">Sistemas de Estoque Automotivo</h3>
               </div>
-
-              <h3 class="service-card__title">Sistemas de Estoque Automotivo</h3>
               <span class="service-card__ideal">Ideal para: concessionárias, lojas de veículos e revendas que precisam organizar e exibir seu estoque</span>
 
               <div class="service-features-list">
@@ -1957,16 +1764,11 @@
             </div>
           </div>
 
-          <div class="service-card animate-on-scroll stagger-3" id="service-lojas">
+          <div class="service-card" id="service-lojas">
             <div>
-              <div class="service-top-row">
-                <div class="service-card__icon-badge">
-                  <svg class="icon" aria-hidden="true"><use href="#i-store"></use></svg>
-                </div>
-                <span class="service-card__badge-special">E-commerce Ágil</span>
+              <div class="service-card__head">
+                <h3 class="service-card__title">Mini Lojas & Catálogos sob Medida</h3>
               </div>
-
-              <h3 class="service-card__title">Mini Lojas & Catálogos sob Medida</h3>
               <span class="service-card__ideal">Ideal para: marcas locais, atacado/varejo e negócios que querem vender sem taxas abusivas</span>
 
               <div class="service-features-list">
@@ -1998,7 +1800,7 @@
           </div>
         </div>
 
-        <p class="service-reinforcement animate-on-scroll">
+        <p class="service-reinforcement">
           Cada projeto é programado para atender à realidade prática da sua empresa. Sem modelos prontos genéricos e sem soluções engessadas.
         </p>
 
@@ -2007,113 +1809,70 @@
 
     <section class="section-diferenciais" id="diferenciais" aria-label="Diferenciais do serviço">
       <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header" id="sobre">
           <h2 class="headline-section">Por que clientes escolhem o Yago e não agências tradicionais</h2>
+          <p class="subheadline">Entrei na área ao perceber a frustração de tantos empreendedores sérios: negócios incríveis com sites lentos, desatualizados ou sem nenhuma presença online. Agências tradicionais cobram orçamentos desproporcionais, atrasam prazos e colocam intermediários no atendimento.</p>
         </div>
 
-        <div class="stats-grid" id="statsBar">
-          <div class="stat-item animate-on-scroll stagger-1">
-            <div class="stat-num">+15</div>
-            <div class="stat-label">Projetos Entregues</div>
+        <dl class="diferenciais-list">
+          <div class="diferencial-row">
+            <dt>Orçamento Claro & Sem Surpresas</dt>
+            <dd>Preço justo e proposta 100% transparente. Você sabe com clareza o que está contratando, com escopo detalhado e sem taxas ocultas.</dd>
           </div>
-          <div class="stat-item animate-on-scroll stagger-2">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Entrega no Prazo Combinado</div>
+          <div class="diferencial-row">
+            <dt>Suporte Real por 6 Meses</dt>
+            <dd>Para sites de conversão, você conta com 6 meses de suporte gratuito após a entrega. Para sistemas web, manutenção e hospedagem em nuvem garantidas em planos acessíveis.</dd>
           </div>
-          <div class="stat-item animate-on-scroll stagger-3">
-            <div class="stat-num">6 Meses</div>
-            <div class="stat-label">Suporte Direto no WhatsApp</div>
+          <div class="diferencial-row">
+            <dt>Entrega no prazo combinado</dt>
+            <dd>Sem desculpas e sem enrolação. O cronograma definido no início é seguido à risca para que seu projeto esteja no ar exatamente quando planejado.</dd>
           </div>
-          <div class="stat-item animate-on-scroll stagger-4">
-            <div class="stat-num">+90</div>
-            <div class="stat-label">Google PageSpeed Score</div>
+          <div class="diferencial-row">
+            <dt>Velocidade Máxima no 4G</dt>
+            <dd>Seu site abre num piscar de olhos no celular, garantindo que o visitante permaneça atento e não desista antes de ver sua oferta.</dd>
           </div>
-        </div>
-
-        <div class="diferenciais-grid">
-          <div class="diferencial-card animate-on-scroll stagger-1" id="diferencial-pagamento">
-            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
-            <h3 class="diferencial-card__title">Orçamento Claro & Sem Surpresas</h3>
-            <p class="diferencial-card__text">Preço justo e proposta 100% transparente. Você sabe com clareza o que está contratando, com escopo detalhado e sem taxas ocultas.</p>
+          <div class="diferencial-row">
+            <dt>Atendimento direto comigo</dt>
+            <dd>Você fala diretamente com quem programa o seu site: sem intermediários, atendentes robôs ou burocracia.</dd>
           </div>
-
-          <div class="diferencial-card animate-on-scroll stagger-2" id="diferencial-suporte">
-            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-wrench"></use></svg>
-            <h3 class="diferencial-card__title">Suporte Real por 6 Meses</h3>
-            <p class="diferencial-card__text">Para sites de conversão, você conta com 6 meses de suporte gratuito após a entrega. Para sistemas web, manutenção e hospedagem em nuvem garantidas em planos acessíveis.</p>
-          </div>
-
-          <div class="diferencial-card animate-on-scroll stagger-3" id="diferencial-prazo">
-            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-zap"></use></svg>
-            <h3 class="diferencial-card__title">Entrega no prazo combinado</h3>
-            <p class="diferencial-card__text">Sem desculpas e sem enrolação. O cronograma definido no início é seguido à risca para que seu projeto esteja no ar exatamente quando planejado.</p>
-          </div>
-
-          <div class="diferencial-card animate-on-scroll stagger-4" id="diferencial-responsivo">
-            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-phone"></use></svg>
-            <h3 class="diferencial-card__title">Velocidade Máxima no 4G</h3>
-            <p class="diferencial-card__text">Seu site abre num piscar de olhos no celular, garantindo que o visitante permaneça atento e não desista antes de ver sua oferta.</p>
-          </div>
-
-          <div class="diferencial-card animate-on-scroll stagger-5" id="diferencial-atendimento">
-            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-user"></use></svg>
-            <h3 class="diferencial-card__title">Atendimento direto comigo</h3>
-            <p class="diferencial-card__text">Você fala diretamente com quem programa o seu site: sem intermediários, atendentes robôs ou burocracia.</p>
-          </div>
-        </div>
-
-        <div class="section-cta animate-on-scroll">
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="diferenciais-cta" aria-label="Falar com Yago no WhatsApp">
-            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-            Falar com Yago no WhatsApp
-          </a>
-        </div>
+        </dl>
       </div>
     </section>
 
     <section class="section-processo" id="processo" aria-label="Como funciona o processo">
       <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
           <h2 class="headline-section">É mais simples do que parece</h2>
           <p class="subheadline">Em quatro etapas práticas e transparentes, você sai do zero para o seu site no ar, sem precisar entender nada de tecnologia.</p>
         </div>
 
         <div class="processo-steps" role="list">
-          <div class="processo-track" aria-hidden="true"></div>
-          <div class="processo-step animate-on-scroll stagger-1" role="listitem">
+          <div class="processo-step" role="listitem">
             <div class="processo-step__number" aria-label="Passo 1">1</div>
-            <div class="processo-step__content">
               <h3 class="processo-step__title">Você me conta sobre o seu negócio</h3>
               <p class="processo-step__text">Manda uma mensagem no WhatsApp. Conversamos sobre seu serviço, público-alvo e o que é essencial destacar. Sem formulários complicados.</p>
-            </div>
           </div>
 
-          <div class="processo-step animate-on-scroll stagger-2" role="listitem">
+          <div class="processo-step" role="listitem">
             <div class="processo-step__number" aria-label="Passo 2">2</div>
-            <div class="processo-step__content">
               <h3 class="processo-step__title">Desenvolvimento personalizado</h3>
               <p class="processo-step__text">Crio o layout completo com cores da sua marca, estrutura persuasiva e foco em conversão. Você acompanha cada etapa da criação.</p>
-            </div>
           </div>
 
-          <div class="processo-step animate-on-scroll stagger-3" role="listitem">
+          <div class="processo-step" role="listitem">
             <div class="processo-step__number" aria-label="Passo 3">3</div>
-            <div class="processo-step__content">
               <h3 class="processo-step__title">Aprovação e publicação</h3>
               <p class="processo-step__text">Você revisa cada detalhe e só publicamos quando você estiver 100% satisfeito. Cuido de domínio, hospedagem e configurações técnicas.</p>
-            </div>
           </div>
 
-          <div class="processo-step animate-on-scroll stagger-4" role="listitem">
+          <div class="processo-step" role="listitem">
             <div class="processo-step__number" aria-label="Passo 4">4</div>
-            <div class="processo-step__content">
               <h3 class="processo-step__title">Suporte e acompanhamento</h3>
               <p class="processo-step__text">Para sites de conversão, você conta com 6 meses de suporte gratuito para ajustes de textos, fotos e dúvidas técnicas comigo.</p>
-            </div>
           </div>
         </div>
 
-        <div class="section-cta animate-on-scroll">
+        <div class="section-cta">
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20come%C3%A7ar%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="processo-cta" aria-label="Começar meu projeto agora no WhatsApp">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Começar meu projeto agora no WhatsApp
@@ -2122,44 +1881,9 @@
       </div>
     </section>
 
-    <section class="section-sobre" id="sobre" aria-label="Sobre o desenvolvedor">
-      <div class="container">
-        <div class="sobre-inner">
-          <div class="sobre-visual animate-on-scroll">
-            <div class="sobre-avatar-wrapper">
-              <div class="sobre-avatar" role="img" aria-label="Foto de Yago Duarte Ribeiro, desenvolvedor web">
-                <img src="images/foto-yago.jpeg" alt="Yago Duarte Ribeiro, desenvolvedor web" class="sobre-avatar-img" />
-                <div class="sobre-avatar-text">
-                  <p class="sobre-avatar-name">Yago Duarte</p>
-                  <p class="sobre-avatar-role">Desenvolvedor Web · Várzea Paulista</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="sobre-content animate-on-scroll stagger-2">
-            <h2 class="headline-section">Prazer, sou o Yago: desenvolvedor web em Várzea Paulista</h2>
-            <p class="sobre-text">Desenvolvo sites de alta conversão e sistemas sob medida para profissionais e empresas que desejam conquistar clientes qualificados e se posicionar com autoridade.</p>
-            <p class="sobre-text">Entrei na área ao perceber a frustração de tantos empreendedores sérios: negócios incríveis com sites lentos, desatualizados ou sem nenhuma presença online. Agências tradicionais cobram orçamentos desproporcionais, atrasam prazos e colocam intermediários no atendimento.</p>
-            <p class="sobre-text">Comigo, o relacionamento é próximo e transparente. Você fala com um desenvolvedor real cuidando do seu projeto do início ao fim, com a certeza de um trabalho entregue com excelência e suporte de verdade.</p>
-            
-            <div class="sobre-location">
-              <span class="sobre-location-item"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> Várzea Paulista, SP</span>
-              <span class="sobre-location-item"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg> Atendimento online para todo o Brasil</span>
-            </div>
-            
-            <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20vamos%20conversar%20sobre%20um%20projeto%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="sobre-cta" aria-label="Falar com Yago no WhatsApp">
-              <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-              Vamos conversar no WhatsApp?
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section-faq" id="faq" aria-label="Perguntas frequentes">
       <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
           <h2 class="headline-section">Dúvidas frequentes</h2>
           <p class="subheadline">Respostas diretas e transparentes para você começar seu projeto com segurança total.</p>
         </div>
@@ -2238,7 +1962,7 @@
           </div>
         </div>
 
-        <div class="section-cta animate-on-scroll">
+        <div class="section-cta">
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20site!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="faq-cta" aria-label="Tirar dúvida no WhatsApp">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Ainda tem alguma dúvida? Me chame no WhatsApp e respondo agora
@@ -2249,16 +1973,9 @@
 
     <section class="section-cta-final" id="contato" aria-label="Contato e chamada para ação">
       <div class="container">
-        <div class="animate-on-scroll">
+        <div>
           <h2 class="headline-section">O seu negócio merece uma presença digital à altura da qualidade do seu serviço.</h2>
           <p class="cta-final-sub">Sites de alta conversão e sistemas sob medida desenvolvidos do zero, com design marcante, velocidade instantânea no 4G e suporte de verdade direto com o desenvolvedor.</p>
-          
-          <div class="cta-final-seals">
-            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg> Pagamento único para sites</span>
-            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg> 6 meses de suporte gratuito</span>
-            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg> Aprovação garantida em etapas</span>
-            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> 100% adaptado para celular</span>
-          </div>
           
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20meu%20projeto%20agora%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-xl" id="cta-final-btn" aria-label="Solicitar meu diagnóstico gratuito no WhatsApp">
             <svg class="whatsapp-icon" style="width:26px;height:26px;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
@@ -2399,20 +2116,19 @@
       });
     });
 
-    // 4. Reveal on scroll
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      animatedElements.forEach(el => observer.observe(el));
-    } else {
-      animatedElements.forEach(el => el.classList.add('visible'));
+    // 4. The case image wipes open the first time it scrolls into view
+    const caseMedia = document.querySelector('.case__media');
+    const calmMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (caseMedia && 'IntersectionObserver' in window && !calmMotion
+        && caseMedia.getBoundingClientRect().top > window.innerHeight * 0.85) {
+      caseMedia.classList.add('is-armed');
+      const caseObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          caseMedia.classList.add('is-in');
+          caseObserver.disconnect();
+        }
+      }, { threshold: 0.2 });
+      caseObserver.observe(caseMedia);
     }
   </script>
 </body>
