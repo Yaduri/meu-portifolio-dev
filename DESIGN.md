@@ -160,9 +160,9 @@ O visual é ancorado em uma atmosfera escura de alto padrão técnico, projetado
 - **Cinza Fumaça (`#9CA3AF`)**: Apoio estrutural calmo, subtítulos, divisores e metadados.
 
 **Key Characteristics:**
-- Fundo grafite profundo com grid pontilhado sutil e difusão de luz ambiente âmbar/laranja
-- Superfícies em vidro escuro translúcido (*smoked glass*) com bordas táteis
-- Botões primários com alto contraste WCAG AAA (texto escuro sobre gradiente laranja)
+- Fundo grafite único e liso, sem brilhos, grid ou faixas alternadas; seções separadas por linhas finas
+- Conteúdo sem cards: grupos separados por espaço e linhas de 1px, títulos de seção alinhados à esquerda
+- Botões primários com alto contraste WCAG AAA (texto escuro sobre laranja sólido)
 - Símbolo 3D oficial da marca em destaque com iluminação volumétrica
 
 ## Colors
@@ -204,13 +204,14 @@ A paleta é concisa, disciplinada e orientada à conversão direta.
 
 - **Container Máximo:** 1200px centralizado com padding lateral de 24px (mobile) a 32px (desktop).
 - **Ritmo Vertical:** Padding de seção de 110px no desktop e 68px no mobile.
-- **Grid de Cards:** Grid adaptativo de 3 colunas (serviços) e 2 colunas (portfólio), colapsando em coluna única no mobile.
+- **Ordem das seções:** Hero (só texto) → Portfólio → Dores → Serviços → Diferenciais (com os números) → Processo → Sobre → FAQ → CTA final.
+- **Grids:** 3 colunas (serviços e diferenciais). Portfólio em grade de 6 colunas (4 projetos grandes e 3 menores) no desktop e fileira deslizável com scroll-snap no mobile.
 
 ## Elevation & Depth
 
-Profundidade construída com elevação direcional tátil e iluminação ambiente difusa:
-- **Shadow Glass:** `0 6px 14px -3px rgba(0, 0, 0, 0.55)` para cards em repouso.
-- **Shadow Glass Hover:** `0 10px 14px -4px rgba(0, 0, 0, 0.75)` ao pairar sobre cards interativos.
+Layout plano. A hierarquia vem de espaço, tipografia e linhas finas, não de sombras:
+- **Linha divisória:** `1px solid rgba(156, 163, 175, 0.12)` entre seções e itens de lista.
+- **Sem sombras e sem blur** em cards, botões e badges. O único blur é o da barra de navegação ao rolar.
 - **Proibição Absoluta:** Sombras coloridas com offset zero (`box-shadow: 0 0 Xpx color`) são banidas em favor de elevação direcional neutra.
 
 ## Shapes
@@ -222,12 +223,12 @@ Profundidade construída com elevação direcional tátil e iluminação ambient
 ## Components
 
 ### Buttons
-- **Primary:** Fundo gradiente linear (`135deg, #FF6B00 0%, #FF8533 100%`), texto `#0F1115 !important`, peso 800, padding 16px 32px, elevação direcional. Efeito hover com deslocamento de -2px e shimmer suave.
-- **Secondary:** Fundo grafite translúcido (`rgba(20, 23, 29, 0.6)`), borda laranja fina (`rgba(255, 107, 0, 0.35)`), texto Branco Neve.
+- **Primary:** Fundo sólido `#FF6B00`, texto `#0F1115 !important`, peso 700, padding 16px 28px. Hover clareia para `#FF8533`. Sem gradiente, sombra ou shimmer.
+- **Secondary:** Fundo transparente, borda neutra fina (`rgba(255, 255, 255, 0.18)`), texto Branco Neve. Usado também no CTA da navegação.
 
-### Cards Glassmorphic
-- **Estrutura:** Fundo em `rgba(20, 23, 29, 0.85)` com `backdrop-filter: blur(16px)` e borda sutil de 1px em `rgba(156, 163, 175, 0.12)`.
-- **Card em Destaque:** Borda em `rgba(255, 107, 0, 0.45)` com badge superior em degradê Laranja Chama.
+### Blocos de conteúdo
+- **Estrutura:** Sem fundo, sombra ou raio; apenas uma linha superior de 1px em `rgba(156, 163, 175, 0.12)`. Ícones, checks e badges em tons neutros.
+- **Bloco em Destaque:** Linha superior em Branco Neve e botão primário laranja; sem badge colorido.
 
 ### Brand Logo Lockup
 - **Símbolo:** Renderização do ícone 3D "YD" com sombra suave alaranjada.

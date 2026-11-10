@@ -29,7 +29,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     /* ==========================================================================
@@ -50,47 +49,14 @@
       */
       --color-bg: #0F1115;
       --color-bg-alt: #14171D;
-      --color-surface: rgba(20, 23, 29, 0.85);
-      --color-surface-hover: rgba(26, 30, 38, 0.95);
       --color-surface-border: rgba(156, 163, 175, 0.12);
-      --color-surface-border-hover: rgba(255, 107, 0, 0.5);
 
       --color-accent-red: #FF6B00;
-      --color-accent-red-hover: #E66000;
-      --color-accent-red-glow: rgba(255, 107, 0, 0.25);
       --color-accent-red-light: #FF8533;
-      --color-accent-red-lighter: #FFA366;
-      --color-accent-red-dark: #FF6B00;
-      --color-accent-red-gradient-end: #FF8533;
-      --color-accent-red-gradient-hover: #E66000;
-
-      --color-accent-blue: #FF8533;
-      --color-accent-blue-dark: #E66000;
-      --color-accent-blue-light: #FFA366;
-      --color-accent-cyan: #FF6B00;
-      --color-accent-cyan-light: #FF8533;
-      --color-accent-cyan-dark: #E66000;
-      --color-accent-blue-glow: rgba(255, 107, 0, 0.2);
-      --color-accent-cyan-glow: rgba(255, 107, 0, 0.2);
 
       --color-whatsapp: #22C55E;
-      --color-whatsapp-hover: #16A34A;
       --color-whatsapp-light: #2ED86E;
-      --color-whatsapp-dark: #15803D;
-      --color-whatsapp-glow: rgba(34, 197, 94, 0.25);
 
-      /* Mockup Window Controls */
-      --color-mockup-red: #FF5F56;
-      --color-mockup-yellow: #FFBD2E;
-      --color-mockup-green: #27C93F;
-
-      /* Semantic Badges */
-      --color-status-live: #4ADE80;
-      --color-rating-star: #FBBF24;
-      --color-badge-amber: #FBBF24;
-      --color-badge-amber-bg: rgba(245, 158, 11, 0.15);
-      --color-badge-emerald: #34D399;
-      --color-badge-emerald-bg: rgba(16, 185, 129, 0.12);
       --color-footer-bg: #0A0C0F;
 
       /* Typography: Neutrals WCAG AAA */
@@ -102,41 +68,20 @@
       --radius-xs: 6px;
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
 
       --container-max: 1200px;
       --section-padding: 110px 0;
       --section-padding-mobile: 68px 0;
 
-      /* Easing & Shadows (Restrained Directional Depth) */
+      /* Easing */
       --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
       --transition-fast: 0.2s var(--ease-fluid);
-      --transition-normal: 0.35s var(--ease-fluid);
-      --transition-slow: 0.6s var(--ease-fluid);
-
-      --shadow-glass: 0 6px 14px -3px rgba(0, 0, 0, 0.55);
-      --shadow-glass-hover: 0 10px 14px -4px rgba(0, 0, 0, 0.75);
     }
 
     html {
       font-size: 16px;
-    }
-
-    html.lenis, html.lenis body {
-      height: auto;
-    }
-
-    .lenis.lenis-smooth {
-      scroll-behavior: auto !important;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overscroll-behavior: contain;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
     }
 
     body {
@@ -158,75 +103,18 @@
     .headline-section,
     .nav__logo,
     .nav__mobile-menu a,
-    .hero__status-badge,
     .sobre-avatar-name,
     .faq-question,
     .footer__brand-name,
     .footer__col-title,
     .processo-step__number,
     .processo-step__title,
-    .mockup-heading-sim,
     .dor-transition,
     .service-card__title,
     .diferencial-card__title,
-    .portfolio-card__overlay-title,
     .portfolio-card__info-title,
-    .speed-number,
     .stat-num {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    /* Spatial Ambient Glows */
-    .ambient-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .ambient-glow-1 {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      top: -120px;
-      right: -80px;
-      background: radial-gradient(circle, rgba(255, 107, 0, 0.04) 0%, transparent 65%);
-      filter: blur(80px);
-      border-radius: 50%;
-    }
-
-    .ambient-glow-2 {
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      top: 45%;
-      left: -120px;
-      background: radial-gradient(circle, rgba(255, 133, 51, 0.035) 0%, transparent 65%);
-      filter: blur(90px);
-      border-radius: 50%;
-    }
-
-    .ambient-glow-3 {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      bottom: -80px;
-      right: -100px;
-      background: radial-gradient(circle, rgba(255, 107, 0, 0.03) 0%, transparent 65%);
-      filter: blur(100px);
-      border-radius: 50%;
-    }
-
-    /* Dot Grid Background Texture */
-    .ambient-grid {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 85%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 85%);
-      pointer-events: none;
     }
 
     /* Accessibility: Skip to Content & Focus Rings */
@@ -234,7 +122,7 @@
       position: absolute;
       top: -100px;
       left: 16px;
-      background: var(--color-accent-blue);
+      background: var(--color-accent-red);
       color: #0F1115 !important;
       font-weight: 800;
       padding: 12px 20px;
@@ -258,20 +146,6 @@
       outline: none;
     }
 
-    /* Scroll Progress Indicator Bar */
-    .scroll-progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 100%;
-      background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-cyan), var(--color-accent-red));
-      z-index: 10000;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.1s linear;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    }
     .container {
       max-width: var(--container-max);
       width: 100%;
@@ -294,9 +168,9 @@
     }
 
     .headline-section {
-      font-weight: 800;
-      font-size: clamp(26px, 3.5vw, 40px);
-      line-height: 1.22;
+      font-weight: 700;
+      font-size: clamp(26px, 3.2vw, 38px);
+      line-height: 1.2;
       letter-spacing: -0.02em;
       text-wrap: balance;
       color: var(--color-text-primary);
@@ -310,7 +184,7 @@
     }
 
     .section-header {
-      text-align: center;
+      max-width: 720px;
       margin-bottom: 56px;
     }
 
@@ -318,32 +192,32 @@
       margin-bottom: 16px;
     }
 
-    .section-tagline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--color-accent-cyan);
-      background: rgba(255, 107, 0, 0.1);
-      border: 1px solid rgba(255, 107, 0, 0.25);
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      margin-bottom: 16px;
+    main > section + section {
+      border-top: 1px solid var(--color-surface-border);
     }
 
-    .section-tagline i {
-      font-size: 10px;
-    }
+    /* Split layout: section title on the left, list on the right */
+    @media (min-width: 1025px) {
+      .section-dor .container,
+      .section-faq .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+        column-gap: 72px;
+        align-items: start;
+      }
 
-    .section-bg-dark { background-color: transparent; }
-    .section-bg-surface {
-      background-color: var(--color-bg-alt);
-      border-top: 1px solid rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      position: relative;
+      .section-dor .section-header,
+      .section-faq .section-header {
+        grid-row: 1 / span 2;
+        position: sticky;
+        top: 120px;
+        margin-bottom: 0;
+      }
+
+      .section-dor .container > :not(.section-header),
+      .section-faq .container > :not(.section-header) {
+        grid-column: 2;
+      }
     }
 
     /* ==========================================================================
@@ -355,13 +229,13 @@
       justify-content: center;
       gap: 12px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 0.2px;
       border: none;
       border-radius: var(--radius-sm);
       cursor: pointer;
       text-decoration: none;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+      transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
       text-align: center;
       line-height: 1.3;
       position: relative;
@@ -373,14 +247,12 @@
       transform: scale(0.97) !important;
     }
 
-    /* Shimmer Light Sweep Effect */
     .btn-primary {
-      background: linear-gradient(135deg, var(--color-accent-red) 0%, var(--color-accent-red-gradient-end) 100%);
+      background: var(--color-accent-red);
       color: #0F1115 !important;
-      font-weight: 800;
-      padding: 16px 32px;
-      min-height: 56px;
-      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      font-weight: 700;
+      padding: 16px 28px;
+      min-height: 52px;
     }
 
     .btn-primary:visited,
@@ -390,75 +262,51 @@
       color: #0F1115 !important;
     }
 
-    .btn-primary svg,
-    .btn-primary i,
-    .btn-primary .whatsapp-icon {
-      fill: #0F1115 !important;
-      color: #0F1115 !important;
-    }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -120%;
-      width: 70%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      transform: skewX(-20deg);
-      transition: left 0.75s ease;
-    }
-
-    .btn-primary:hover::after {
-      left: 140%;
-    }
-
     .btn-primary:hover {
-      background: linear-gradient(135deg, var(--color-accent-red-gradient-end) 0%, var(--color-accent-red-gradient-hover) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: var(--color-accent-red-light);
     }
 
     .btn-primary-xl {
-      padding: 20px 42px;
-      font-size: 17px;
-      min-height: 64px;
-      border-radius: var(--radius-lg);
-      box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.7);
+      padding: 18px 36px;
+      font-size: 16px;
+      min-height: 60px;
     }
 
     .btn-secondary {
-      background: rgba(20, 23, 29, 0.6);
+      background: transparent;
       color: var(--color-text-primary);
-      border: 1px solid rgba(255, 107, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 14px 28px;
       min-height: 52px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     .btn-secondary:hover {
-      border-color: var(--color-accent-cyan);
-      background: rgba(255, 107, 0, 0.12);
-      color: var(--color-text-primary);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6);
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .btn-whatsapp {
-      background: linear-gradient(135deg, var(--color-whatsapp) 0%, var(--color-whatsapp-hover) 100%);
+      background: var(--color-whatsapp);
       color: #032310;
       font-weight: 700;
-      padding: 16px 32px;
-      min-height: 56px;
-      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.6);
+      padding: 16px 28px;
+      min-height: 52px;
     }
 
     .btn-whatsapp:hover {
-      background: linear-gradient(135deg, var(--color-whatsapp-light) 0%, var(--color-whatsapp) 100%);
+      background: var(--color-whatsapp-light);
       color: #032310;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.75);
+    }
+
+    .icon {
+      width: 1.15em;
+      height: 1.15em;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .whatsapp-icon {
@@ -470,20 +318,10 @@
     /* ==========================================================================
        4. ANIMATIONS & SCROLL REVEAL (Antigravity Motion)
        ========================================================================== */
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-
-    @keyframes float3D {
-      0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-4deg); }
-      50% { transform: translateY(-12px) rotateX(4deg) rotateY(-2deg); }
-    }
-
     .animate-on-scroll {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s var(--ease-fluid), transform 0.7s var(--ease-fluid);
+      transform: translateY(12px);
+      transition: opacity 0.5s var(--ease-fluid), transform 0.5s var(--ease-fluid);
       will-change: opacity, transform;
     }
 
@@ -492,25 +330,32 @@
       transform: translateY(0);
     }
 
-    .stagger-1 { transition-delay: 0.08s; }
-    .stagger-2 { transition-delay: 0.16s; }
-    .stagger-3 { transition-delay: 0.24s; }
-    .stagger-4 { transition-delay: 0.32s; }
-    .stagger-5 { transition-delay: 0.40s; }
-    .stagger-6 { transition-delay: 0.48s; }
-    .stagger-7 { transition-delay: 0.56s; }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.10s; }
+    .stagger-3 { transition-delay: 0.15s; }
+    .stagger-4 { transition-delay: 0.20s; }
+    .stagger-5 { transition-delay: 0.25s; }
+    .stagger-6 { transition-delay: 0.30s; }
+    .stagger-7 { transition-delay: 0.35s; }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .hero__content > * {
+      animation: heroIn 0.6s var(--ease-fluid) both;
+    }
+
+    .hero__content > :nth-child(2) { animation-delay: 0.08s; }
+    .hero__content > :nth-child(3) { animation-delay: 0.16s; }
+    .hero__content > :nth-child(4) { animation-delay: 0.24s; }
 
     @media (prefers-reduced-motion: reduce) {
       .animate-on-scroll {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
-      }
-      .hero__visual {
-        animation: none !important;
-      }
-      .btn-primary::after {
-        display: none !important;
       }
     }
 
@@ -528,11 +373,10 @@
     }
 
     .nav.scrolled {
-      background: rgba(7, 9, 14, 0.88);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 6px 14px -4px rgba(0, 0, 0, 0.7);
+      background: rgba(15, 17, 21, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-surface-border);
     }
 
     .nav__inner {
@@ -547,18 +391,12 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      transition: transform var(--transition-fast);
-    }
-
-    .nav__logo:hover {
-      transform: translateY(-1px);
     }
 
     .nav__logo-symbol {
       width: 40px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 2px 8px rgba(255, 107, 0, 0.35));
     }
 
     .nav__logo-brand {
@@ -599,7 +437,7 @@
     .nav__links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
 
@@ -607,31 +445,13 @@
       color: var(--color-text-muted);
       text-decoration: none;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
+      white-space: nowrap;
       transition: color 0.2s ease;
-      position: relative;
-    }
-
-    .nav__links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--color-accent-cyan);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.2s ease;
-      border-radius: var(--radius-xs);
     }
 
     .nav__links a:hover {
       color: var(--color-text-primary);
-    }
-
-    .nav__links a:hover::after {
-      transform: scaleX(1);
     }
 
     .nav__cta {
@@ -647,8 +467,8 @@
       flex-direction: column;
       justify-content: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: var(--radius-sm);
       cursor: pointer;
       padding: 10px;
@@ -670,9 +490,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(7, 9, 14, 0.98);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background: var(--color-bg);
       z-index: 950;
       flex-direction: column;
       align-items: center;
@@ -686,7 +504,7 @@
     }
 
     .nav__mobile-menu a {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--color-text-primary);
       text-decoration: none;
@@ -694,7 +512,7 @@
     }
 
     .nav__mobile-menu a:hover {
-      color: var(--color-accent-cyan);
+      color: var(--color-text-secondary);
     }
 
     .nav__mobile-menu a.btn-whatsapp {
@@ -710,13 +528,13 @@
       position: absolute;
       top: 24px;
       right: 24px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       color: var(--color-text-primary);
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      font-size: 24px;
+      font-size: 22px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -724,52 +542,16 @@
     }
 
     /* ==========================================================================
-       6. HERO SECTION (Spatial 3D & Live Status)
+       6. HERO SECTION
        ========================================================================== */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 130px 0 80px;
+      padding: 136px 0 56px;
       position: relative;
-    }
-
-    .hero__inner {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Real-Time Live Status Pill */
-    .hero__status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-status-live);
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--color-whatsapp);
-      border-radius: 50%;
-      display: inline-block;
-      flex-shrink: 0;
     }
 
     .hero__headline {
       margin-bottom: 24px;
+      max-width: 940px;
     }
 
     .hero__headline em {
@@ -781,9 +563,7 @@
 
     .hero__subheadline {
       margin-bottom: 36px;
-      max-width: 540px;
-      font-size: 15px;
-      line-height: 1.7;
+      max-width: 600px;
     }
 
     .hero__subheadline strong {
@@ -814,245 +594,9 @@
       color: var(--color-text-secondary);
     }
 
-    .hero__badge i {
-      color: var(--color-whatsapp);
-      font-size: 13px;
-    }
-
-    /* Hero Spatial 3D Visual */
-    .hero__visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      perspective: 1200px;
-      animation: float3D 6s ease-in-out infinite;
-    }
-
-    .hero__mockup-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 440px;
-      transform-style: preserve-3d;
-    }
-
-    .hero__mockup-device {
-      position: relative;
-      background: rgba(20, 23, 29, 0.75);
-      border: 1px solid rgba(255, 107, 0, 0.3);
-      border-radius: var(--radius-lg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      overflow: hidden;
-      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
-    }
-
-    .hero__mockup-bar {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .hero__mockup-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .hero__mockup-dot:nth-child(1) { background: var(--color-mockup-red); }
-    .hero__mockup-dot:nth-child(2) { background: var(--color-mockup-yellow); }
-    .hero__mockup-dot:nth-child(3) { background: var(--color-mockup-green); }
-
-    .hero__mockup-url {
-      margin-left: 8px;
-      font-size: 11px;
-      font-family: monospace;
+    .hero__badge .icon {
       color: var(--color-text-muted);
-      background: rgba(0, 0, 0, 0.3);
-      padding: 4px 14px;
-      border-radius: var(--radius-sm);
-      flex: 1;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .hero__mockup-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .mockup-preview-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .mockup-pill-tag {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--color-accent-cyan);
-      background: rgba(255, 107, 0, 0.12);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(255, 107, 0, 0.25);
-    }
-
-    .mockup-heading-sim {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      line-height: 1.3;
-    }
-
-    .mockup-text-sim {
-      font-size: 12px;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-
-    .mockup-cta-sim {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 800;
-      color: #0F1115 !important;
-      background: var(--color-accent-red);
-      padding: 8px 16px;
-      border-radius: var(--radius-sm);
-      align-self: flex-start;
-      margin-top: 4px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-    }
-
-    .mockup-cta-sim i,
-    .mockup-cta-sim svg {
-      color: #0F1115 !important;
-      fill: #0F1115 !important;
-    }
-
-    .mockup-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 8px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .mockup-metric-item {
-      padding: 6px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .mockup-metric-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: var(--radius-xs);
-      background: rgba(34, 197, 94, 0.15);
-      color: var(--color-whatsapp);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 13px;
-    }
-
-    .mockup-metric-val {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      line-height: 1.1;
-    }
-
-    .mockup-metric-label {
-      font-size: 10px;
-      color: var(--color-text-dim);
-    }
-
-    /* Floating Score Badge */
-    .floating-speed-badge {
-      position: absolute;
-      bottom: -18px;
-      right: -14px;
-      background: rgba(11, 15, 26, 0.95);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      padding: 10px 18px;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6);
-      transform: translateZ(30px);
-    }
-
-    .speed-number {
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--color-status-live);
-    }
-
-    .speed-text {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--color-text-secondary);
-      line-height: 1.2;
-    }
-
-    /* ==========================================================================
-       7. STATS BAR (Authority & Social Proof)
-       ========================================================================== */
-    .stats-bar {
-      padding: 36px 0;
-      background: rgba(11, 14, 23, 0.6);
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(10px);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-
-    .stat-item {
-      padding: 12px 16px;
-      position: relative;
-    }
-
-    .stat-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
-    }
-
-    .stat-num {
-      font-weight: 800;
-      font-size: clamp(28px, 3.5vw, 36px);
-      color: var(--color-text-primary);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      line-height: 1.3;
     }
 
     /* ==========================================================================
@@ -1064,65 +608,28 @@
 
     .dor-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 860px;
-      margin: 0 auto 48px;
+      grid-template-columns: 1fr;
+      margin-bottom: 0;
     }
 
     .dor-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-surface-border);
-      border-radius: var(--radius-lg);
-      padding: 26px;
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: var(--transition-normal);
-      box-shadow: var(--shadow-glass);
-    }
-
-    .dor-card:hover {
-      border-color: var(--color-surface-border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glass-hover);
-      background: var(--color-surface-hover);
-    }
-
-    .dor-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-      line-height: 1;
-      color: var(--color-accent-cyan);
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 107, 0, 0.1);
-      border: 1px solid rgba(255, 107, 0, 0.25);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 22px 0;
+      border-top: 1px solid var(--color-surface-border);
     }
 
     .dor-card__text {
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--color-text-secondary);
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--color-text-primary);
     }
 
     .dor-transition {
-      text-align: center;
-      font-size: clamp(17px, 2vw, 21px);
-      font-style: italic;
-      color: var(--color-accent-cyan);
-      font-weight: 600;
-      padding: 28px 24px;
-      border-top: 1px solid rgba(255, 107, 0, 0.15);
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.6;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      padding-top: 28px;
+      border-top: 1px solid var(--color-surface-border);
+      line-height: 1.5;
     }
 
     /* ==========================================================================
@@ -1135,8 +642,8 @@
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 28px;
-      margin-bottom: 44px;
+      gap: 48px;
+      margin-bottom: 48px;
     }
 
     @media (min-width: 992px) {
@@ -1147,36 +654,15 @@
     }
 
     .service-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-surface-border);
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.5);
-      position: relative;
-      overflow: hidden;
+      padding-top: 28px;
+      border-top: 1px solid var(--color-surface-border);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: var(--transition-normal);
-    }
-
-    .service-card:hover {
-      background: var(--color-surface-hover);
-      border-color: var(--color-surface-border-hover);
-      box-shadow: 0 8px 14px -4px rgba(0, 0, 0, 0.75);
-      transform: translateY(-4px);
     }
 
     .service-card.featured {
-      border-color: rgba(255, 107, 0, 0.45);
-      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.6);
-    }
-
-    .service-card.featured:hover {
-      border-color: var(--color-accent-red);
-      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
+      border-top-color: var(--color-text-primary);
     }
 
     .service-top-row {
@@ -1188,66 +674,35 @@
     }
 
     .service-card__icon-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      background: rgba(255, 107, 0, 0.12);
-      border: 1px solid rgba(255, 107, 0, 0.3);
-      color: var(--color-accent-cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--color-text-primary);
       font-size: 22px;
-      flex-shrink: 0;
-    }
-
-    .service-card.featured .service-card__icon-badge {
-      background: rgba(255, 107, 0, 0.15);
-      border-color: rgba(255, 107, 0, 0.4);
-      color: var(--color-accent-red-lighter);
+      line-height: 1;
     }
 
     .service-card__badge-special {
-      background: rgba(255, 107, 0, 0.15);
-      border: 1px solid rgba(255, 107, 0, 0.4);
-      color: var(--color-accent-red-lighter);
+      color: var(--color-text-muted);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 5px 12px;
-      border-radius: var(--radius-full);
+      letter-spacing: 0.08em;
       white-space: nowrap;
     }
 
-    .service-card__badge-special.badge-cyan {
-      background: rgba(255, 107, 0, 0.12);
-      border-color: rgba(255, 107, 0, 0.35);
-      color: var(--color-accent-cyan);
-    }
-
-    .service-card__badge-special.badge-emerald {
-      background: rgba(16, 185, 129, 0.12);
-      border-color: rgba(16, 185, 129, 0.35);
-      color: #34D399;
-    }
-
     .service-card__title {
-      font-weight: 800;
-      font-size: 20px;
+      font-weight: 700;
+      font-size: 22px;
       margin-bottom: 8px;
       color: var(--color-text-primary);
       line-height: 1.3;
     }
 
     .service-card__ideal {
-      font-size: 13px;
-      color: var(--color-accent-cyan);
-      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-text-muted);
       margin-bottom: 24px;
       display: block;
-      line-height: 1.4;
-      min-height: 38px;
+      line-height: 1.5;
+      min-height: 42px;
     }
 
     .service-features-list {
@@ -1267,8 +722,8 @@
       line-height: 1.45;
     }
 
-    .service-feature-item i {
-      color: var(--color-whatsapp);
+    .service-feature-item .icon {
+      color: var(--color-text-muted);
       font-size: 14px;
       margin-top: 3px;
       flex-shrink: 0;
@@ -1276,8 +731,6 @@
 
     .service-card__footer {
       margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .service-card__cta {
@@ -1288,19 +741,10 @@
     }
 
     .service-reinforcement {
-      text-align: center;
-      font-style: italic;
       color: var(--color-text-muted);
-      font-size: 15px;
-      margin-bottom: 36px;
+      font-size: 16px;
       max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.6;
-    }
-
-    .section-cta {
-      text-align: center;
     }
 
     /* ==========================================================================
@@ -1310,80 +754,45 @@
       padding: var(--section-padding);
     }
 
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .stat-num {
+      font-weight: 700;
+      font-size: clamp(28px, 3.5vw, 36px);
+      color: var(--color-text-primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      line-height: 1.3;
+    }
+
     .diferenciais-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 40px 48px;
       margin-bottom: 56px;
     }
 
-    @media (min-width: 1025px) {
-      .diferenciais-grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-      .diferenciais-grid .diferencial-card:nth-child(1) { grid-column: 1 / 3; }
-      .diferenciais-grid .diferencial-card:nth-child(2) { grid-column: 3 / 5; }
-      .diferenciais-grid .diferencial-card:nth-child(3) { grid-column: 5 / 7; }
-      .diferenciais-grid .diferencial-card:nth-child(4) { grid-column: 2 / 4; }
-      .diferenciais-grid .diferencial-card:nth-child(5) { grid-column: 4 / 6; }
-    }
-
     .diferencial-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-surface-border);
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      text-align: left;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: var(--transition-normal);
-      position: relative;
-      box-shadow: var(--shadow-glass);
-    }
-
-    .diferencial-card:hover {
-      border-color: var(--color-surface-border-hover);
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-glass-hover);
-      background: var(--color-surface-hover);
-    }
-
-    .diferencial-card.featured {
-      border-color: rgba(255, 107, 0, 0.4);
-    }
-
-    .diferencial-card.featured:hover {
-      border-color: var(--color-accent-red);
-      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.7);
-    }
-
-    .diferencial-badge {
-      position: absolute;
-      top: -12px;
-      left: 28px;
-      background: linear-gradient(135deg, #FF8533 0%, #FF6B00 100%);
-      color: #0F1115 !important;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: var(--radius-full);
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      padding-top: 24px;
+      border-top: 1px solid var(--color-surface-border);
     }
 
     .diferencial-card__icon {
-      font-size: 30px;
-      line-height: 1;
-      color: var(--color-accent-cyan);
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .diferencial-card.featured .diferencial-card__icon {
-      color: var(--color-accent-red-light);
+      display: block;
+      font-size: 22px;
+      color: var(--color-text-primary);
+      margin-bottom: 18px;
     }
 
     .diferencial-card__title {
@@ -1408,40 +817,34 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 48px 32px;
       margin-bottom: 56px;
     }
 
-    @media (min-width: 769px) {
-      .portfolio-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        max-width: 580px;
-        margin: 0 auto;
-        width: 100%;
-      }
-    }
-
     .portfolio-card {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--color-surface-border);
-      transition: var(--transition-normal);
-      background: var(--color-surface);
+      grid-column: span 3;
       display: flex;
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-      cursor: pointer;
-      box-shadow: var(--shadow-glass);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
     }
 
-    .portfolio-card:hover {
-      border-color: var(--color-surface-border-hover);
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-glass-hover);
+    .portfolio-card:nth-child(n+5) {
+      grid-column: span 2;
+    }
+
+    .hero + .section-portfolio {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .section-portfolio .section-header {
+      margin-bottom: 36px;
+    }
+
+    .portfolio-card:nth-child(n+5) .portfolio-card__view-link {
+      display: none;
     }
 
     .portfolio-card__screen {
@@ -1449,7 +852,9 @@
       aspect-ratio: 16/9;
       position: relative;
       overflow: hidden;
-      background: var(--color-bg);
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-surface-border);
+      border-radius: var(--radius-md);
     }
 
     .portfolio-card__img {
@@ -1462,60 +867,15 @@
     }
 
     .portfolio-card:hover .portfolio-card__img {
-      transform: scale(1.04);
-    }
-
-    .portfolio-card__overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(7, 9, 14, 0.88);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .portfolio-card:hover .portfolio-card__overlay {
-      opacity: 1;
-    }
-
-    .portfolio-card__overlay-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--color-accent-cyan);
-    }
-
-    .portfolio-card__overlay-title {
-      font-weight: 800;
-      font-size: 22px;
-      color: var(--color-text-primary);
-    }
-
-    .portfolio-card__overlay-link {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      transform: scale(1.02);
     }
 
     .portfolio-card__info {
-      padding: 20px 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      background: rgba(11, 15, 26, 0.5);
     }
 
     .portfolio-card__info-left {
@@ -1525,7 +885,7 @@
 
     .portfolio-card__info-title {
       font-weight: 700;
-      font-size: 17px;
+      font-size: 18px;
       margin-bottom: 6px;
       color: var(--color-text-primary);
     }
@@ -1539,29 +899,10 @@
 
     .portfolio-tag {
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-    }
-
-    .portfolio-tag.lp {
-      background: rgba(255, 107, 0, 0.15);
-      color: var(--color-accent-red-lighter);
-      border: 1px solid rgba(255, 107, 0, 0.35);
-    }
-
-    .portfolio-tag.si {
-      background: rgba(255, 107, 0, 0.12);
-      color: var(--color-accent-cyan);
-      border: 1px solid rgba(255, 107, 0, 0.3);
-    }
-
-    .portfolio-tag.demo {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--color-rating-star);
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--color-text-muted);
     }
 
     .portfolio-card__info-nicho {
@@ -1573,22 +914,16 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-accent-cyan);
-      border: 1px solid rgba(255, 107, 0, 0.35);
-      border-radius: var(--radius-sm);
-      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-primary);
       white-space: nowrap;
-      transition: all 0.2s;
       flex-shrink: 0;
-      background: rgba(255, 107, 0, 0.06);
+      transition: color 0.2s;
     }
 
     .portfolio-card:hover .portfolio-card__view-link {
-      background: rgba(255, 107, 0, 0.25);
-      border-color: var(--color-accent-cyan);
-      color: var(--color-text-primary);
+      color: var(--color-accent-red-light);
     }
 
     /* ==========================================================================
@@ -1601,92 +936,50 @@
     .processo-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 32px;
       position: relative;
       margin-bottom: 56px;
     }
 
-    /* Connected Gradient Track Line */
     .processo-track {
       position: absolute;
-      top: 36px;
-      left: 12%;
-      right: 12%;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.08);
+      top: 20px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-surface-border);
       z-index: 0;
       overflow: hidden;
-      border-radius: var(--radius-xs);
-    }
-
-    .processo-track-fill {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, var(--color-accent-red) 0%, var(--color-accent-blue) 35%, var(--color-accent-cyan) 70%, var(--color-whatsapp) 100%);
-      transform: scaleX(0);
-      transform-origin: left;
     }
 
     .processo-step {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 12px;
+      align-items: flex-start;
       position: relative;
       z-index: 1;
     }
 
     .processo-step__number {
-      width: 72px;
-      height: 72px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #FF8533 0%, #FF6B00 100%);
-      color: #0F1115 !important;
-      font-weight: 800;
-      font-size: 24px;
+      background: var(--color-bg);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--color-text-primary);
+      font-weight: 700;
+      font-size: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 24px;
       flex-shrink: 0;
-      position: relative;
-      box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .processo-step:nth-of-type(1) .processo-step__number {
-      background: linear-gradient(135deg, #FF8533 0%, #FF6B00 100%);
-      color: #0F1115 !important;
-      box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .processo-step:nth-of-type(2) .processo-step__number {
-      background: linear-gradient(135deg, #FF8533 0%, #FF6B00 100%);
-      color: #0F1115 !important;
-      box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .processo-step:nth-of-type(3) .processo-step__number {
-      background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
-      color: #FFFFFF !important;
-      box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .processo-step:nth-of-type(4) .processo-step__number {
-      background: linear-gradient(135deg, var(--color-whatsapp-dark) 0%, #14532D 100%);
-      color: #FFFFFF !important;
-      box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .processo-step__icon {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: var(--color-text-muted);
+      box-shadow: 0 0 0 10px var(--color-bg);
     }
 
     .processo-step__title {
       font-weight: 700;
-      font-size: 17px;
+      font-size: 18px;
       margin-bottom: 10px;
       color: var(--color-text-primary);
     }
@@ -1723,15 +1016,10 @@
     .sobre-avatar {
       width: 290px;
       height: 340px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(255, 107, 0, 0.12), rgba(20, 23, 29, 0.8));
-      border: 1px solid rgba(255, 107, 0, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: var(--radius-md);
+      background: var(--color-bg-alt);
       overflow: hidden;
       position: relative;
-      box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.8);
     }
 
     .sobre-avatar-img {
@@ -1754,15 +1042,19 @@
 
     .sobre-avatar-name {
       font-weight: 800;
-      font-size: 19px;
+      font-size: 18px;
       color: var(--color-text-primary);
     }
 
     .sobre-avatar-role {
-      font-size: 12px;
-      color: var(--color-accent-cyan);
-      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      font-weight: 500;
       margin-top: 2px;
+    }
+
+    .sobre-content .headline-section {
+      margin-bottom: 20px;
     }
 
     .sobre-text {
@@ -1778,8 +1070,8 @@
       gap: 20px;
       flex-wrap: wrap;
       padding: 16px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid var(--color-surface-border);
+      border-bottom: 1px solid var(--color-surface-border);
       margin: 24px 0 32px;
     }
 
@@ -1791,8 +1083,8 @@
       color: var(--color-text-muted);
     }
 
-    .sobre-location-item i {
-      color: var(--color-accent-cyan);
+    .sobre-location-item .icon {
+      color: var(--color-text-muted);
     }
 
     /* ==========================================================================
@@ -1803,75 +1095,46 @@
     }
 
     .faq-list {
-      max-width: 800px;
-      margin: 0 auto 48px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      margin-bottom: 40px;
+      border-top: 1px solid var(--color-surface-border);
     }
 
     .faq-item {
-      background: var(--color-surface);
-      border: 1px solid var(--color-surface-border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: var(--transition-fast);
-      box-shadow: var(--shadow-glass);
-    }
-
-    .faq-item.open {
-      border-color: rgba(255, 107, 0, 0.4);
-      background: var(--color-surface-hover);
-      box-shadow: var(--shadow-glass-hover);
+      border-bottom: 1px solid var(--color-surface-border);
     }
 
     .faq-question {
       width: 100%;
       background: none;
       border: none;
-      padding: 22px 26px;
+      padding: 22px 0;
       text-align: left;
       color: var(--color-text-primary);
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      transition: color 0.2s ease, background 0.2s ease;
       touch-action: manipulation;
     }
 
-    .faq-question:hover {
-      color: var(--color-accent-cyan);
-    }
-
-    .faq-item.open .faq-question {
-      color: var(--color-accent-cyan);
-    }
-
     .faq-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: var(--color-text-muted);
-      transition: transform 0.3s var(--ease-fluid), border-color 0.3s ease, color 0.3s ease;
-      flex-shrink: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 400;
       line-height: 1;
+      color: var(--color-text-muted);
+      transition: transform 0.3s var(--ease-fluid), color 0.3s ease;
+      flex-shrink: 0;
     }
 
     .faq-item.open .faq-icon {
-      border-color: var(--color-accent-cyan);
-      color: var(--color-accent-cyan);
       transform: rotate(45deg);
-      background: rgba(255, 107, 0, 0.1);
+      color: var(--color-text-primary);
     }
 
     .faq-answer {
@@ -1895,10 +1158,11 @@
     }
 
     .faq-answer-content {
-      padding: 0 26px 22px;
-      font-size: 15px;
+      padding: 0 0 24px;
+      max-width: 640px;
+      font-size: 16px;
       color: var(--color-text-secondary);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     /* ==========================================================================
@@ -1906,15 +1170,15 @@
        ========================================================================== */
     .section-cta-final {
       padding: var(--section-padding);
-      background: linear-gradient(180deg, var(--color-bg-alt) 0%, #05060A 100%);
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .section-cta-final .headline-section {
+      margin-bottom: 16px;
     }
 
     .cta-final-sub {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: 18px;
       color: var(--color-text-muted);
       margin-bottom: 40px;
       max-width: 600px;
@@ -1937,37 +1201,37 @@
       gap: 8px;
       font-size: 14px;
       color: var(--color-text-secondary);
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    .cta-seal i {
-      color: var(--color-accent-cyan);
-      font-size: 16px;
+    .cta-seal .icon {
+      color: var(--color-text-muted);
+      font-size: 14px;
     }
 
     .cta-safety {
       font-size: 14px;
       color: var(--color-text-dim);
       margin-top: 24px;
-      font-style: italic;
     }
 
     .cta-phone {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--color-text-muted);
       margin-top: 14px;
     }
 
     .cta-phone a {
-      color: var(--color-accent-cyan);
-      text-decoration: none;
-      font-weight: 700;
+      color: var(--color-text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
     }
 
     .footer {
       background: var(--color-footer-bg);
       padding: 56px 0 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid var(--color-surface-border);
     }
 
     .footer__inner {
@@ -1985,7 +1249,7 @@
     }
 
     .footer__brand-name span {
-      color: var(--color-accent-cyan);
+      color: var(--color-accent-red);
     }
 
     .footer__brand-desc {
@@ -2004,22 +1268,19 @@
       width: 44px;
       height: 44px;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--color-text-muted);
       text-decoration: none;
       font-size: 16px;
-      transition: all 0.2s;
-      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 0.2s, color 0.2s;
     }
 
     .footer__social:hover {
-      border-color: var(--color-accent-cyan);
+      border-color: rgba(255, 255, 255, 0.5);
       color: var(--color-text-primary);
-      background: rgba(255, 107, 0, 0.15);
-      transform: translateY(-2px);
     }
 
     .footer__col-title {
@@ -2046,7 +1307,7 @@
     }
 
     .footer__links a:hover {
-      color: var(--color-accent-cyan);
+      color: var(--color-text-primary);
     }
 
     .footer__bottom {
@@ -2054,7 +1315,7 @@
       align-items: center;
       justify-content: space-between;
       padding-top: 28px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid var(--color-surface-border);
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -2064,8 +1325,8 @@
       color: var(--color-text-dim);
     }
 
-    .footer__location i {
-      color: var(--color-accent-red);
+    .footer__location .icon {
+      color: var(--color-text-muted);
       margin-right: 4px;
     }
 
@@ -2081,8 +1342,8 @@
     }
 
     .whatsapp-float__label {
-      background: rgba(11, 15, 26, 0.9);
-      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-surface-border);
       color: var(--color-text-primary);
       font-size: 13px;
       font-weight: 600;
@@ -2093,8 +1354,6 @@
       transform: translateX(10px);
       transition: all 0.3s var(--ease-fluid);
       pointer-events: none;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
     }
 
     .whatsapp-float:hover .whatsapp-float__label {
@@ -2103,26 +1362,25 @@
     }
 
     .whatsapp-float__btn {
-      width: 60px;
-      height: 60px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-whatsapp) 0%, var(--color-whatsapp-hover) 100%);
+      background: var(--color-whatsapp);
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.6);
-      transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s ease;
+      transition: transform 0.25s var(--ease-fluid);
       flex-shrink: 0;
     }
 
     .whatsapp-float__btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 14px -3px rgba(0, 0, 0, 0.75);
+      transform: scale(1.06);
     }
 
-    .whatsapp-float__btn i {
-      font-size: 30px;
+    .whatsapp-float__btn svg {
+      width: 24px;
+      height: 24px;
       color: #032310;
     }
 
@@ -2131,58 +1389,25 @@
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero {
-        min-height: auto;
-        padding: 110px 0 60px;
-      }
-
-      .hero__inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        text-align: center;
-      }
-
-      .hero__status-badge {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero__subheadline {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero__cta-group, .hero__badges {
-        justify-content: center;
+        padding: 120px 0 56px;
       }
 
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .stat-item:nth-child(2)::after {
-        display: none;
+        gap: 28px 24px;
       }
 
       .diferenciais-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .diferenciais-grid .diferencial-card:nth-child(5):last-child {
-        grid-column: 1 / -1;
-        max-width: 480px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
       .sobre-inner {
         grid-template-columns: 1fr;
         gap: 48px;
-        text-align: center;
       }
 
-      .sobre-location {
-        justify-content: center;
+      .sobre-visual {
+        justify-content: flex-start;
       }
     }
 
@@ -2200,7 +1425,7 @@
       }
 
       .hero {
-        padding: 100px 0 50px;
+        padding: 100px 0 48px;
       }
 
       .headline-hero {
@@ -2209,7 +1434,11 @@
       }
 
       .headline-section {
-        font-size: clamp(24px, 7.5vw, 32px);
+        font-size: clamp(24px, 7vw, 30px);
+      }
+
+      .section-header {
+        margin-bottom: 40px;
       }
 
       .hero__cta-group .btn,
@@ -2219,25 +1448,44 @@
         max-width: 100%;
       }
 
-      .service-features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card-featured {
-        padding: 32px 24px;
-      }
-
-      .dor-grid {
-        grid-template-columns: 1fr;
-      }
-
+      /* Portfolio becomes a swipeable row on phones */
       .portfolio-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 24px;
+        margin: 0 -24px 40px;
+        padding: 0 24px;
+        scrollbar-width: none;
+      }
+
+      .portfolio-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .portfolio-card,
+      .portfolio-card:nth-child(n+5) {
+        flex: 0 0 84%;
+        scroll-snap-align: start;
+      }
+
+      .portfolio-card.animate-on-scroll {
+        opacity: 1;
+        transform: none;
+      }
+
+      .portfolio-card__view-link {
+        display: none;
+      }
+
+      .stats-grid {
+        margin-bottom: 48px;
       }
 
       .processo-steps {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 0;
       }
 
       .processo-track {
@@ -2246,21 +1494,14 @@
 
       .processo-step {
         flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
         gap: 18px;
-        background: var(--color-surface);
-        padding: 20px;
-        border-radius: var(--radius-md);
-        border: 1px solid var(--color-surface-border);
+        padding: 24px 0;
+        border-top: 1px solid var(--color-surface-border);
       }
 
       .processo-step__number {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
         margin-bottom: 0;
-        box-shadow: none !important;
+        box-shadow: none;
       }
 
       .footer__inner {
@@ -2270,7 +1511,7 @@
 
       .footer__bottom {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
       }
 
       .whatsapp-float {
@@ -2285,25 +1526,18 @@
 
     @media (max-width: 480px) {
       .container {
-        padding: 0 18px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .stat-item::after {
-        display: none !important;
+        padding: 0 20px;
       }
 
       .diferenciais-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
 
-      .floating-speed-badge {
-        right: 0;
-        bottom: -24px;
+      .portfolio-grid {
+        scroll-padding-left: 20px;
+        margin: 0 -20px 40px;
+        padding: 0 20px;
       }
     }
 
@@ -2316,15 +1550,6 @@
         scroll-behavior: auto !important;
       }
 
-      .pulse-dot {
-        animation: none !important;
-        opacity: 1 !important;
-      }
-
-      .btn-primary::after {
-        display: none !important;
-      }
-
       .animate-on-scroll {
         opacity: 1 !important;
         transform: none !important;
@@ -2335,21 +1560,26 @@
 </head>
 <body>
 
-  <div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
 
   <a href="#hero" class="skip-link">Pular para o conteúdo principal</a>
-
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
-    <div class="ambient-glow-3"></div>
-    <div class="ambient-grid"></div>
-  </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
     <symbol id="icon-whatsapp" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
     </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9"/><path d="M3 9h18v11H3z"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
   </svg>
 
   <header>
@@ -2364,14 +1594,14 @@
             </div>
           </a>
           <ul class="nav__links" role="list">
-            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#processo">Como Funciona</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#faq">Dúvidas</a></li>
           </ul>
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20or%C3%A7amento%20para%20meu%20projeto%21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary nav__cta nav__cta-desktop" aria-label="Falar com Yago no WhatsApp">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
             Falar com Yago
           </a>
@@ -2387,8 +1617,8 @@
 
   <div class="nav__mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação mobile" aria-hidden="true">
     <button class="nav__mobile-close" id="mobileClose" aria-label="Fechar menu">✕</button>
-    <a href="#servicos" class="mobile-nav-link">Serviços</a>
     <a href="#portfolio" class="mobile-nav-link">Portfólio</a>
+    <a href="#servicos" class="mobile-nav-link">Serviços</a>
     <a href="#diferenciais" class="mobile-nav-link">Diferenciais</a>
     <a href="#processo" class="mobile-nav-link">Como Funciona</a>
     <a href="#sobre" class="mobile-nav-link">Sobre</a>
@@ -2400,14 +1630,14 @@
   </div>
 
   <main>
-    <section class="hero section-bg-dark" id="hero" aria-label="Apresentação do Desenvolvedor">
+    <section class="hero" id="hero" aria-label="Apresentação do Desenvolvedor">
       <div class="container">
         <div class="hero__inner">
           
           <div class="hero__content">
             
             <h1 class="headline-hero hero__headline">
-              Tenha um site sob medida, <em>ultrarrápido no celular</em> e pronto para transformar visitantes em clientes no seu WhatsApp.
+              Seu site sob medida, <em>ultrarrápido no celular</em>, pronto para vender pelo WhatsApp.
             </h1>
             
             <p class="subheadline hero__subheadline">
@@ -2422,126 +1652,226 @@
             </div>
             
             <div class="hero__badges">
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Pagamento único para sites</span>
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Suporte de 6 meses incluso</span>
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> Carregamento instantâneo</span>
-              <span class="hero__badge"><i class="fas fa-check" aria-hidden="true"></i> 100% adaptado para celular</span>
+              <span class="hero__badge"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Pagamento único para sites</span>
+              <span class="hero__badge"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Suporte de 6 meses incluso</span>
             </div>
-          </div>
-
-          <div class="hero__visual" aria-hidden="true">
-            <div class="hero__mockup-wrapper">
-              <div class="hero__mockup-device">
-                <div class="hero__mockup-bar">
-                  <div class="hero__mockup-dot"></div>
-                  <div class="hero__mockup-dot"></div>
-                  <div class="hero__mockup-dot"></div>
-                  <div class="hero__mockup-url">seunegocio.com.br</div>
-                </div>
-                <div class="hero__mockup-body">
-                  <div class="mockup-preview-header">
-                    <span class="mockup-pill-tag">Alta Conversão</span>
-                    <span style="font-size: 11px; color: var(--color-whatsapp); font-weight: 600;"><i class="fas fa-circle" style="font-size: 10px;"></i> Online</span>
-                  </div>
-                  <div class="mockup-heading-sim">Presença digital profissional que fecha negócios</div>
-                  <div class="mockup-text-sim">Estrutura pensada para valorizar seus serviços e levar o visitante direto para o seu WhatsApp.</div>
-                  <span class="mockup-cta-sim"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</span>
-                  
-                  <div class="mockup-metrics-grid">
-                    <div class="mockup-metric-item">
-                      <div class="mockup-metric-icon"><i class="fas fa-mobile-screen"></i></div>
-                      <div>
-                        <div class="mockup-metric-val">100%</div>
-                        <div class="mockup-metric-label">Mobile First</div>
-                      </div>
-                    </div>
-                    <div class="mockup-metric-item">
-                      <div class="mockup-metric-icon"><i class="fas fa-shield-halved"></i></div>
-                      <div>
-                        <div class="mockup-metric-val">6 Meses</div>
-                        <div class="mockup-metric-label">Suporte Incluso</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="floating-speed-badge">
-                <i class="fas fa-bolt" style="color: var(--color-status-live); font-size: 18px;"></i>
-                <div>
-                  <div class="speed-number">99/100</div>
-                  <div class="speed-text">Google PageSpeed</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="stats-bar" id="statsBar" aria-label="Estatísticas e garantias">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item animate-on-scroll stagger-1">
-            <div class="stat-num" data-target="15" data-prefix="+" data-suffix="">+15</div>
-            <div class="stat-label">Projetos Entregues</div>
-          </div>
-          <div class="stat-item animate-on-scroll stagger-2">
-            <div class="stat-num" data-target="100" data-prefix="" data-suffix="%">100%</div>
-            <div class="stat-label">Entrega no Prazo Combinado</div>
-          </div>
-          <div class="stat-item animate-on-scroll stagger-3">
-            <div class="stat-num" data-target="6" data-prefix="" data-suffix=" Meses">6 Meses</div>
-            <div class="stat-label">Suporte Direto no WhatsApp</div>
-          </div>
-          <div class="stat-item animate-on-scroll stagger-4">
-            <div class="stat-num" data-target="90" data-prefix="+" data-suffix="">+90</div>
-            <div class="stat-label">Google PageSpeed Score</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-dor section-bg-surface" id="dor" aria-label="Identificação de problemas">
+    <section class="section-portfolio" id="portfolio" aria-label="Portfólio de projetos">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-triangle-exclamation"></i> Diagnóstico</span>
-          <h2 class="headline-section">Você se identifica com alguma<br>dessas situações?</h2>
+          <h2 class="headline-section">Projetos que já estão no ar</h2>
+          <p class="subheadline">Sites reais e demonstrações desenvolvidas sob medida com identidade marcante, velocidade e foco comercial.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/mosca-branca.jpeg"
+                alt="Screenshot do site Mosca Branca Car"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag si">Sistema de Estoque</span>
+                  <span class="portfolio-card__info-nicho">Concessionária · Várzea Paulista – SP</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-psicologia-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-demo-psicologia" aria-label="Ver projeto de demonstração Aline Duarte Psicóloga">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-psicologia.jpeg"
+                alt="Screenshot do site de demonstração Aline Duarte Psicóloga"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Aline Duarte — Psicóloga</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Psicologia & Saúde</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-estetica-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-3" id="portfolio-demo-estetica" aria-label="Ver projeto de demonstração Essenza Estética">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-estetica.jpeg"
+                alt="Screenshot do site de demonstração Essenza Estética"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Essenza Estética & Bem-Estar</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Estética & Saúde</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-moveis.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-4" id="portfolio-demo-moveis" aria-label="Ver projeto de demonstração Ateliê Linha Casa">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-moveis.jpeg"
+                alt="Screenshot do site de demonstração Ateliê Linha Casa"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Ateliê Linha Casa — Móveis Planejados</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Catálogo & Conversão</span>
+                  <span class="portfolio-card__info-nicho">Móveis & Design</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-advocacia-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-5" id="portfolio-demo-advocacia" aria-label="Ver projeto de demonstração Advocacia">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-advocacia.jpeg"
+                alt="Screenshot do site de demonstração Advocacia"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Escritório de Advocacia</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Advocacia & Direito</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-arquitetura-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-6" id="portfolio-demo-arquitetura" aria-label="Ver projeto Studio Japi Arquitetura">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-studio-japi.jpeg"
+                alt="Screenshot do site Studio Japi Arquitetura"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Studio Japi — Arquitetura</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Arquitetura & Alto Padrão · Jundiaí – SP</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://demo-massoterapia.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-7" id="portfolio-demo-massoterapia" aria-label="Ver projeto Serena Terapias e Spa Urbano">
+            <div class="portfolio-card__screen">
+              <img
+                src="images/demo-massoterapia.jpeg"
+                alt="Screenshot do site Serena — Terapias & Spa Urbano"
+                class="portfolio-card__img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-card__info">
+              <div class="portfolio-card__info-left">
+                <h3 class="portfolio-card__info-title">Serena — Terapias & Spa Urbano</h3>
+                <div class="portfolio-card__info-meta">
+                  <span class="portfolio-tag demo">Site de Conversão</span>
+                  <span class="portfolio-card__info-nicho">Massoterapia & Spa · Jundiaí – SP</span>
+                </div>
+              </div>
+              <span class="portfolio-card__view-link">
+                Ver projeto <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <div class="section-cta animate-on-scroll">
+          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20projeto%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Quero um projeto para o meu segmento">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+            Quero um projeto para o meu segmento
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dor" id="dor" aria-label="Identificação de problemas">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="headline-section">Você se identifica com alguma dessas situações?</h2>
         </div>
         
         <div class="dor-grid">
           <div class="dor-card animate-on-scroll stagger-1">
-            <div class="dor-icon"><i class="fas fa-ghost" aria-hidden="true"></i></div>
             <p class="dor-card__text">Você ainda não tem um site profissional e sente que seu negócio perde clientes todos os dias por não passar a confiança que deveria.</p>
           </div>
           
           <div class="dor-card animate-on-scroll stagger-2">
-            <div class="dor-icon"><i class="fas fa-face-frown-open" aria-hidden="true"></i></div>
             <p class="dor-card__text">Seu site atual é lento no celular, parece antigo ou você tem vergonha de mandar o link para clientes exigentes.</p>
           </div>
           
           <div class="dor-card animate-on-scroll stagger-3">
-            <div class="dor-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
             <p class="dor-card__text">Você depende apenas do Instagram e sabe o risco de ficar sem um canal próprio, seguro e profissional para fechar negócios.</p>
           </div>
           
           <div class="dor-card animate-on-scroll stagger-4">
-            <div class="dor-icon"><i class="fas fa-money-bill-wave" aria-hidden="true"></i></div>
             <p class="dor-card__text">Já contratou agências ou profissionais no passado e ficou na mão com atrasos, sites genéricos ou falta de suporte depois da entrega.</p>
           </div>
         </div>
 
         <p class="dor-transition animate-on-scroll">
-          "Se você respondeu sim para qualquer uma dessas situações, você está no lugar certo para virar essa página."
+          Se você respondeu sim para qualquer uma dessas situações, você está no lugar certo para virar essa página.
         </p>
       </div>
     </section>
 
-    <section class="section-solucao section-bg-dark" id="servicos" aria-label="Soluções e serviços oferecidos">
+    <section class="section-solucao" id="servicos" aria-label="Soluções e serviços oferecidos">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-cubes"></i> Soluções Sob Medida</span>
           <h2 class="headline-section">O que eu desenvolvo para o seu negócio</h2>
           <p class="subheadline">Projetos planejados e programados do zero para gerar contatos diários, valorizar seus serviços e facilitar suas vendas.</p>
         </div>
@@ -2551,7 +1881,7 @@
             <div>
               <div class="service-top-row">
                 <div class="service-card__icon-badge">
-                  <i class="fas fa-bullseye"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg>
                 </div>
                 <span class="service-card__badge-special">Mais Pedido</span>
               </div>
@@ -2561,28 +1891,20 @@
 
               <div class="service-features-list">
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Design exclusivo:</strong> identidade visual pensada para o seu público, sem modelos genéricos</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Foco em conversão:</strong> textos persuasivos e botões estratégicos para o WhatsApp</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Carregamento instantâneo:</strong> código limpo com pontuação 90+ no Google PageSpeed</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>100% responsivo:</strong> navegação impecável em qualquer celular, tablet ou computador</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>Sem mensalidade:</strong> pagamento único pelo desenvolvimento, com o site 100% seu</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>6 meses de suporte gratuito:</strong> acompanhamento direto comigo no WhatsApp após a entrega</span>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+                  <span><strong>Sem mensalidade:</strong> pagamento único, site 100% seu e 6 meses de suporte direto comigo</span>
                 </div>
               </div>
             </div>
@@ -2599,9 +1921,9 @@
             <div>
               <div class="service-top-row">
                 <div class="service-card__icon-badge">
-                  <i class="fas fa-car-side"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-car"></use></svg>
                 </div>
-                <span class="service-card__badge-special badge-cyan">Concessionárias & Lojas</span>
+                <span class="service-card__badge-special">Concessionárias & Lojas</span>
               </div>
 
               <h3 class="service-card__title">Sistemas de Estoque Automotivo</h3>
@@ -2609,27 +1931,19 @@
 
               <div class="service-features-list">
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Painel fácil e rápido</strong> para adicionar, editar e pausar veículos</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Filtros inteligentes</strong> por marca, modelo, ano e faixa de preço</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Botão de proposta direta</strong> no WhatsApp para cada veículo</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>Galeria de fotos otimizada</strong> que carrega sem lentidão mesmo no 4G</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>Banco de dados seguro</strong> em nuvem com backup automático</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Manutenção & Hospedagem</strong> inclusas em plano acessível</span>
                 </div>
               </div>
@@ -2647,9 +1961,9 @@
             <div>
               <div class="service-top-row">
                 <div class="service-card__icon-badge">
-                  <i class="fas fa-store"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-store"></use></svg>
                 </div>
-                <span class="service-card__badge-special badge-emerald">E-commerce Ágil</span>
+                <span class="service-card__badge-special">E-commerce Ágil</span>
               </div>
 
               <h3 class="service-card__title">Mini Lojas & Catálogos sob Medida</h3>
@@ -2657,28 +1971,20 @@
 
               <div class="service-features-list">
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Catálogo dinâmico</strong> com fotos, variações e preços claros</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Carrinho simplificado</strong> com checkout direto no WhatsApp ou Pix</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Zero taxas por venda:</strong> todo o lucro das suas vendas é 100% seu</span>
                 </div>
                 <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
+                  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
                   <span><strong>Painel administrativo simples</strong> para gerenciar produtos</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>Integração com WhatsApp</strong> para receber pedidos formatados</span>
-                </div>
-                <div class="service-feature-item">
-                  <i class="fas fa-circle-check"></i>
-                  <span><strong>Suporte técnico contínuo</strong> para manter tudo funcionando</span>
                 </div>
               </div>
             </div>
@@ -2693,47 +1999,64 @@
         </div>
 
         <p class="service-reinforcement animate-on-scroll">
-          "Cada projeto é programado para atender à realidade prática da sua empresa. Sem modelos prontos genéricos e sem soluções engessadas."
+          Cada projeto é programado para atender à realidade prática da sua empresa. Sem modelos prontos genéricos e sem soluções engessadas.
         </p>
 
       </div>
     </section>
 
-    <section class="section-diferenciais section-bg-surface" id="diferenciais" aria-label="Diferenciais do serviço">
+    <section class="section-diferenciais" id="diferenciais" aria-label="Diferenciais do serviço">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-star"></i> Vantagens</span>
-          <h2 class="headline-section">Por que clientes escolhem o Yago<br>e não agências tradicionais</h2>
+          <h2 class="headline-section">Por que clientes escolhem o Yago e não agências tradicionais</h2>
+        </div>
+
+        <div class="stats-grid" id="statsBar">
+          <div class="stat-item animate-on-scroll stagger-1">
+            <div class="stat-num">+15</div>
+            <div class="stat-label">Projetos Entregues</div>
+          </div>
+          <div class="stat-item animate-on-scroll stagger-2">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Entrega no Prazo Combinado</div>
+          </div>
+          <div class="stat-item animate-on-scroll stagger-3">
+            <div class="stat-num">6 Meses</div>
+            <div class="stat-label">Suporte Direto no WhatsApp</div>
+          </div>
+          <div class="stat-item animate-on-scroll stagger-4">
+            <div class="stat-num">+90</div>
+            <div class="stat-label">Google PageSpeed Score</div>
+          </div>
         </div>
 
         <div class="diferenciais-grid">
-          <div class="diferencial-card featured animate-on-scroll stagger-1" id="diferencial-pagamento">
-            <div class="diferencial-badge">Destaque</div>
-            <i class="fas fa-shield-halved diferencial-card__icon" aria-hidden="true"></i>
+          <div class="diferencial-card animate-on-scroll stagger-1" id="diferencial-pagamento">
+            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
             <h3 class="diferencial-card__title">Orçamento Claro & Sem Surpresas</h3>
             <p class="diferencial-card__text">Preço justo e proposta 100% transparente. Você sabe com clareza o que está contratando, com escopo detalhado e sem taxas ocultas.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-2" id="diferencial-suporte">
-            <i class="fas fa-screwdriver-wrench diferencial-card__icon" aria-hidden="true"></i>
+            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-wrench"></use></svg>
             <h3 class="diferencial-card__title">Suporte Real por 6 Meses</h3>
             <p class="diferencial-card__text">Para sites de conversão, você conta com 6 meses de suporte gratuito após a entrega. Para sistemas web, manutenção e hospedagem em nuvem garantidas em planos acessíveis.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-3" id="diferencial-prazo">
-            <i class="fas fa-bolt diferencial-card__icon" aria-hidden="true"></i>
+            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-zap"></use></svg>
             <h3 class="diferencial-card__title">Entrega no prazo combinado</h3>
             <p class="diferencial-card__text">Sem desculpas e sem enrolação. O cronograma definido no início é seguido à risca para que seu projeto esteja no ar exatamente quando planejado.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-4" id="diferencial-responsivo">
-            <i class="fas fa-mobile-screen-button diferencial-card__icon" aria-hidden="true"></i>
+            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-phone"></use></svg>
             <h3 class="diferencial-card__title">Velocidade Máxima no 4G</h3>
             <p class="diferencial-card__text">Seu site abre num piscar de olhos no celular, garantindo que o visitante permaneça atento e não desista antes de ver sua oferta.</p>
           </div>
 
           <div class="diferencial-card animate-on-scroll stagger-5" id="diferencial-atendimento">
-            <i class="fas fa-handshake diferencial-card__icon" aria-hidden="true"></i>
+            <svg class="icon diferencial-card__icon" aria-hidden="true"><use href="#i-user"></use></svg>
             <h3 class="diferencial-card__title">Atendimento direto comigo</h3>
             <p class="diferencial-card__text">Você fala diretamente com quem programa o seu site: sem intermediários, atendentes robôs ou burocracia.</p>
           </div>
@@ -2748,237 +2071,18 @@
       </div>
     </section>
 
-    <section class="section-portfolio section-bg-dark" id="portfolio" aria-label="Portfólio de projetos">
+    <section class="section-processo" id="processo" aria-label="Como funciona o processo">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-laptop-code"></i> Portfólio</span>
-          <h2 class="headline-section">Projetos que já estão no ar</h2>
-          <p class="subheadline">Sites reais e demonstrações desenvolvidas sob medida com identidade marcante, velocidade e foco comercial.</p>
-        </div>
-
-        <div class="portfolio-grid">
-          <a href="https://moscabrancacar.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-1" id="portfolio-mosca-branca" aria-label="Ver projeto Mosca Branca Car">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/mosca-branca.jpeg"
-                alt="Screenshot do site Mosca Branca Car"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Sistema & Estoque</span>
-                <span class="portfolio-card__overlay-title">Mosca Branca Car</span>
-                <span class="portfolio-card__overlay-link">moscabrancacar.com.br <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Mosca Branca Car</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag si">Sistema de Estoque</span>
-                  <span class="portfolio-card__info-nicho">Concessionária · Várzea Paulista – SP</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-psicologia-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-2" id="portfolio-demo-psicologia" aria-label="Ver projeto de demonstração Aline Duarte Psicóloga">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-psicologia.png"
-                alt="Screenshot do site de demonstração Aline Duarte Psicóloga"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
-                <span class="portfolio-card__overlay-title">Aline Duarte — Psicóloga</span>
-                <span class="portfolio-card__overlay-link">demo-psicologia-chi.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Aline Duarte — Psicóloga</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Site de Conversão</span>
-                  <span class="portfolio-card__info-nicho">Psicologia & Saúde</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-estetica-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-3" id="portfolio-demo-estetica" aria-label="Ver projeto de demonstração Essenza Estética">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-estetica.jpeg"
-                alt="Screenshot do site de demonstração Essenza Estética"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
-                <span class="portfolio-card__overlay-title">Essenza Estética</span>
-                <span class="portfolio-card__overlay-link">demo-estetica-theta.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Essenza Estética & Bem-Estar</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Site de Conversão</span>
-                  <span class="portfolio-card__info-nicho">Estética & Saúde</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-moveis.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-4" id="portfolio-demo-moveis" aria-label="Ver projeto de demonstração Ateliê Linha Casa">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-moveis.jpeg"
-                alt="Screenshot do site de demonstração Ateliê Linha Casa"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Catálogo Online</span>
-                <span class="portfolio-card__overlay-title">Ateliê Linha Casa</span>
-                <span class="portfolio-card__overlay-link">demo-moveis.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Ateliê Linha Casa — Móveis Planejados</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Catálogo & Conversão</span>
-                  <span class="portfolio-card__info-nicho">Móveis & Design</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-advocacia-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-5" id="portfolio-demo-advocacia" aria-label="Ver projeto de demonstração Advocacia">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-advocacia.jpeg"
-                alt="Screenshot do site de demonstração Advocacia"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
-                <span class="portfolio-card__overlay-title">Escritório de Advocacia</span>
-                <span class="portfolio-card__overlay-link">demo-advocacia-lemon.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Escritório de Advocacia</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Site de Conversão</span>
-                  <span class="portfolio-card__info-nicho">Advocacia & Direito</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-arquitetura-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-6" id="portfolio-demo-arquitetura" aria-label="Ver projeto Studio Japi Arquitetura">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-studio-japi.jpeg"
-                alt="Screenshot do site Studio Japi Arquitetura"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
-                <span class="portfolio-card__overlay-title">Studio Japi — Arquitetura</span>
-                <span class="portfolio-card__overlay-link">demo-arquitetura-nine.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Studio Japi — Arquitetura</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Site de Conversão</span>
-                  <span class="portfolio-card__info-nicho">Arquitetura & Alto Padrão · Jundiaí – SP</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-
-          <a href="https://demo-massoterapia.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card animate-on-scroll stagger-7" id="portfolio-demo-massoterapia" aria-label="Ver projeto Serena Terapias e Spa Urbano">
-            <div class="portfolio-card__screen">
-              <img
-                src="images/demo-massoterapia.jpeg"
-                alt="Screenshot do site Serena — Terapias & Spa Urbano"
-                class="portfolio-card__img"
-                loading="lazy"
-              />
-              <div class="portfolio-card__overlay" aria-hidden="true">
-                <span class="portfolio-card__overlay-tag">Site de Conversão</span>
-                <span class="portfolio-card__overlay-title">Serena — Terapias & Spa Urbano</span>
-                <span class="portfolio-card__overlay-link">demo-massoterapia.vercel.app <i class="fas fa-arrow-up-right-from-square" style="font-size:11px;"></i></span>
-              </div>
-            </div>
-            <div class="portfolio-card__info">
-              <div class="portfolio-card__info-left">
-                <h3 class="portfolio-card__info-title">Serena — Terapias & Spa Urbano</h3>
-                <div class="portfolio-card__info-meta">
-                  <span class="portfolio-tag demo">Site de Conversão</span>
-                  <span class="portfolio-card__info-nicho">Massoterapia & Spa · Jundiaí – SP</span>
-                </div>
-              </div>
-              <span class="portfolio-card__view-link">
-                Ver projeto <i class="fas fa-arrow-up-right-from-square"></i>
-              </span>
-            </div>
-          </a>
-        </div>
-
-        <div class="section-cta animate-on-scroll">
-          <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20um%20projeto%20assim%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="portfolio-cta" aria-label="Quero um projeto para o meu segmento">
-            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-            Quero um projeto para o meu segmento
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-processo section-bg-surface" id="processo" aria-label="Como funciona o processo">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-list-check"></i> Passo a Passo</span>
           <h2 class="headline-section">É mais simples do que parece</h2>
           <p class="subheadline">Em quatro etapas práticas e transparentes, você sai do zero para o seu site no ar, sem precisar entender nada de tecnologia.</p>
         </div>
 
         <div class="processo-steps" role="list">
-          <div class="processo-track" aria-hidden="true">
-            <div class="processo-track-fill" id="processoTrackFill"></div>
-          </div>
+          <div class="processo-track" aria-hidden="true"></div>
           <div class="processo-step animate-on-scroll stagger-1" role="listitem">
             <div class="processo-step__number" aria-label="Passo 1">1</div>
             <div class="processo-step__content">
-              <i class="fab fa-whatsapp processo-step__icon" aria-hidden="true"></i>
               <h3 class="processo-step__title">Você me conta sobre o seu negócio</h3>
               <p class="processo-step__text">Manda uma mensagem no WhatsApp. Conversamos sobre seu serviço, público-alvo e o que é essencial destacar. Sem formulários complicados.</p>
             </div>
@@ -2987,7 +2091,6 @@
           <div class="processo-step animate-on-scroll stagger-2" role="listitem">
             <div class="processo-step__number" aria-label="Passo 2">2</div>
             <div class="processo-step__content">
-              <i class="fas fa-pen-ruler processo-step__icon" aria-hidden="true"></i>
               <h3 class="processo-step__title">Desenvolvimento personalizado</h3>
               <p class="processo-step__text">Crio o layout completo com cores da sua marca, estrutura persuasiva e foco em conversão. Você acompanha cada etapa da criação.</p>
             </div>
@@ -2996,7 +2099,6 @@
           <div class="processo-step animate-on-scroll stagger-3" role="listitem">
             <div class="processo-step__number" aria-label="Passo 3">3</div>
             <div class="processo-step__content">
-              <i class="fas fa-circle-check processo-step__icon" aria-hidden="true"></i>
               <h3 class="processo-step__title">Aprovação e publicação</h3>
               <p class="processo-step__text">Você revisa cada detalhe e só publicamos quando você estiver 100% satisfeito. Cuido de domínio, hospedagem e configurações técnicas.</p>
             </div>
@@ -3005,7 +2107,6 @@
           <div class="processo-step animate-on-scroll stagger-4" role="listitem">
             <div class="processo-step__number" aria-label="Passo 4">4</div>
             <div class="processo-step__content">
-              <i class="fas fa-headset processo-step__icon" aria-hidden="true"></i>
               <h3 class="processo-step__title">Suporte e acompanhamento</h3>
               <p class="processo-step__text">Para sites de conversão, você conta com 6 meses de suporte gratuito para ajustes de textos, fotos e dúvidas técnicas comigo.</p>
             </div>
@@ -3021,7 +2122,7 @@
       </div>
     </section>
 
-    <section class="section-sobre section-bg-dark" id="sobre" aria-label="Sobre o desenvolvedor">
+    <section class="section-sobre" id="sobre" aria-label="Sobre o desenvolvedor">
       <div class="container">
         <div class="sobre-inner">
           <div class="sobre-visual animate-on-scroll">
@@ -3037,15 +2138,14 @@
           </div>
           
           <div class="sobre-content animate-on-scroll stagger-2">
-            <span class="section-tagline"><i class="fas fa-user"></i> Sobre Mim</span>
             <h2 class="headline-section">Prazer, sou o Yago: desenvolvedor web em Várzea Paulista</h2>
             <p class="sobre-text">Desenvolvo sites de alta conversão e sistemas sob medida para profissionais e empresas que desejam conquistar clientes qualificados e se posicionar com autoridade.</p>
             <p class="sobre-text">Entrei na área ao perceber a frustração de tantos empreendedores sérios: negócios incríveis com sites lentos, desatualizados ou sem nenhuma presença online. Agências tradicionais cobram orçamentos desproporcionais, atrasam prazos e colocam intermediários no atendimento.</p>
             <p class="sobre-text">Comigo, o relacionamento é próximo e transparente. Você fala com um desenvolvedor real cuidando do seu projeto do início ao fim, com a certeza de um trabalho entregue com excelência e suporte de verdade.</p>
             
             <div class="sobre-location">
-              <span class="sobre-location-item"><i class="fas fa-location-dot" aria-hidden="true"></i> Várzea Paulista, SP</span>
-              <span class="sobre-location-item"><i class="fas fa-earth-americas" aria-hidden="true"></i> Atendimento online para todo o Brasil</span>
+              <span class="sobre-location-item"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> Várzea Paulista, SP</span>
+              <span class="sobre-location-item"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg> Atendimento online para todo o Brasil</span>
             </div>
             
             <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20vamos%20conversar%20sobre%20um%20projeto%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="sobre-cta" aria-label="Falar com Yago no WhatsApp">
@@ -3057,10 +2157,9 @@
       </div>
     </section>
 
-    <section class="section-faq section-bg-surface" id="faq" aria-label="Perguntas frequentes">
+    <section class="section-faq" id="faq" aria-label="Perguntas frequentes">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-circle-question"></i> FAQ</span>
           <h2 class="headline-section">Dúvidas frequentes</h2>
           <p class="subheadline">Respostas diretas e transparentes para você começar seu projeto com segurança total.</p>
         </div>
@@ -3151,15 +2250,14 @@
     <section class="section-cta-final" id="contato" aria-label="Contato e chamada para ação">
       <div class="container">
         <div class="animate-on-scroll">
-          <span class="section-tagline"><i class="fas fa-paper-plane"></i> Comece Agora</span>
-          <h2 class="headline-section mb-16">O seu negócio merece uma presença<br>digital à altura da qualidade do seu serviço.</h2>
+          <h2 class="headline-section">O seu negócio merece uma presença digital à altura da qualidade do seu serviço.</h2>
           <p class="cta-final-sub">Sites de alta conversão e sistemas sob medida desenvolvidos do zero, com design marcante, velocidade instantânea no 4G e suporte de verdade direto com o desenvolvedor.</p>
           
           <div class="cta-final-seals">
-            <span class="cta-seal"><i class="fas fa-code" aria-hidden="true"></i> Pagamento único para sites</span>
-            <span class="cta-seal"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> 6 meses de suporte gratuito</span>
-            <span class="cta-seal"><i class="fas fa-shield-halved" aria-hidden="true"></i> Aprovação garantida em etapas</span>
-            <span class="cta-seal"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> 100% adaptado para celular</span>
+            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg> Pagamento único para sites</span>
+            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg> 6 meses de suporte gratuito</span>
+            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg> Aprovação garantida em etapas</span>
+            <span class="cta-seal"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> 100% adaptado para celular</span>
           </div>
           
           <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20meu%20projeto%20agora%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-primary-xl" id="cta-final-btn" aria-label="Solicitar meu diagnóstico gratuito no WhatsApp">
@@ -3202,8 +2300,8 @@
         <div>
           <p class="footer__col-title">Navegação</p>
           <ul class="footer__links" role="list">
-            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#processo">Como Funciona</a></li>
           </ul>
@@ -3222,7 +2320,7 @@
       
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Yago Duarte Ribeiro. Todos os direitos reservados.</p>
-        <p class="footer__location"><i class="fas fa-location-dot" aria-hidden="true"></i> Várzea Paulista, SP · Atendimento online para todo o Brasil</p>
+        <p class="footer__location"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> Várzea Paulista, SP · Atendimento online para todo o Brasil</p>
       </div>
     </div>
   </footer>
@@ -3230,106 +2328,27 @@
   <div class="whatsapp-float" aria-label="Botão flutuante WhatsApp">
     <span class="whatsapp-float__label">Falar com Yago</span>
     <a href="https://wa.me/5511945987666?text=Ol%C3%A1%20Yago%2C%20quero%20saber%20mais%20sobre%20sites%20e%20sistemas%20web%21" target="_blank" rel="noopener noreferrer" class="whatsapp-float__btn" id="whatsapp-float-btn" aria-label="Abrir WhatsApp e falar com Yago">
-      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
     </a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
   <script>
-    // 0. Accessibility Check & Plugin Registration
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let lenis = null;
-
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    // 1. Initialize Lenis Smooth Scrolling (Inertial Physics)
-    if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
-      lenis = new Lenis({
-        duration: 1.15,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        touchMultiplier: 1.2
-      });
-
-      // Synchronize Lenis scroll updates with GSAP ScrollTrigger
-      lenis.on('scroll', ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
-    }
-
-    // 2. Navigation Scroll State & Scroll Progress Bar
+    // 1. Navigation scroll state
     const navbar = document.getElementById('navbar');
-    const scrollProgress = document.getElementById('scrollProgress');
+    const updateNav = () => navbar.classList.toggle('scrolled', window.scrollY > 30);
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
 
-    function updateScrollState(scrollY, totalHeight) {
-      if (scrollY > 30) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-
-      if (scrollProgress && totalHeight > 0) {
-        const progress = Math.min(1, Math.max(0, scrollY / totalHeight));
-        scrollProgress.style.transform = `scaleX(${progress})`;
-      }
-    }
-
-    if (lenis) {
-      lenis.on('scroll', ({ scroll, limit }) => {
-        updateScrollState(scroll, limit);
-      });
-    } else {
-      window.addEventListener('scroll', () => {
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-        updateScrollState(window.scrollY, totalHeight);
-      }, { passive: true });
-    }
-
-    // 3. Smooth Anchor Scrolling with Header Offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#' || targetId === '') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          if (lenis) {
-            lenis.scrollTo(targetElement, { offset: -70, duration: 1.1 });
-          } else {
-            const headerOffset = 70;
-            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-              top: elementPosition - headerOffset,
-              behavior: 'smooth'
-            });
-          }
-        }
-      });
-    });
-
-    // 4. Mobile Menu Accessible Drawer
+    // 2. Mobile menu (accessible drawer)
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileClose = document.getElementById('mobileClose');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
     function openMenu() {
       mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
       hamburgerBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      if (lenis) lenis.stop();
       setTimeout(() => mobileClose.focus(), 50);
     }
 
@@ -3338,207 +2357,62 @@
       mobileMenu.setAttribute('aria-hidden', 'true');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      if (lenis) lenis.start();
       if (restoreFocus) hamburgerBtn.focus();
     }
 
     hamburgerBtn.addEventListener('click', openMenu);
     mobileClose.addEventListener('click', () => closeMenu(true));
-    mobileLinks.forEach(link => link.addEventListener('click', () => closeMenu(false)));
+    document.querySelectorAll('.mobile-nav-link').forEach(link => link.addEventListener('click', () => closeMenu(false)));
 
     window.addEventListener('keydown', (e) => {
-      if (mobileMenu.classList.contains('open')) {
-        if (e.key === 'Escape') {
-          closeMenu(true);
-        } else if (e.key === 'Tab') {
-          const focusable = mobileMenu.querySelectorAll('button, a[href]');
-          if (focusable.length > 0) {
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-            }
-          }
+      if (!mobileMenu.classList.contains('open')) return;
+      if (e.key === 'Escape') {
+        closeMenu(true);
+      } else if (e.key === 'Tab') {
+        const focusable = mobileMenu.querySelectorAll('button, a[href]');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
         }
       }
     });
 
-    // 5. Smooth High-Performance FAQ Accordion (CSS Grid based, zero layout reflows)
+    // 3. FAQ accordion (one item open at a time)
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
-
       question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-
+        const willOpen = !item.classList.contains('open');
         faqItems.forEach(other => {
-          if (other !== item) {
-            other.classList.remove('open');
-            const otherBtn = other.querySelector('.faq-question');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          }
+          other.classList.remove('open');
+          other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
-
-        if (isOpen) {
-          item.classList.remove('open');
-          question.setAttribute('aria-expanded', 'false');
-        } else {
+        if (willOpen) {
           item.classList.add('open');
           question.setAttribute('aria-expanded', 'true');
-        }
-
-        // Notify Lenis and ScrollTrigger to recalculate viewport bounds
-        if (typeof ScrollTrigger !== 'undefined') {
-          setTimeout(() => ScrollTrigger.refresh(), 360);
         }
       });
     });
 
-    // 6. Smooth IntersectionObserver Entrance Animations for Standard Sections
+    // 4. Reveal on scroll
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    animatedElements.forEach(el => observer.observe(el));
-
-    // 7. GSAP Cinematic Animations & Spatial Micro-Interactions
-    if (!prefersReducedMotion && typeof gsap !== 'undefined') {
-      // Hero Entrance Timeline (Explicit fromTo for rock-solid visibility)
-      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      heroTl.fromTo(".hero__headline", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, delay: 0.15 })
-            .fromTo(".hero__subheadline", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.4")
-            .fromTo(".hero__cta-group", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.4")
-            .fromTo(".hero__badges .hero__badge", { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.08 }, "-=0.3")
-            .fromTo(".hero__visual", { scale: 0.95, opacity: 0, y: 24 }, { scale: 1, opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.2)" }, "-=0.6");
-
-      // Interactive 3D Mouse Tilt with gsap.quickTo (Desktop only)
-      const mockupDevice = document.querySelector('.hero__mockup-device');
-      const heroVisual = document.querySelector('.hero__visual');
-
-      if (mockupDevice && heroVisual && window.matchMedia('(pointer: fine)').matches) {
-        const xRotTo = gsap.quickTo(mockupDevice, "rotationY", { duration: 0.6, ease: "power2.out" });
-        const yRotTo = gsap.quickTo(mockupDevice, "rotationX", { duration: 0.6, ease: "power2.out" });
-
-        heroVisual.addEventListener('mousemove', (e) => {
-          const rect = heroVisual.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5;
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-          xRotTo(x * 14);
-          yRotTo(-y * 14);
-        });
-
-        heroVisual.addEventListener('mouseleave', () => {
-          xRotTo(-4);
-          yRotTo(2);
-        });
-      }
-
-      // Stats Bar Number Counters with GSAP Interpolation
-      const statsSection = document.getElementById('statsBar');
-      if (statsSection) {
-        ScrollTrigger.create({
-          trigger: statsSection,
-          start: "top 85%",
-          once: true,
-          onEnter: () => {
-            document.querySelectorAll('.stat-num').forEach(counter => {
-              const target = parseInt(counter.getAttribute('data-target'), 10);
-              const prefix = counter.getAttribute('data-prefix') || '';
-              const suffix = counter.getAttribute('data-suffix') || '';
-              if (isNaN(target) || target === 0) return;
-
-              const valObj = { val: 0 };
-              gsap.to(valObj, {
-                val: target,
-                duration: 1.6,
-                ease: "power2.out",
-                onUpdate: () => {
-                  counter.textContent = prefix + Math.floor(valObj.val) + suffix;
-                },
-                onComplete: () => {
-                  counter.textContent = prefix + target + suffix;
-                }
-              });
-            });
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
-      }
-
-      // Process Track Scroll Scrubbing
-      const trackFill = document.getElementById('processoTrackFill');
-      const processoSection = document.getElementById('processo');
-      if (trackFill && processoSection) {
-        gsap.to(trackFill, {
-          scaleX: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: processoSection,
-            start: "top 60%",
-            end: "bottom 75%",
-            scrub: 0.5
-          }
-        });
-
-        // Step numbers pop on scroll
-        gsap.utils.toArray('.processo-step').forEach((step) => {
-          const num = step.querySelector('.processo-step__number');
-          if (num) {
-            gsap.from(num, {
-              scale: 0.82,
-              duration: 0.5,
-              ease: "back.out(1.6)",
-              scrollTrigger: {
-                trigger: step,
-                start: "top 75%",
-                toggleActions: "play none none reverse"
-              }
-            });
-          }
-        });
-      }
-
-      // Magnetic Button Effect (Desktop pointer only)
-      if (window.matchMedia('(pointer: fine)').matches) {
-        const magneticBtns = document.querySelectorAll('.btn-primary, .whatsapp-float__btn');
-        magneticBtns.forEach(btn => {
-          const xTo = gsap.quickTo(btn, "x", { duration: 0.35, ease: "power2.out" });
-          const yTo = gsap.quickTo(btn, "y", { duration: 0.35, ease: "power2.out" });
-
-          btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const relX = e.clientX - rect.left - rect.width / 2;
-            const relY = e.clientY - rect.top - rect.height / 2;
-            xTo(relX * 0.28);
-            yTo(relY * 0.28);
-          });
-
-          btn.addEventListener('mouseleave', () => {
-            xTo(0);
-            yTo(0);
-          });
-        });
-      }
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      animatedElements.forEach(el => observer.observe(el));
     } else {
-      // Fallback for prefers-reduced-motion: reveal instantly
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        el.classList.add('visible');
-      });
-      document.querySelectorAll('.stat-num').forEach(counter => {
-        const target = counter.getAttribute('data-target') || '';
-        const prefix = counter.getAttribute('data-prefix') || '';
-        const suffix = counter.getAttribute('data-suffix') || '';
-        counter.textContent = prefix + target + suffix;
-      });
+      animatedElements.forEach(el => el.classList.add('visible'));
     }
   </script>
 </body>

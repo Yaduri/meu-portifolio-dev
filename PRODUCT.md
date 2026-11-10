@@ -30,7 +30,7 @@ Conversão ágil via WhatsApp, catálogos online para consulta rápida de produt
 ## Brand Commitments
 - Nome/Identidade: Yago Dev / Yago Duarte Ribeiro.
 - Tom de Voz: Profissional, humano, confiável, direto e transparente.
-- Identidade Visual Incumbente: Paleta escuro premium (fundo `#07090E`, navy `#0D1424`, acento vermelho `#C0202A` nos CTAs e ciano neon `#38BDF8` nos detalhes).
+- Identidade Visual: Escura, plana e minimalista (fundo grafite `#0F1115`, texto branco neve `#F8F9FA`, apoio cinza fumaça `#9CA3AF` e laranja chama `#FF6B00` apenas nos CTAs e em um destaque do título). Detalhes em `DESIGN.md`.
 - Tipografia: Plus Jakarta Sans (títulos) e Inter (corpo de texto).
 
 ## Evidence on Hand
