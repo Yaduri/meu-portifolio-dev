@@ -16,7 +16,7 @@ Profissionais autônomos, clínicas de saúde/estética, escritórios de advocac
 Gerar resultados comerciais concretos por meio de Sites de Alta Conversão que atraem clientes pelo WhatsApp e Sistemas Web que facilitam a gestão de estoque, catálogos e vendas.
 
 ## Positioning
-Sites de conversão e sistemas web sob medida (sem templates genéricos), com carregamento ultrarrápido (foco em PageSpeed), suporte contínuo de 6 meses direto com o desenvolvedor e transparência total de investimento para cada necessidade de negócio.
+Sites de conversão e sistemas web sob medida (sem templates genéricos), com carregamento ultrarrápido (foco em PageSpeed), suporte contínuo direto com o desenvolvedor e transparência total de investimento para cada necessidade de negócio.
 
 ## Operating Context
 Conversão ágil via WhatsApp, catálogos online para consulta rápida de produtos/veículos, navegação mobile-first (mais de 70% dos acessos), painéis de fácil atualização e compartilhamento direto de links comerciais.
@@ -25,7 +25,7 @@ Conversão ágil via WhatsApp, catálogos online para consulta rápida de produt
 - Sites de conversão de alta performance (HTML/CSS/JS e frameworks modernos).
 - Sistemas web sob medida (catálogos de estoque automotivo, mini lojas virtuais, cardápios e painéis de controle).
 - Integrações diretas com API do WhatsApp e formulários otimizados.
-- Planos flexíveis: sites de conversão com investimento definido na proposta e sistemas web com manutenção e hospedagem dimensionadas para o projeto.
+- Modelo de cobrança: taxa de implantação mais mensalidade de hospedagem e suporte, com valores definidos na proposta.
 
 ## Brand Commitments
 - Nome/Identidade: Yago Dev / Yago Duarte Ribeiro.
@@ -35,9 +35,9 @@ Conversão ágil via WhatsApp, catálogos online para consulta rápida de produt
 
 ## Evidence on Hand
 - Portfólio com projetos reais e demonstrações em nichos estratégicos (Mosca Branca Car - Estoque Automotivo, Aline Duarte Psicóloga, Essenza Estética, Ateliê Linha Casa, Escritório de Advocacia).
-- Contato direto e suporte de 6 meses incluso.
+- Contato direto e suporte incluso na mensalidade de hospedagem e suporte.
 - Localização física: Várzea Paulista - SP.
-- WhatsApp Oficial: (11) 94598-7666.
+- WhatsApp Oficial: (11) 94852-7590.
 
 ## Product Principles
 - **Foco em Resultados Comerciais**: Todo layout e sistema é pensado para gerar contatos, vendas e praticidade de uso.
