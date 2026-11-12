@@ -25,7 +25,7 @@ Conversão ágil via WhatsApp, catálogos online para consulta rápida de produt
 - Sites de conversão de alta performance (HTML/CSS/JS e frameworks modernos).
 - Sistemas web sob medida (catálogos de estoque automotivo, mini lojas virtuais, cardápios e painéis de controle).
 - Integrações diretas com API do WhatsApp e formulários otimizados.
-- Planos flexíveis: sites de conversão sem mensalidade recorrente obrigatória e sistemas web com manutenção e hospedagem dimensionadas para o projeto.
+- Planos flexíveis: sites de conversão com investimento definido na proposta e sistemas web com manutenção e hospedagem dimensionadas para o projeto.
 
 ## Brand Commitments
 - Nome/Identidade: Yago Dev / Yago Duarte Ribeiro.
