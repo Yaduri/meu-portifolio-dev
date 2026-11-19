@@ -137,7 +137,7 @@ Os títulos usam `text-wrap: balance`; parágrafos longos ficam em até 60 carac
 - **Ordem das seções:** Hero → Caso Mosca Branca Car → Demonstrações → Dores → Serviços → Por que o Yago (diferenciais e história) → Processo → FAQ → CTA final.
 - **Hero:** título em largura total; abaixo, texto e botão à esquerda e a foto com legenda à direita. No mobile a foto vira uma miniatura ao lado da legenda.
 - **Caso real:** imagem larga (3:1) seguida de título à esquerda e descrição à direita.
-- **Demonstrações:** grade de 3 colunas no desktop, 2 no tablet e fileira deslizável com scroll-snap no mobile.
+- **Demonstrações:** grade de 2 colunas no desktop, 2 no tablet e fileira deslizável com scroll-snap no mobile.
 - **Dores e FAQ:** título fixo à esquerda e lista à direita no desktop.
 - **Diferenciais:** linhas de largura total, título à esquerda e texto à direita.
 - **Processo:** 4 colunas com numeral em serifa; lista vertical no mobile.
